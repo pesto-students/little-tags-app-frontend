@@ -2,24 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import {IntlProvider} from 'react-intl';
 import reportWebVitals from "./reportWebVitals";
-import English from "./lang/en-US.json";
-import French from  "./lang/fr-FR.json"
-const locale="fr-FR" ||navigator.language;
-let lang;
-console.log("locale======>",locale)
-if(locale==="en-GB"){
-  lang=English
-}else{
-  lang=French
-}
+import { LangProvider } from './context/LangContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <IntlProvider locale={locale} messages={lang}>
-    <App />
-    </IntlProvider>
+    
+    <LangProvider>
+    <App/>
+  </LangProvider>
+    
   </React.StrictMode>,
   document.getElementById("root")
 );

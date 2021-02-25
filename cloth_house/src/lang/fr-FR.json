@@ -3,5 +3,6 @@
     "homepage.subscribeHeader": "Abonnez-vous",
     "user.hello": "Bonjour {username}, comment ça va ?",
     "user.signIn": "Veuillez <em>vous connecter</em> s\"il vous plaît",
-    "app.containers.Home.homeHeading":"Bienvenue !"
+    "app.containers.Home.homeHeading":"Bienvenue !",
+    "app.components.LangSwitch.loginSignUp":"connexion/S'inscrire"
   }
