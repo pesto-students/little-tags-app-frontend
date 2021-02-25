@@ -26,10 +26,30 @@
 
 .header .searchInput{
     width: 576px;
-    height: 67px;
-    
+    height: 67px;  
 }
 
+.header .selectpin{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+
+.header .login {
+  width: 150px;
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+.header .login .login-button{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+
+.header .globe{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+  width:200px;
+  font-size: 20px;
+}
 
 .customWidth {
   width: 250px;
