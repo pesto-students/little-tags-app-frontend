@@ -12,10 +12,12 @@ const { Header, Footer, Sider, Content } = Layout;
     <>
     <Layout className="layout">
         <TopHeader />
-        <Content>Content</Content>
-        <Footer>Add Footer</Footer>
+        <Content>
+        <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
+        </Content>
+        <Footer >Add Footer</Footer>
       </Layout>
-      <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
+      
     </>
   );
 }

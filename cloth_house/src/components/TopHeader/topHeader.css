@@ -48,6 +48,7 @@
   text-decoration-color: #FFFFFF;
   width:200px;
   font-size: 20px;
+  text-align-last: end;
 }
 
 .customWidth {
