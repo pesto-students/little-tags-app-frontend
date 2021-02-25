@@ -7,8 +7,8 @@
 import { defineMessages } from "react-intl";
 
 export default defineMessages({
-  hubspotDesc: {
-    id: "app.containers.Home.heading",
+  homeHeading: {
+    id: "app.containers.Home.homeHeading",
     defaultMessage: "Go to Test"
   }
 });

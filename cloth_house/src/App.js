@@ -2,19 +2,18 @@ import "./App.css";
 import Routes from "./route";
 import ErrorBoundary from "./Hoc/ErrorBoundary";
 import { BrowserRouter } from "react-router-dom";
-import { injectIntl } from "react-intl";
-import {IntlProvider, FormattedMessage, FormattedNumber} from 'react-intl'
-
+import {IntlProvider} from 'react-intl';
+import messages from "./messages";
 function App(props) {
-  console.log("App=======>", props);
- const locale="en" 
+ const locale =  'fr-FR'; 
+ 
   return (
 
     <div className="App">
     
       <BrowserRouter>
         <ErrorBoundary>
-     <IntlProvider locale={locale}>
+     <IntlProvider locale={locale} messages={messages[locale]}>
           <Routes {...props} />
           </IntlProvider>
         </ErrorBoundary>

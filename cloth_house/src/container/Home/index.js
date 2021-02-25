@@ -3,14 +3,15 @@ import "./home.css";
 import { Link } from "react-router-dom";
 import TopHeader from "../../components/TopHeader";
 import messages from "./messages";
+import {injectIntl} from "react-intl"
  function Home(props) {
-  console.log("Home===>", messages);
+  console.log("Home===>",props, messages);
 
   return (
     <>
-      <Link to="/test">{props.intl&&props.intl.formatMessage(messages.hubspotDesc)}</Link>
+      <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
       <TopHeader />
     </>
   );
 }
-export default Home 
+export default injectIntl(Home) 
