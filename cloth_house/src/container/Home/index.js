@@ -9,8 +9,8 @@ import {injectIntl} from "react-intl"
 
   return (
     <>
-      <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
       <TopHeader />
+      <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
     </>
   );
 }
