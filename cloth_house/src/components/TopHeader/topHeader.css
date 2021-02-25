@@ -1,3 +1,56 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.header { 
+    z-index: 1;
+    width: 100%;
+    background-color: #006892;
+    white-space: nowrap
+}
+
+.header .logo {
+    font-family: Lato;
+    color: #FFFFFF;
+    font-size:30px;
+    font-style:italic;
+    text-align:left;
+    font-weight: bold;
+    width: 300px;
+}
+
+.header .logoImage {
+    width: 30px;
+    height: 30px;
+}
+
+.header .searchInput{
+    width: 576px;
+    height: 67px;  
+}
+
+.header .selectpin{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+
+.header .login {
+  width: 150px;
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+.header .login .login-button{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+}
+
+.header .globe{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+  width:200px;
+  font-size: 20px;
+  text-align-last: end;
+}
+
 .customWidth {
   width: 250px;
   padding-top: 10px;
@@ -29,3 +82,6 @@ svg {
     font-size: 1.5rem;
   }
 }
+
+
+

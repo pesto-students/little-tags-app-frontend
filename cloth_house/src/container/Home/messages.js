@@ -8,7 +8,7 @@ import { defineMessages } from "react-intl";
 
 export default defineMessages({
   homeHeading: {
-    id: "app.containers.Home.homeHeading",
+    id: "homepage.welcome",
     defaultMessage: "Go to Test"
   }
 });
