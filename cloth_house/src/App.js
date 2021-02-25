@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import {IntlProvider} from 'react-intl';
 import messages from "./messages";
 function App(props) {
- const locale =  'fr-FR'; 
+ const locale =  'en-GB'; 
  
   return (
 
