@@ -15,7 +15,7 @@ class ErrorBoundary extends Component {
     this.setState({ errors: error, errorInfo: info });
   }
 
-  render() {
+  errorDisplay=()=>{
     const errorDivStyle = {
       display: "flex",
       justifyContent: "center",
@@ -25,6 +25,18 @@ class ErrorBoundary extends Component {
       width: "100%"
     };
 
+    return (
+      <div style={errorDivStyle}>
+        <h2 className="centered" style={{ fontSize: "16px" }}>
+          Whoops! Something went wrong. We will be looking into this.
+        </h2>
+      </div>
+    );
+
+  }
+
+  render() {
+  
     if (this.state.hasError) {
       const errorInfo = _.cloneDeep(this.state.errorInfo);
       if (typeof errorInfo === "object" && errorInfo !== null) {
@@ -37,15 +49,9 @@ class ErrorBoundary extends Component {
         );
       }
 
-      return (
-        <div style={errorDivStyle}>
-          <h2 className="centered" style={{ fontSize: "16px" }}>
-            Whoops! Something went wrong. We will be looking into this.
-          </h2>
-        </div>
-      );
+      
     }
-    return this.props.children ? this.props.children : "";
+    return this.state.hasError ?this.errorDisplay(): this.props.children;
   }
 }
 
