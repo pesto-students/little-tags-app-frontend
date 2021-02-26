@@ -48,7 +48,12 @@
   text-decoration-color: #FFFFFF;
   width:200px;
   font-size: 20px;
-  text-align-last: end;
+}
+.header .globe .globemenu{
+  color: #e62121; 
+  text-decoration-color: #b10c0c;
+  width:20px;
+  font-size: 20px;
 }
 
 .customWidth {

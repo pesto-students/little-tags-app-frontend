@@ -11,12 +11,12 @@ const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
 
- const menu=(<Menu>
+ const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
-   return <Menu.Item>
-      <Button value={key} onClick={()=>{console.log("key======>",key)
+   return <Menu.Item >
+      <a value={key} onClick={()=>{console.log("key======>",key)
     switchLang(key)
-    }} >{langOptions[key]}</Button>
+    }} >{langOptions[key]}</a>
     </Menu.Item>
   })} 
   
@@ -48,7 +48,7 @@ const SmileBagHeader= (props) =>{
         </div>
         </div>
         <div className="globe">
-        <Dropdown overlay={menu}>
+        <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 
         </Dropdown>
         </div>

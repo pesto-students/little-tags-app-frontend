@@ -1,6 +1,8 @@
-import { React } from "react";
+import { React,useContext } from "react";
 import { Input, Row, Col, Select, Space, Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import LangContext,{langOptions} from "../../context/LangContext.js"
+import { injectIntl } from "react-intl";
 import "./categories.css";
 
 const menu = (
@@ -38,28 +40,28 @@ const Category = (args) => {
   );
 };
 
-const Categories = () => {
+const Categories = (props) => {
   return (
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle">
         <Col className="gutter-row " span={3}>
           <Category
             imagesrc="./assets/images/clothing.png"
-            menuLabel="Clothing"
+            menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})}
           />
         </Col>
         <Col className="gutter-row " span={3}>
           <Category
             imagesrc="./assets/images/footwear.jpg"
-            menuLabel="Footwear"
+            menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
           />
         </Col>
         <Col className="gutter-row " span={3}>
-          <Category imagesrc="./assets/images/bags.png" menuLabel="Bags" />
+          <Category imagesrc="./assets/images/bags.png" menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})} />
         </Col>
       </Row>
     </div>
   );
 };
 
-export default Categories;
+export default injectIntl(Categories);
