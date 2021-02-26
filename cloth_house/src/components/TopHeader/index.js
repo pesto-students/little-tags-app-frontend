@@ -1,12 +1,27 @@
-import React from "react";
+import React,{useContext} from "react";
 import ErrorBoundary from "../../Hoc/ErrorBoundary.js";
 import { Layout } from "antd";
-import { Input, Row, Col, Select,Space,Button  } from "antd";
-import { AudioOutlined,SearchOutlined,EnvironmentOutlined ,GlobalOutlined } from '@ant-design/icons';
+import {Menu,Input, Row, Select,Space,Button,Dropdown  } from "antd";
+import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined } from '@ant-design/icons';
 import "./topHeader.css";
-const { Header, Footer, Sider, Content } = Layout;
+import LangContext,{langOptions} from "../../context/LangContext.js"
+import { injectIntl } from "react-intl";
+const { Header } = Layout;
 const { Option } = Select;
-const SmileBagHeader= () =>{
+const SmileBagHeader= (props) =>{
+  const { switchLang } = useContext(LangContext);
+
+ const menu=(<Menu>
+  {Object.keys(langOptions).map((key)=>{ 
+   return <Menu.Item>
+      <Button value={key} onClick={()=>{console.log("key======>",key)
+    switchLang(key)
+    }} >{langOptions[key]}</Button>
+    </Menu.Item>
+  })} 
+  
+  </Menu>)
+  console.log("menu",menu)
   return (
     <>
     <ErrorBoundary>
@@ -28,12 +43,14 @@ const SmileBagHeader= () =>{
         </Select>
         </div>
         <div className="login">
-        <Button className="login-button" block={true} type="primary" ghost={true} size="large">
-          Login/Signup
-        </Button>
+        <div className="login-button" block={true} type="primary" ghost={true} size="large">
+          {props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
+        </div>
         </div>
         <div className="globe">
-        <GlobalOutlined onClick={() => {}} className="globe"/>
+        <Dropdown overlay={menu}>
+         <GlobalOutlined  className="globe"/> 
+        </Dropdown>
         </div>
         </Space>
         </Row>
@@ -42,13 +59,6 @@ const SmileBagHeader= () =>{
     </>
   );
 };
-const HeaderNew= () => {
-  return (<>
-    <ErrorBoundary>
-      <div className={"width100"}>Header Component</div>
-    </ErrorBoundary>
-    </>
-  );
-};
 
-export default SmileBagHeader;
+
+export default injectIntl(SmileBagHeader);

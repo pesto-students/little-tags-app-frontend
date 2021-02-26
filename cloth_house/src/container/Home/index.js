@@ -8,7 +8,7 @@ import {injectIntl} from "react-intl"
 import { Layout } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
  function Home(props) {
-  console.log("Home===>",props, messages);
+  console.log("Home===>",props);
   return (
     <>
     <Layout className="layout">
