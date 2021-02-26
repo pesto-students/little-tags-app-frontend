@@ -4,5 +4,8 @@
     "user.hello": "Bonjour {username}, comment ça va ?",
     "user.signIn": "Veuillez <em>vous connecter</em> s\"il vous plaît",
     "app.containers.Home.homeHeading":"Bienvenue !",
-    "app.components.LangSwitch.loginSignUp":"connexion/S'inscrire"
+    "app.components.LangSwitch.loginSignUp":"connexion/S'inscrire",
+    "app.components.LangSwitch.category.footwear":"chaussure",
+    "app.components.LangSwitch.category.clothing":"Vêtements",
+    "app.components.LangSwitch.category.bags":"Sacs"
   }
