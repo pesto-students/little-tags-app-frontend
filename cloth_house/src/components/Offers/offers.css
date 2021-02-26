@@ -1,0 +1,14 @@
+.carouseloffers {
+  height: 200px;
+  color: white;
+  line-height: 160px;
+  text-align: center;
+  background-color: #8dabe4;
+}
+
+.offerscards{
+    padding-top: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0.5%;
+}

@@ -8,5 +8,8 @@
     "app.components.LangSwitch.loginSignUp":"Login/Signup",
     "app.components.LangSwitch.category.footwear":"Footwear",
     "app.components.LangSwitch.category.clothing":"Clothing",
-    "app.components.LangSwitch.category.bags":"Bags"
+    "app.components.LangSwitch.category.bags":"Bags",
+    "app.components.LangSwitch.footer.terms":"Terms & Conditions",
+    "app.components.LangSwitch.footer.madeInIndia":"Made In India",
+    "app.components.LangSwitch.home.offerstitle":"OFFERS"
   }
