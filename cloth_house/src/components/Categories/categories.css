@@ -1,0 +1,15 @@
+.categories{
+    padding-top: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0.5%;
+    background-color: white;
+}
+
+.categories .category{
+    color: #47525E;
+    font-family: Lato;
+    font-size: 15px;
+    line-height: 33px;
+    text-align: left;
+}
