@@ -3,9 +3,11 @@ import "./home.css";
 import { Link } from "react-router-dom";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
+import {CarouselOffers,Offers} from "../../components/Offers";
+import SmileBagFooter from "../../components/Footer";
 import messages from "./messages";
 import {injectIntl} from "react-intl"
-import { Layout } from "antd";
+import { Layout,Divider } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
  function Home(props) {
   console.log("Home===>",props);
@@ -15,9 +17,11 @@ const { Header, Footer, Sider, Content } = Layout;
         <TopHeader />
         <Content>
           <Categories/>
-        <Link to="/test">{props.intl&&props.intl.formatMessage(messages.homeHeading)}</Link>
+          <CarouselOffers/>
+          <Divider style={{fontSize:"x-large"}}>{props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
+          <Offers />
         </Content>
-        <Footer >Add Footer</Footer>
+        <SmileBagFooter />
       </Layout>
       
     </>

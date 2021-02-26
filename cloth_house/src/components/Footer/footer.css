@@ -1,0 +1,11 @@
+.footer{
+    z-index: 1;
+    width: 100%;
+    background-color: #006892;
+    padding: 10px;
+    color: white;
+}
+
+.footer a{
+    color: white;
+}
