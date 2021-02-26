@@ -1,5 +1,6 @@
 {
-
+    "appName":"Smilebag",
+    "in":"in",
     "homepage.welcome": "Welcome!",
     "homepage.subscribeHeader": "Subscribe Now",
     "user.hello": "Hi {username}, how are you?",
@@ -11,5 +12,25 @@
     "app.components.LangSwitch.category.bags":"Bags",
     "app.components.LangSwitch.footer.terms":"Terms & Conditions",
     "app.components.LangSwitch.footer.madeInIndia":"Made In India",
-    "app.components.LangSwitch.home.offerstitle":"OFFERS"
+    "app.components.LangSwitch.home.offerstitle":"OFFERS",
+    "app.containers.Login.email":"Email",
+    "app.containers.Login.password":"Password",
+    "app.containers.Login.remember":"Remember",
+    "app.containers.Login.me":"me",
+    "app.containers.Login.forgotPassword":"Forgot Password",
+    "app.containers.Login.logIn":"Log In",
+    "app.containers.Login.registerNow":"register now",
+    "app.containers.Login.or":"or",
+    "app.containers.Login.forgotPasswordDesc":"The page is under development",
+    "app.containers.SignUp.confirmPassword":"Confirm Password",
+    "app.containers.SignUp.confirmPasswordError":"Please confirm your password",
+    "app.containers.SignUp.passwordNotMatch":"The two passwords that you entered do not match",
+    "app.containers.SignUp.name":"Name",
+    "app.containers.SignUp.nameTitle":"What do you want us to call you",
+    "app.containers.SignUp.subCommon":"Please input your",
+    "app.containers.SignUp.phoneNumber":"Phone Number",
+    "app.containers.SignUp.agreement":"agreement",
+    "app.containers.SignUp.register":"register",
+    "app.containers.SignUp.readThe":"I have read the"
+    
   }

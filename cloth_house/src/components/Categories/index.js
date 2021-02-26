@@ -1,7 +1,6 @@
-import { React,useContext } from "react";
-import { Input, Row, Col, Select, Space, Menu, Dropdown, Button } from "antd";
+import { React } from "react";
+import { Row, Col,  Space, Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import LangContext,{langOptions} from "../../context/LangContext.js"
 import { injectIntl } from "react-intl";
 import "./categories.css";
 

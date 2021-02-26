@@ -1,7 +1,5 @@
-import { React,useContext } from "react";
-import { Input, Row, Col, Select, Space, Menu, Dropdown, Button, Carousel ,Card  } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import LangContext,{langOptions} from "../../context/LangContext.js"
+import { React } from "react";
+import {  Space  } from "antd";
 import { injectIntl } from "react-intl";
 import "./footer.css";
 import { Footer } from "antd/lib/layout/layout";

@@ -1,4 +1,5 @@
-{
+{   "appName":"Smilebag",
+     "in":"dans",
     "homepage.welcome": "Bienvenue !",
     "homepage.subscribeHeader": "Abonnez-vous",
     "user.hello": "Bonjour {username}, comment ça va ?",
@@ -10,5 +11,24 @@
     "app.components.LangSwitch.category.bags":"Sacs",
     "app.components.LangSwitch.footer.terms":"termes et conditions",
     "app.components.LangSwitch.footer.madeInIndia":"Fabriqué en Inde",
-    "app.components.LangSwitch.home.offerstitle":"DES OFFRES"
+    "app.components.LangSwitch.home.offerstitle":"DES OFFRES",
+    "app.containers.Login.email":"E-mail",
+    "app.containers.Login.password":"le mot de passe",
+    "app.containers.Login.remember":"rappelles toi",
+    "app.containers.Login.me":"moi",
+    "app.containers.Login.forgotPassword":"Mot de passe oublié",
+    "app.containers.Login.logIn":"connexion",
+    "app.containers.Login.registerNow":"S'inscrire maintenant",
+    "app.containers.Login.or":"ou",
+    "app.containers.Login.forgotPasswordDesc":"La page est en cours de développement",
+    "app.containers.SignUp.confirmPassword":"Confirmez le mot de passe",
+    "app.containers.SignUp.confirmPasswordError":"Veuillez confirmer votre mot de passe",
+    "app.containers.SignUp.passwordNotMatch":"Les deux mots de passe que vous avez saisis ne correspondent pas",
+    "app.containers.SignUp.name":"Nom",
+    "app.containers.SignUp.nameTitle":"Comment voulez-vous que nous vous appelions",
+    "app.containers.SignUp.subCommon":"Veuillez saisir votre",
+    "app.containers.SignUp.phoneNumber":"Numéro de téléphone",
+    "app.containers.SignUp.agreement":"une entente",
+    "app.containers.SignUp.register":"S'inscrire",
+    "app.containers.SignUp.readThe":"J'ai lu le"
   }
