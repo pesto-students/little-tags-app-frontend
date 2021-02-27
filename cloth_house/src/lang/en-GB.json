@@ -31,6 +31,7 @@
     "app.containers.SignUp.phoneNumber":"Phone Number",
     "app.containers.SignUp.agreement":"agreement",
     "app.containers.SignUp.register":"register",
-    "app.containers.SignUp.readThe":"I have read the"
+    "app.containers.SignUp.readThe":"I have read the",
+    "app.containers.SignUp.acceptAggrement":"Should accept agreement" 
     
   }

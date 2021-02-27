@@ -86,7 +86,7 @@ const RegistrationForm = (props) => {
           },
           {
             required: true,
-            message: '${props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl.formatMessage({id:"app.containers.Login.email"})}!',
+            message: `${props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl.formatMessage({id:"app.containers.Login.email"})}!`,
           },
         ]}
       >
@@ -179,7 +179,7 @@ const RegistrationForm = (props) => {
         rules={[
           {
             validator: (_, value) =>
-              value ? Promise.resolve() : Promise.reject('Should accept agreement'),
+              value ? Promise.resolve() : Promise.reject(props.intl.formatMessage({id:"app.containers.SignUp.acceptAggrement"})),
           },
         ]}
         {...tailFormItemLayout}
@@ -194,6 +194,7 @@ const RegistrationForm = (props) => {
         </Button>
       </Form.Item>
     </Form>
+
     </div>
   );
 };

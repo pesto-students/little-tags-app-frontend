@@ -30,5 +30,6 @@
     "app.containers.SignUp.phoneNumber":"Numéro de téléphone",
     "app.containers.SignUp.agreement":"une entente",
     "app.containers.SignUp.register":"S'inscrire",
-    "app.containers.SignUp.readThe":"J'ai lu le"
+    "app.containers.SignUp.readThe":"J'ai lu le",
+    "app.containers.SignUp.acceptAggrement":"Should accept agreement"
   }
