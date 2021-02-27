@@ -4,8 +4,11 @@
     background-color: #006892;
     padding: 10px;
     color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
-.footer a{
+.footer button{
     color: white;
 }

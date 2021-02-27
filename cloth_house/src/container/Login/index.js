@@ -1,7 +1,10 @@
 import React from   "react";
 import { UserOutlined,LockOutlined } from "@ant-design/icons";
-import {  Form, Input, Button, Checkbox,Row,Col  } from "antd";
-import "./login.css"
+import {  Form, Input, Button, Checkbox,Row,Col, Space,Layout  } from "antd";
+import TopHeader from "../../components/TopHeader";
+import SmileBagFooter from "../../components/Footer";
+import "./login.css";
+const { Content } = Layout;
 const NormalLoginForm = (props) => { 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
@@ -9,11 +12,19 @@ const NormalLoginForm = (props) => {
   };
 
   return (
+
+    <>
+      <Layout className="layout">
+        <TopHeader {...props} />
+        <Content className="content">
     <Row>
     
       <Col className="padForLoginForm">
-    <p className="alignLeft">
-      {props.intl.formatMessage({id:"appName"})}.{props.intl.formatMessage({id:"in"})}</p>
+       <Space direction="vertical" align="center">
+      <Button type="primary" danger>
+      {props.intl.formatMessage({id:"app.containers.Login.loginwithgoogle"})}
+    </Button>
+    <h2>{props.intl.formatMessage({id:"app.containers.Login.or"})}</h2>
     <Form
       name="normal_login"
       className="login-form"
@@ -61,16 +72,23 @@ const NormalLoginForm = (props) => {
       </Form.Item>
 
       <Form.Item>
+        <Space>
         <Button type="primary" htmlType="submit" className="login-form-button">
         {props.intl.formatMessage({id:"app.containers.Login.logIn"})}
         </Button>
-        {props.intl.formatMessage({id:"app.containers.Login.or"})} <Button type="link" href="" onClick={(e)=>{
+        {props.intl.formatMessage({id:"app.containers.Login.or"})}<Button type="link" href="" onClick={(e)=>{
           e.preventDefault()
           props.history.push('/signup')
         }}>{props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</Button>
+        </Space>
       </Form.Item>
     </Form>
+    </Space> 
     </Col></Row>
+    </Content>
+        <SmileBagFooter />
+      </Layout>
+      </>
   );
 };
 
