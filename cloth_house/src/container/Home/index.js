@@ -8,11 +8,11 @@ import {injectIntl} from "react-intl"
 import { Layout,Divider } from "antd";
 const { Content } = Layout;
  function Home(props) {
-  console.log("Home===>",props);
+  //console.log("Home===>",props);
   return (
     <>
     <Layout className="layout">
-        <TopHeader />
+        <TopHeader {...props} />
         <Content>
           <Categories/>
           <CarouselOffers/>

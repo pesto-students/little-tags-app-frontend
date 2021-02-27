@@ -10,7 +10,7 @@ const { Header } = Layout;
 const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
-
+//console.log("SmileBagHeader=====>",props)
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item >
@@ -43,9 +43,11 @@ const SmileBagHeader= (props) =>{
         </Select>
         </div>
         <div className="login">
-        <div className="login-button" block={true} type="primary" ghost={true} size="large">
+        <Button onClick={()=>{
+          props.history.push('/login')
+        }} className="login-button" block={true} type="primary" ghost={true} size="large">
           {props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
-        </div>
+        </Button>
         </div>
         <div className="globe">
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>

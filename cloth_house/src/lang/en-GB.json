@@ -6,7 +6,7 @@
     "user.hello": "Hi {username}, how are you?",
     "user.signIn": "Please, <em>sign in</em>",
     "app.containers.Home.homeHeading":"Heading For Home page",
-    "app.components.LangSwitch.loginSignUp":"Login/Signup",
+    "app.components.LangSwitch.loginSignUp":"Login",
     "app.components.LangSwitch.category.footwear":"Footwear",
     "app.components.LangSwitch.category.clothing":"Clothing",
     "app.components.LangSwitch.category.bags":"Bags",
