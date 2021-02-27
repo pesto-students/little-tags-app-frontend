@@ -14,7 +14,7 @@ const SmileBagHeader= (props) =>{
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item >
-      <a value={key} onClick={()=>{console.log("key======>",key)
+      <a href="" value={key} onClick={()=>{console.log("key======>",key)
     switchLang(key)
     }} >{langOptions[key]}</a>
     </Menu.Item>
@@ -30,7 +30,7 @@ const SmileBagHeader= (props) =>{
         <Space align="center">
         <div className="logo">
           SmileBag{" "}
-          <img className="logoImage" src="./assets/images/Raster.png"></img>
+          <img alt="fallback" className="logoImage" src="./assets/images/Raster.png"></img>
         </div>
        
         <div className="searchInput">

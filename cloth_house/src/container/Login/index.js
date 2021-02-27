@@ -53,21 +53,21 @@ const NormalLoginForm = (props) => {
           <Checkbox>{props.intl.formatMessage({id:"app.containers.Login.remember"})}  {props.intl.formatMessage({id:"app.containers.Login.me"})}</Checkbox>
         </Form.Item>
 
-        <a className="login-form-forgot" onClick={e=>{e.stopPropagation()
+        <Button type="link" className="login-form-forgot" onClick={e=>{e.stopPropagation()
         props.history.push('/forgot-password')
         }}>
           {props.intl.formatMessage({id:"app.containers.Login.forgotPassword"})}
-        </a>
+        </Button>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
         {props.intl.formatMessage({id:"app.containers.Login.logIn"})}
         </Button>
-        {props.intl.formatMessage({id:"app.containers.Login.or"})} <a href="" onClick={(e)=>{
+        {props.intl.formatMessage({id:"app.containers.Login.or"})} <Button type="link" href="" onClick={(e)=>{
           e.preventDefault()
           props.history.push('/signup')
-        }}>{props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</a>
+        }}>{props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</Button>
       </Form.Item>
     </Form>
     </Col></Row>

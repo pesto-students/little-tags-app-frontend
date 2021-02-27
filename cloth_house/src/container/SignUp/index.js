@@ -194,7 +194,7 @@ const [agreementModal,showAgreementModal]=useState(false)
         {...tailFormItemLayout}
       >
         <Checkbox>
-          {props.intl.formatMessage({id:"app.containers.SignUp.readThe"})} <a onClick={onClickAgreement}>{props.intl.formatMessage({id:"app.containers.SignUp.agreement"})}</a>
+          {props.intl.formatMessage({id:"app.containers.SignUp.readThe"})} <Button type="link" onClick={onClickAgreement}>{props.intl.formatMessage({id:"app.containers.SignUp.agreement"})}</Button>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>

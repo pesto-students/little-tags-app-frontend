@@ -3,17 +3,17 @@ import { Row, Col,  Space, Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { injectIntl } from "react-intl";
 import "./categories.css";
-
+import {Button} from "antd"
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank">1st menu item</a>
+      <Button type="link">1st menu item</Button>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank">2nd menu item</a>
+      <Button type="link">2nd menu item</Button>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank">3rd menu item</a>
+      <Button type="link">3rd menu item</Button>
     </Menu.Item>
   </Menu>
 );
@@ -24,15 +24,16 @@ const Category = (args) => {
       <Space>
         <img
           src={args.imagesrc}
+          alt="fallback"
           style={{ width: "55px", height: "55px" }}
         ></img>
         <Dropdown overlay={menu} placement="bottomCenter" arrow>
-          <a
+          <Button type="link"
             className="ant-dropdown-link category"
             onClick={(e) => e.preventDefault()}
           >
             {args.menuLabel} <DownOutlined />
-          </a>
+          </Button>
         </Dropdown>
       </Space>
     </>
