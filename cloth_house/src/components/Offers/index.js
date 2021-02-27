@@ -1,12 +1,12 @@
-import { React,useContext } from "react";
-import { Input, Row, Col, Select, Space, Menu, Dropdown, Button, Carousel ,Card  } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import LangContext,{langOptions} from "../../context/LangContext.js"
-import { injectIntl } from "react-intl";
+import { React } from "react";
+import {  Row, Col,  Carousel ,Card  } from "antd";
+// import { DownOutlined } from "@ant-design/icons";
+// import LangContext,{langOptions} from "../../context/LangContext.js"
+// import { injectIntl } from "react-intl";
 import "./offers.css";
 
 
-const CarouselOffers =(args) =>{
+const CarouselOffers =() =>{
     return (<>
     <Carousel autoplay>
     <div>
@@ -39,7 +39,7 @@ const OfferCard =() => {
     </>);
 }
 
-const Offers = (args) => {
+const Offers = () => {
     return (<div className="offerscards">
      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="space-around" align="middle">
          <Col span={8}> 

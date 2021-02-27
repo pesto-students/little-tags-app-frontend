@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import "./signup.css"
+import Modal from "../../components/Modal"
 import { 
   Form,
   Input,
@@ -44,9 +45,11 @@ const tailFormItemLayout = {
 
 const RegistrationForm = (props) => {
   const [form] = Form.useForm();
-
+const [agreementModal,showAgreementModal]=useState(false)
+//const agreementTitle="Customer Usage Agreement"
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    props.history.push('/login');
   };
 
   const prefixSelector = (
@@ -61,7 +64,13 @@ const RegistrationForm = (props) => {
       </Select>
     </Form.Item>
   );
-  
+  const onClickAgreement=(e)=>{
+      e.preventDefault()
+      showAgreementModal(true)
+  }
+  const handleOk=()=>{
+      showAgreementModal(false)
+  }
   return (
       <div className={"alignCenter"}>
     <Form
@@ -185,7 +194,7 @@ const RegistrationForm = (props) => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          {props.intl.formatMessage({id:"app.containers.SignUp.readThe"})} <a href="">{props.intl.formatMessage({id:"app.containers.SignUp.agreement"})}</a>
+          {props.intl.formatMessage({id:"app.containers.SignUp.readThe"})} <a onClick={onClickAgreement}>{props.intl.formatMessage({id:"app.containers.SignUp.agreement"})}</a>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
@@ -194,7 +203,15 @@ const RegistrationForm = (props) => {
         </Button>
       </Form.Item>
     </Form>
-
+   {agreementModal&& <Modal formatMessage={props.intl.formatMessage} visible={agreementModal} 
+   body={props.intl.formatMessage({id:"app.containers.SignUp.acceptBody"})}
+   title={props.intl.formatMessage({id:"app.containers.SignUp.acceptTitle"})}
+   onOk={handleOk}
+   handleCancel={handleOk}
+   footer={[<Button key="submit" type="primary"  onClick={handleOk}>
+   {props.intl.formatMessage({id:"app.containers.Login.close"})}
+ </Button>]}
+   />}
     </div>
   );
 };

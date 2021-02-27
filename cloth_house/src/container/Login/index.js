@@ -5,6 +5,7 @@ import "./login.css"
 const NormalLoginForm = (props) => { 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    props.history.push('/home');
   };
 
   return (
