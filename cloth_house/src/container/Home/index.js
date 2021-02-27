@@ -13,7 +13,7 @@ const { Content } = Layout;
     <>
     <Layout className="layout">
         <TopHeader {...props} />
-        <Content>
+        <Content className="content">
           <Categories/>
           <CarouselOffers/>
           <Divider style={{fontSize:"x-large"}}>{props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
