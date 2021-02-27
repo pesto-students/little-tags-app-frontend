@@ -28,7 +28,9 @@ const SmileBagHeader= (props) =>{
       <Header className="header">
         <Row>
         <Space align="center">
-        <div className="logo">
+        <div className="logo" onClick={()=>{
+          props.history.push("/")
+        }}>
           SmileBag{" "}
           <img alt="fallback" className="logoImage" src="./assets/images/Raster.png"></img>
         </div>
