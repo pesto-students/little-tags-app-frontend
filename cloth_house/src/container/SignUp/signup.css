@@ -1,7 +1,12 @@
 .alignCenter {
   width: 70%;
-  padding-top: 10%;
+  padding-top: 3%;
   align-items: center;
   display: flex;
   padding-left: 35%;
+  background-color: white;
+}
+
+.content{
+  background-color: white;
 }

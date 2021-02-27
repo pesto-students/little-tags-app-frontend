@@ -49,11 +49,8 @@
   width:200px;
   font-size: 20px;
 }
-.header .globe .globemenu{
-  color: #e62121; 
-  text-decoration-color: #b10c0c;
-  width:20px;
-  font-size: 20px;
+.globemenu{
+  color: #111111; 
 }
 
 .customWidth {

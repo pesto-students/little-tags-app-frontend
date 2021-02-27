@@ -43,20 +43,20 @@ const Category = (args) => {
 const Categories = (props) => {
   return (
     <div className="categories">
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle">
-        <Col className="gutter-row " span={3}>
+      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
+        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
             imagesrc="./assets/images/clothing.png"
             menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})}
           />
         </Col>
-        <Col className="gutter-row " span={3}>
+        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
             imagesrc="./assets/images/footwear.jpg"
             menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
           />
         </Col>
-        <Col className="gutter-row " span={3}>
+        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category imagesrc="./assets/images/bags.png" menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})} />
         </Col>
       </Row>

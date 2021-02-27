@@ -14,7 +14,7 @@ const SmileBagHeader= (props) =>{
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item >
-      <Button type="link" value={key} onClick={()=>{console.log("key======>",key)
+      <Button className="globemenu" type="link" value={key} onClick={()=>{console.log("key======>",key)
     switchLang(key)
     }} >{langOptions[key]}</Button>
     </Menu.Item>
