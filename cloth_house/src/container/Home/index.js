@@ -1,20 +1,18 @@
 import React from "react";
 import "./home.css";
-import { Link } from "react-router-dom";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import {CarouselOffers,Offers} from "../../components/Offers";
 import SmileBagFooter from "../../components/Footer";
-import messages from "./messages";
 import {injectIntl} from "react-intl"
 import { Layout,Divider } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
  function Home(props) {
-  console.log("Home===>",props);
+  //console.log("Home===>",props);
   return (
     <>
     <Layout className="layout">
-        <TopHeader />
+        <TopHeader {...props} />
         <Content>
           <Categories/>
           <CarouselOffers/>
