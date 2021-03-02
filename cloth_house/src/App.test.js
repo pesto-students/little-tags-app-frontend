@@ -1,9 +1,9 @@
 import React from 'react';
 import App from './App';
 import renderer from 'react-test-renderer';
-import ErrorBoundary from "./Hoc/ErrorBoundary";
-import Routes from "./route";
-import { IntlProvider, intlShape } from "react-intl";
+// import ErrorBoundary from "./Hoc/ErrorBoundary";
+// import Routes from "./route";
+// import { IntlProvider, intlShape } from "react-intl";
 
 // Create IntlProvider to retrieve React Intl context
 // const intlProvider = new IntlProvider(
