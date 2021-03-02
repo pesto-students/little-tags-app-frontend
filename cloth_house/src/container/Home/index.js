@@ -6,6 +6,7 @@ import {CarouselOffers,Offers} from "../../components/Offers";
 import SmileBagFooter from "../../components/Footer";
 import {injectIntl} from "react-intl"
 import { Layout,Divider } from "antd";
+
 const { Content } = Layout;
  function Home(props) {
   //console.log("Home===>",props);

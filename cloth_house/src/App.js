@@ -5,6 +5,7 @@ import ErrorBoundary from "./Hoc/ErrorBoundary";
 import { BrowserRouter } from "react-router-dom";
 import {IntlProvider} from "react-intl";
 import LangContext from "./context/LangContext"
+
 function App(props) {
   const { lang, currentLangData } = useContext(LangContext);
   return (
