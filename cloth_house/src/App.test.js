@@ -54,7 +54,7 @@ it('Route Snapshot', () => {
 });
 
 
-module.exports = Intl;
+//module.exports = Intl;
 
 
 // it('Error Boundary Snapshot', () => {
