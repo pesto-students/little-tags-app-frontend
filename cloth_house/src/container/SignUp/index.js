@@ -245,7 +245,7 @@ const RegistrationForm = (props) => {
                           ? Promise.resolve()
                           : Promise.reject(
                               props.intl.formatMessage({
-                                id: "app.containers.SignUp.acceptAggrement",
+                                id: "app.containers.SignUp.acceptAgreement",
                               })
                             ),
                     },
