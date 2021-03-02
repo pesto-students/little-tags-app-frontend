@@ -6,15 +6,14 @@ import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined } from '@ant-design/
 import "./topHeader.css";
 import LangContext,{langOptions} from "../../context/LangContext.js"
 import { injectIntl } from "react-intl";
-import { useDispatch, useSelector } from "react-redux";
-import {startAction, stopAction} from "../../redux/action"
+// import { useDispatch, useSelector } from "react-redux";
+// import {startAction, stopAction} from "../../redux/action"
 const { Header } = Layout;
 const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
-  const state=useSelector(state=>state);
-  const dispatch=useDispatch()
-console.log("SmileBagHeader=====>====>",{state})
+  // const state=useSelector(state=>state);
+  // const dispatch=useDispatch()
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item >
@@ -25,7 +24,6 @@ console.log("SmileBagHeader=====>====>",{state})
   })} 
   
   </Menu>)
-  console.log("menu",menu)
   return (
     <>
     <ErrorBoundary>
@@ -49,8 +47,8 @@ console.log("SmileBagHeader=====>====>",{state})
         </Select>
         </div>
         <div className="login">
-        <button onClick={()=> dispatch(startAction())}>Start</button>
-        <button onClick={()=> dispatch(stopAction())}>Stop</button>
+        {/* <button onClick={()=> setTimeout(()=>dispatch(startAction()),2000)}>Start</button>
+        <button onClick={()=> dispatch(stopAction())}>Stop</button> */}
 
         <Button onClick={()=>{
           props.history.push('/login')
