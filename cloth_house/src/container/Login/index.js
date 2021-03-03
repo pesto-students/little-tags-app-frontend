@@ -22,9 +22,9 @@ const NormalLoginForm = (props) => {
       <Col className="padForLoginForm">
        <Space direction="vertical" align="center">
       <Button type="primary" danger>
-      {props.intl.formatMessage({id:"app.containers.Login.loginwithgoogle"})}
+      {props.intl&&props.intl.formatMessage({id:"app.containers.Login.loginwithgoogle"})}
     </Button>
-    <h2>{props.intl.formatMessage({id:"app.containers.Login.or"})}</h2>
+    <h2>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}</h2>
     <Form
       name="normal_login"
       className="login-form"
@@ -38,48 +38,48 @@ const NormalLoginForm = (props) => {
         rules={[
           {
             required: true,
-            message: `${props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl.formatMessage({id:"app.containers.Login.email"})}!`,
+            message: `${props.intl&&props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl&&props.intl.formatMessage({id:"app.containers.Login.email"})}!`,
           },
         ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={props.intl.formatMessage({id:"app.containers.Login.email"})} />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={props.intl&&props.intl.formatMessage({id:"app.containers.Login.email"})} />
       </Form.Item>
       <Form.Item
         name="password"
         rules={[
           {
             required: true,
-            message: `${props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl.formatMessage({id:"app.containers.Login.password"})}!`,
+            message: `${props.intl&&props.intl.formatMessage({id:"app.containers.SignUp.subCommon"})} ${props.intl&&props.intl.formatMessage({id:"app.containers.Login.password"})}!`,
           },
         ]}
       >
         <Input
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
-          placeholder={props.intl.formatMessage({id:"app.containers.Login.password"})}
+          placeholder={props.intl&&props.intl.formatMessage({id:"app.containers.Login.password"})}
         />
       </Form.Item>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>{props.intl.formatMessage({id:"app.containers.Login.remember"})}  {props.intl.formatMessage({id:"app.containers.Login.me"})}</Checkbox>
+          <Checkbox>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.remember"})}  {props.intl&&props.intl.formatMessage({id:"app.containers.Login.me"})}</Checkbox>
         </Form.Item>
 
         <Button type="link" className="login-form-forgot" onClick={e=>{e.stopPropagation()
         props.history.push('/forgot-password')
         }}>
-          {props.intl.formatMessage({id:"app.containers.Login.forgotPassword"})}
+          {props.intl&&props.intl.formatMessage({id:"app.containers.Login.forgotPassword"})}
         </Button>
       </Form.Item>
 
       <Form.Item>
         <Space>
         <Button type="primary" htmlType="submit" className="login-form-button">
-        {props.intl.formatMessage({id:"app.containers.Login.logIn"})}
+        {props.intl&&props.intl.formatMessage({id:"app.containers.Login.logIn"})}
         </Button>
-        {props.intl.formatMessage({id:"app.containers.Login.or"})}<Button type="link" href="" onClick={(e)=>{
+        {props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}<Button type="link" href="" onClick={(e)=>{
           e.preventDefault()
           props.history.push('/signup')
-        }}>{props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</Button>
+        }}>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</Button>
         </Space>
       </Form.Item>
     </Form>

@@ -40,7 +40,7 @@ const Category = (args) => {
 };
 
 const Categories = (props) => {
-  console.log("Categories======>",props.intl);
+ // console.log("Categories======>",props.intl);
   return (
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">

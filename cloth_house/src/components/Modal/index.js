@@ -43,7 +43,7 @@ export default class CustomModal extends React.Component {
           footer={this.props.footer||defaultFooter}
           onCancel={this.props.handleCancel||this.handleCancel}
         >
-         {this.props.formatMessage({id:this.props.body.toString()})}
+         {this.props.intl&&this.props.intl.formatMessage({id:this.props.body&&this.props.body.toString()})}
         </Modal>
       </>
     );

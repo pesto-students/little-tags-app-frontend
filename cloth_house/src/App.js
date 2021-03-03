@@ -7,7 +7,7 @@ import {IntlProvider} from "react-intl";
 import LangContext from "./context/LangContext"
 
 function App(props) {
-  console.log("App--->",props);
+  //console.log("App--->",props);
   const { lang, currentLangData } = useContext(LangContext);
   return (
     <div className="App">    

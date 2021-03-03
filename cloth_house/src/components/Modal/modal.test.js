@@ -1,8 +1,8 @@
 import createComponentWithIntl from '../../utils/helper_snapshot'
-import Categories from "./index"
+import Modal from "./index"
 
-it('Categories Snapshot', () => {
-    const component = createComponentWithIntl(<Categories />);
+it('Agreement Modal Snapshot', () => {
+    const component = createComponentWithIntl(<Modal />);
     let tree = component.toJSON()
   
     expect(tree).toMatchSnapshot()

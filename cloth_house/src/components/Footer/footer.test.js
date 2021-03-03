@@ -1,8 +1,8 @@
 import createComponentWithIntl from '../../utils/helper_snapshot'
-import Categories from "./index"
+import Footer from "./index"
 
-it('Categories Snapshot', () => {
-    const component = createComponentWithIntl(<Categories />);
+it('Footer Snapshot', () => {
+    const component = createComponentWithIntl(<Footer />);
     let tree = component.toJSON()
   
     expect(tree).toMatchSnapshot()

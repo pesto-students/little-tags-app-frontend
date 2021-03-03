@@ -84,12 +84,12 @@ const RegistrationForm = (props) => {
           <div className={"alignCenter"}>
             <Space direction="vertical" align="center">
               <Button type="primary" danger>
-                {props.intl.formatMessage({
+                {props.intl&&props.intl.formatMessage({
                   id: "app.containers.SignUp.signupwithgoogle",
                 })}
               </Button>
               <h2>
-                {props.intl.formatMessage({ id: "app.containers.Login.or" })}
+                {props.intl&&props.intl.formatMessage({ id: "app.containers.Login.or" })}
               </h2>
               <Form
                 {...formItemLayout}
@@ -104,21 +104,21 @@ const RegistrationForm = (props) => {
               >
                 <Form.Item
                   name="email"
-                  label={props.intl.formatMessage({
+                  label={props.intl&&props.intl.formatMessage({
                     id: "app.containers.Login.email",
                   })}
                   rules={[
                     {
                       type: "email",
-                      message: `The input is not valid ${props.intl.formatMessage(
+                      message: `The input is not valid ${props.intl&&props.intl.formatMessage(
                         { id: "app.containers.Login.email" }
                       )}!`,
                     },
                     {
                       required: true,
-                      message: `${props.intl.formatMessage({
+                      message: `${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.subCommon",
-                      })} ${props.intl.formatMessage({
+                      })} ${props.intl&&props.intl.formatMessage({
                         id: "app.containers.Login.email",
                       })}!`,
                     },
@@ -129,15 +129,15 @@ const RegistrationForm = (props) => {
 
                 <Form.Item
                   name="password"
-                  label={props.intl.formatMessage({
+                  label={props.intl&&props.intl.formatMessage({
                     id: "app.containers.Login.password",
                   })}
                   rules={[
                     {
                       required: true,
-                      message: `${props.intl.formatMessage({
+                      message: `${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.subCommon",
-                      })} ${props.intl.formatMessage({
+                      })} ${props.intl&&props.intl.formatMessage({
                         id: "app.containers.Login.password",
                       })}!`,
                     },
@@ -149,7 +149,7 @@ const RegistrationForm = (props) => {
 
                 <Form.Item
                   name="confirm"
-                  label={props.intl.formatMessage({
+                  label={props.intl&&props.intl.formatMessage({
                     id: "app.containers.SignUp.confirmPassword",
                   })}
                   dependencies={["password"]}
@@ -157,7 +157,7 @@ const RegistrationForm = (props) => {
                   rules={[
                     {
                       required: true,
-                      message: `${props.intl.formatMessage({
+                      message: `${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.confirmPasswordError",
                       })}!`,
                     },
@@ -168,7 +168,7 @@ const RegistrationForm = (props) => {
                         }
 
                         return Promise.reject(
-                          `${props.intl.formatMessage({
+                          `${props.intl&&props.intl.formatMessage({
                             id: "app.containers.SignUp.passwordNotMatch",
                           })}!`
                         );
@@ -183,12 +183,12 @@ const RegistrationForm = (props) => {
                   name="name"
                   label={
                     <span>
-                      {props.intl.formatMessage({
+                      {props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.name",
                       })}
                       &nbsp;
                       <Tooltip
-                        title={`${props.intl.formatMessage({
+                        title={`${props.intl&&props.intl.formatMessage({
                           id: "app.containers.SignUp.nameTitle",
                         })}?`}
                       >
@@ -199,9 +199,9 @@ const RegistrationForm = (props) => {
                   rules={[
                     {
                       required: true,
-                      message: `${props.intl.formatMessage({
+                      message: `${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.subCommon",
-                      })} ${props.intl.formatMessage({
+                      })} ${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.name",
                       })}!`,
                       whitespace: true,
@@ -213,15 +213,15 @@ const RegistrationForm = (props) => {
 
                 <Form.Item
                   name="phone"
-                  label={props.intl.formatMessage({
+                  label={props.intl&&props.intl.formatMessage({
                     id: "app.containers.SignUp.phoneNumber",
                   })}
                   rules={[
                     {
                       required: true,
-                      message: `${props.intl.formatMessage({
+                      message: `${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.subCommon",
-                      })} ${props.intl.formatMessage({
+                      })} ${props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.phoneNumber",
                       })}!`,
                     },
@@ -244,7 +244,7 @@ const RegistrationForm = (props) => {
                         value
                           ? Promise.resolve()
                           : Promise.reject(
-                              props.intl.formatMessage({
+                              props.intl&&props.intl.formatMessage({
                                 id: "app.containers.SignUp.acceptAgreement",
                               })
                             ),
@@ -253,11 +253,11 @@ const RegistrationForm = (props) => {
                   {...tailFormItemLayout}
                 >
                   <Checkbox>
-                    {props.intl.formatMessage({
+                    {props.intl&&props.intl.formatMessage({
                       id: "app.containers.SignUp.readThe",
                     })}{" "}
                     <Button type="link" onClick={onClickAgreement}>
-                      {props.intl.formatMessage({
+                      {props.intl&&props.intl.formatMessage({
                         id: "app.containers.SignUp.agreement",
                       })}
                     </Button>
@@ -265,7 +265,7 @@ const RegistrationForm = (props) => {
                 </Form.Item>
                 <Form.Item {...tailFormItemLayout}>
                   <Button type="primary" htmlType="submit">
-                    {props.intl.formatMessage({
+                    {props.intl&&props.intl.formatMessage({
                       id: "app.containers.SignUp.register",
                     })}
                   </Button>
@@ -273,19 +273,19 @@ const RegistrationForm = (props) => {
               </Form>
               {agreementModal && (
                 <Modal
-                  formatMessage={props.intl.formatMessage}
+                  {...props}
                   visible={agreementModal}
-                  body={props.intl.formatMessage({
+                  body={props.intl&&props.intl.formatMessage({
                     id: "app.containers.SignUp.acceptBody",
                   })}
-                  title={props.intl.formatMessage({
+                  title={props.intl&&props.intl.formatMessage({
                     id: "app.containers.SignUp.acceptTitle",
                   })}
                   onOk={handleOk}
                   handleCancel={handleOk}
                   footer={[
                     <Button key="submit" type="primary" onClick={handleOk}>
-                      {props.intl.formatMessage({
+                      {props.intl&&props.intl.formatMessage({
                         id: "app.containers.Login.close",
                       })}
                     </Button>,

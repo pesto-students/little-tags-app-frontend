@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Snapshot 1`] = `
+<footer
+  className="ant-layout-footer footer"
+>
+  <div
+    className="ant-space ant-space-horizontal ant-space-align-center"
+    style={Object {}}
+  >
+    <div
+      className="ant-space-item"
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }
+    >
+      <button
+        className="ant-btn ant-btn-link"
+        onClick={[Function]}
+        type="button"
+      />
+    </div>
+    <div
+      className="ant-space-item"
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }
+    >
+       |
+    </div>
+    <div
+      className="ant-space-item"
+      style={Object {}}
+    >
+      <button
+        className="ant-btn ant-btn-link"
+        onClick={[Function]}
+        type="button"
+      />
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`Footer Snapshot 1`] = `
+<footer
+  className="ant-layout-footer footer"
+>
+  <div
+    className="ant-space ant-space-horizontal ant-space-align-center"
+    style={Object {}}
+  >
+    <div
+      className="ant-space-item"
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }
+    >
+      <button
+        className="ant-btn ant-btn-link"
+        onClick={[Function]}
+        type="button"
+      />
+    </div>
+    <div
+      className="ant-space-item"
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }
+    >
+       |
+    </div>
+    <div
+      className="ant-space-item"
+      style={Object {}}
+    >
+      <button
+        className="ant-btn ant-btn-link"
+        onClick={[Function]}
+        type="button"
+      />
+    </div>
+  </div>
+</footer>
+`;

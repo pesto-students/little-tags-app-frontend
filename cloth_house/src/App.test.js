@@ -5,14 +5,6 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 Enzyme.configure({ adapter: new Adapter() });
 import createComponentWithIntl from './utils/helper_snapshot'
 
-
-global.matchMedia = global.matchMedia || function () {
-  return {
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-  };
-};
-
 it('App Snapshot', () => {
   const component = createComponentWithIntl(<App />);
   let tree = component.toJSON()

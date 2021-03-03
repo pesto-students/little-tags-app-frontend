@@ -17,7 +17,7 @@ const { Content } = Layout;
         <Content className="content">
           <Categories {...props}/>
           <CarouselOffers/>
-          <Divider style={{fontSize:"x-large"}}>{props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
+          <Divider style={{fontSize:"x-large"}}>{props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
           <Offers />
         </Content>
         <SmileBagFooter {...props} />
