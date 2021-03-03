@@ -1,63 +1,38 @@
-import React from 'react';
+
 import App from './App';
-import renderer from 'react-test-renderer';
-// import ErrorBoundary from "./Hoc/ErrorBoundary";
-// import Routes from "./route";
-// import { IntlProvider, intlShape } from "react-intl";
+import Enzyme,{ shallow} from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+Enzyme.configure({ adapter: new Adapter() });
+import createComponentWithIntl from './utils/helper_snapshot'
 
-// Create IntlProvider to retrieve React Intl context
-// const intlProvider = new IntlProvider(
-//   {
-//     locale: "en",
-//     messages: {
-//       message1: "Hello world"
-//     }
-//   },
-//   {}
-// );
-// const { intl } = intlProvider.getChildContext();
 
-// // `intl` prop is required when using injectIntl HOC
-// const nodeWithIntlProp = node => React.cloneElement(node, { intl });
+global.matchMedia = global.matchMedia || function () {
+  return {
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+  };
+};
 
-// // shallow() with React Intl context
-// global.shallowWithIntl = (node, { context, ...options } = {}) => {
-//   return shallow(nodeWithIntlProp(node), {
-//     ...options,
-//     context: {
-//       ...context,
-//       intl
-//     }
-//   });
-// };
-// // mount() with React Intl context
-// global.mountWithIntl = (
-//   node,
-//   { context, childContextTypes, ...options } = {}
-// ) => {
-//   return mount(nodeWithIntlProp(node), {
-//     ...options,
-//     context: {
-//       ...context,
-//       intl
-//     },
-//     childContextTypes: {
-//       intl: intlShape,
-//       ...childContextTypes
-//     }
-//   });
-// };
+it('App Snapshot', () => {
+  const component = createComponentWithIntl(<App />);
+  let tree = component.toJSON()
 
-it('Route Snapshot', () => {
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(tree).toMatchSnapshot()
+
 });
 
+test('app main should be rendered', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper).toMatchSnapshot()
+})
 
+// describe("<AppScreen/>",()=>{
+//   it('allows us to set props', () => {
+//     const wrapper = mount(<App bar="baz" />);
+//     expect(wrapper.props().bar).to.equal('baz');
+//     wrapper.setProps({ bar: 'foo' });
+//     expect(wrapper.props().bar).to.equal('foo');
+//   });
+// })
 //module.exports = Intl;
 
-
-// it('Error Boundary Snapshot', () => {
-//   const tree = renderer.create(<ErrorBoundary />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });

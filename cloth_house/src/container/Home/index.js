@@ -15,12 +15,12 @@ const { Content } = Layout;
     <Layout className="layout">
         <TopHeader {...props} />
         <Content className="content">
-          <Categories/>
+          <Categories {...props}/>
           <CarouselOffers/>
           <Divider style={{fontSize:"x-large"}}>{props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
           <Offers />
         </Content>
-        <SmileBagFooter />
+        <SmileBagFooter {...props} />
       </Layout>
       
     </>

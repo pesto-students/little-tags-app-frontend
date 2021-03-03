@@ -295,7 +295,7 @@ const RegistrationForm = (props) => {
             </Space>
           </div>
         </Content>
-        <SmileBagFooter />
+        <SmileBagFooter {...props} />
       </Layout>
     </>
   );

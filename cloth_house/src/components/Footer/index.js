@@ -1,6 +1,5 @@
 import { React } from "react";
 import {  Space  } from "antd";
-import { injectIntl } from "react-intl";
 import "./footer.css";
 import { Footer } from "antd/lib/layout/layout";
 import {Button} from "antd"
@@ -8,6 +7,7 @@ import {Button} from "antd"
 
 
 const SmileBagFooter = (props) => {
+    //console.log("SmileBagFooter=====>",props);
     return (<Footer className="footer">
     <Space>
     <Button type="link">{props.intl.formatMessage({id:"app.components.LangSwitch.footer.terms"})}</Button> |
@@ -17,4 +17,4 @@ const SmileBagFooter = (props) => {
 }
 
 
-export default injectIntl(SmileBagFooter)
+export default SmileBagFooter

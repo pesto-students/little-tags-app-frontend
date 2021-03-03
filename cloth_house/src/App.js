@@ -11,7 +11,7 @@ function App(props) {
   const { lang, currentLangData } = useContext(LangContext);
   return (
     <div className="App">    
-      <BrowserRouter history={window.history}>
+      <BrowserRouter>
         <ErrorBoundary>
         <IntlProvider locale={lang} messages={currentLangData}>  
           <Routes {...props}/>

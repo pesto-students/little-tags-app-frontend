@@ -5,7 +5,6 @@ import {Menu,Input, Row, Select,Space,Dropdown,Button  } from "antd";
 import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined } from '@ant-design/icons';
 import "./topHeader.css";
 import LangContext,{langOptions} from "../../context/LangContext.js"
-import { injectIntl } from "react-intl";
 // import { useDispatch, useSelector } from "react-redux";
 // import {startAction, stopAction} from "../../redux/action"
 const { Header } = Layout;
@@ -16,8 +15,8 @@ const SmileBagHeader= (props) =>{
   // const dispatch=useDispatch()
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
-   return <Menu.Item >
-      <Button className="globemenu" type="link" value={key} onClick={()=>{console.log("key======>",key)
+   return <Menu.Item key={Math.random()}>
+      <Button  className="globemenu" type="link" value={key} onClick={()=>{console.log("key======>",key)
     switchLang(key)
     }} >{langOptions[key]}</Button>
     </Menu.Item>
@@ -70,4 +69,4 @@ const SmileBagHeader= (props) =>{
 };
 
 
-export default injectIntl(SmileBagHeader);
+export default SmileBagHeader;

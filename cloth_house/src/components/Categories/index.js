@@ -1,7 +1,6 @@
 import { React } from "react";
 import { Row, Col,  Space, Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import { injectIntl } from "react-intl";
 import "./categories.css";
 import {Button} from "antd"
 const menu = (
@@ -41,27 +40,28 @@ const Category = (args) => {
 };
 
 const Categories = (props) => {
+  console.log("Categories======>",props.intl);
   return (
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
         <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
             imagesrc="./assets/images/clothing.png"
-            menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})}
+            menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})}
           />
         </Col>
         <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
             imagesrc="./assets/images/footwear.jpg"
-            menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
+            menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
           />
         </Col>
         <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
-          <Category imagesrc="./assets/images/bags.png" menuLabel={props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})} />
+          <Category imagesrc="./assets/images/bags.png" menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})} />
         </Col>
       </Row>
     </div>
   );
 };
 
-export default injectIntl(Categories);
+export default Categories;
