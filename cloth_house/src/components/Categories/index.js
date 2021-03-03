@@ -40,30 +40,36 @@ const Category = (args) => {
 };
 
 const Categories = (props) => {
- // console.log("Categories======>",props.intl);
+ const redirectToParticularCategory=(category)=>{
+  props.history&&props.history.push(category)
+ }
   return (
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
-        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
+        <Col onClick={()=>redirectToParticularCategory("/category/clothing")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
+
             imagesrc="./assets/images/clothing.png"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})}
-            hreflink="/category/clothing"
+            //hreflink="/category/clothing"
+            
           />
         </Col>
         <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}} />
-        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
+        <Col onClick={()=>redirectToParticularCategory("/category/footwear")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category
             imagesrc="./assets/images/footwear.jpg"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
-            hreflink="/category/footwear"
+           // hreflink="/category/footwear"
+           
           />
         </Col>
         <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  />
-        <Col className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
+        <Col onClick={()=>redirectToParticularCategory("/category/bags")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category imagesrc="./assets/images/bags.png" 
           menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})}
-          hreflink="/category/bags"
+          //hreflink="/category/bags"
+          
           />
         </Col>
       </Row>

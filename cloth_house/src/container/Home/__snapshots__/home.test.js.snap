@@ -265,6 +265,7 @@ exports[`Home Snapshot 1`] = `
       >
         <div
           className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+          onClick={[Function]}
           style={Object {}}
         >
           <div
@@ -294,12 +295,12 @@ exports[`Home Snapshot 1`] = `
               className="ant-space-item"
               style={Object {}}
             >
-              <a
+              <button
                 className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
-                href="/category/clothing"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
+                type="button"
               >
                 <span>
                   Clothing 
@@ -323,7 +324,7 @@ exports[`Home Snapshot 1`] = `
                     />
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -341,6 +342,7 @@ exports[`Home Snapshot 1`] = `
         />
         <div
           className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+          onClick={[Function]}
           style={Object {}}
         >
           <div
@@ -370,12 +372,12 @@ exports[`Home Snapshot 1`] = `
               className="ant-space-item"
               style={Object {}}
             >
-              <a
+              <button
                 className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
-                href="/category/footwear"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
+                type="button"
               >
                 <span>
                   Footwear 
@@ -399,7 +401,7 @@ exports[`Home Snapshot 1`] = `
                     />
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -417,6 +419,7 @@ exports[`Home Snapshot 1`] = `
         />
         <div
           className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+          onClick={[Function]}
           style={Object {}}
         >
           <div
@@ -446,12 +449,12 @@ exports[`Home Snapshot 1`] = `
               className="ant-space-item"
               style={Object {}}
             >
-              <a
+              <button
                 className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
-                href="/category/bags"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
+                type="button"
               >
                 <span>
                   Bags 
@@ -475,7 +478,7 @@ exports[`Home Snapshot 1`] = `
                     />
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

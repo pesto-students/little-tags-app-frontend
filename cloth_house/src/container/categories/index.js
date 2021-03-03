@@ -128,7 +128,7 @@ function CategoriesPage(props) {
       <Layout className="layout">
         <TopHeader {...props} />
         <Content className="content">
-          <Categories />
+          <Categories {...props}/>
           <Divider style={{ margin: "auto" }}></Divider>
           <Row
             className="rowcontent"
