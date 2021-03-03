@@ -1,5 +1,5 @@
 import { React } from "react";
-import {  Row, Col,  Carousel ,Card  } from "antd";
+import {  Row, Col,  Carousel ,Card, Button  } from "antd";
 // import { DownOutlined } from "@ant-design/icons";
 // import LangContext,{langOptions} from "../../context/LangContext.js"
 // import { injectIntl } from "react-intl";
@@ -9,17 +9,45 @@ import "./offers.css";
 const CarouselOffers =() =>{
     return (<>
     <Carousel autoplay>
-    <div>
-      <h3 className="carouseloffers">Offer 1</h3>
+    <div  className="carouseloffers">
+      <img width="100%" height="300px" src="./assets/images/offers/yellowpic.jpg"></img>
+      <div className="offertextboxright">
+        <h2>Offer Heading</h2>
+        <h4>Offer Sub Heading</h4>
+        <div>
+        <Button type="dashed">Shop Now</Button>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 className="carouseloffers">Offer 2</h3>
+    <div  className="carouseloffers">
+      <img width="100%" height="300px" src="./assets/images/offers/mensuits.jpg"></img>
+      <div className="offertextboxleft">
+        <h2>Offer 2 Heading</h2>
+        <h4>Offer 2 Sub Heading</h4>
+        <div>
+        <Button type="dashed">Shop Now</Button>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 className="carouseloffers">Offer 3</h3>
+    <div  className="carouseloffers">
+      <img width="100%" height="300px" src="./assets/images/offers/bags.jpg"></img>
+      <div className="offertextboxleft">
+        <h2>Offer 3 Heading</h2>
+        <h4>Offer 3 Sub Heading</h4>
+        <div>
+        <Button type="dashed">Shop Now</Button>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 className="carouseloffers">Offer 4</h3>
+    <div  className="carouseloffers">
+      <img width="100%" height="300px" src="./assets/images/offers/sunglasses.jpg"></img>
+      <div className="offertextboxleft">
+        <h2>Offer 4 Heading</h2>
+        <h4>Offer 4 Sub Heading</h4>
+        <div>
+        <Button type="dashed">Shop Now</Button>
+        </div>
+      </div>
     </div>
   </Carousel>
     </>);

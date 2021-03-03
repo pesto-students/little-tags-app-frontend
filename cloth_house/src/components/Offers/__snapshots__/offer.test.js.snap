@@ -52,6 +52,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -60,11 +61,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/sunglasses.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 4
-              </h3>
+                <h2>
+                  Offer 4 Heading
+                </h2>
+                <h4>
+                  Offer 4 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,6 +105,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -91,11 +114,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/yellowpic.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxright"
               >
-                Offer 1
-              </h3>
+                <h2>
+                  Offer Heading
+                </h2>
+                <h4>
+                  Offer Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -114,6 +158,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -122,11 +167,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/mensuits.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 2
-              </h3>
+                <h2>
+                  Offer 2 Heading
+                </h2>
+                <h4>
+                  Offer 2 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -145,6 +211,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -153,11 +220,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/bags.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 3
-              </h3>
+                <h2>
+                  Offer 3 Heading
+                </h2>
+                <h4>
+                  Offer 3 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -176,6 +264,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -184,11 +273,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/sunglasses.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 4
-              </h3>
+                <h2>
+                  Offer 4 Heading
+                </h2>
+                <h4>
+                  Offer 4 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,6 +316,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -214,11 +325,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/yellowpic.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxright"
               >
-                Offer 1
-              </h3>
+                <h2>
+                  Offer Heading
+                </h2>
+                <h4>
+                  Offer Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -236,6 +368,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -244,11 +377,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/mensuits.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 2
-              </h3>
+                <h2>
+                  Offer 2 Heading
+                </h2>
+                <h4>
+                  Offer 2 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -266,6 +420,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -274,11 +429,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/bags.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 3
-              </h3>
+                <h2>
+                  Offer 3 Heading
+                </h2>
+                <h4>
+                  Offer 3 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -296,6 +472,7 @@ exports[`Agreement Modal Snapshot 1`] = `
         >
           <div>
             <div
+              className="carouseloffers"
               style={
                 Object {
                   "display": "inline-block",
@@ -304,11 +481,32 @@ exports[`Agreement Modal Snapshot 1`] = `
               }
               tabIndex={-1}
             >
-              <h3
-                className="carouseloffers"
+              <img
+                height="300px"
+                src="./assets/images/offers/sunglasses.jpg"
+                width="100%"
+              />
+              <div
+                className="offertextboxleft"
               >
-                Offer 4
-              </h3>
+                <h2>
+                  Offer 4 Heading
+                </h2>
+                <h4>
+                  Offer 4 Sub Heading
+                </h4>
+                <div>
+                  <button
+                    className="ant-btn ant-btn-dashed"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <span>
+                      Shop Now
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

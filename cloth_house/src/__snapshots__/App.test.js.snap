@@ -297,12 +297,12 @@ exports[`App Snapshot 1`] = `
                 className="ant-space-item"
                 style={Object {}}
               >
-                <button
+                <a
                   className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+                  href="/category/clothing"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  type="button"
                 >
                   <span>
                     Clothing 
@@ -326,10 +326,22 @@ exports[`App Snapshot 1`] = `
                       />
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
+          <div
+            className="ant-divider ant-divider-vertical"
+            role="separator"
+            style={
+              Object {
+                "borderColor": "#baafaf",
+                "borderWidth": "2px",
+                "height": "50px",
+                "margin": "2px",
+              }
+            }
+          />
           <div
             className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
             style={Object {}}
@@ -361,12 +373,12 @@ exports[`App Snapshot 1`] = `
                 className="ant-space-item"
                 style={Object {}}
               >
-                <button
+                <a
                   className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+                  href="/category/footwear"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  type="button"
                 >
                   <span>
                     Footwear 
@@ -390,10 +402,22 @@ exports[`App Snapshot 1`] = `
                       />
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
+          <div
+            className="ant-divider ant-divider-vertical"
+            role="separator"
+            style={
+              Object {
+                "borderColor": "#baafaf",
+                "borderWidth": "2px",
+                "height": "50px",
+                "margin": "2px",
+              }
+            }
+          />
           <div
             className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
             style={Object {}}
@@ -425,12 +449,12 @@ exports[`App Snapshot 1`] = `
                 className="ant-space-item"
                 style={Object {}}
               >
-                <button
+                <a
                   className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+                  href="/category/bags"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
-                  type="button"
                 >
                   <span>
                     Bags 
@@ -454,7 +478,7 @@ exports[`App Snapshot 1`] = `
                       />
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -511,6 +535,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -519,11 +544,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/sunglasses.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 4
-                    </h3>
+                      <h2>
+                        Offer 4 Heading
+                      </h2>
+                      <h4>
+                        Offer 4 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -542,6 +588,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -550,11 +597,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/yellowpic.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxright"
                     >
-                      Offer 1
-                    </h3>
+                      <h2>
+                        Offer Heading
+                      </h2>
+                      <h4>
+                        Offer Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -573,6 +641,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -581,11 +650,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/mensuits.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 2
-                    </h3>
+                      <h2>
+                        Offer 2 Heading
+                      </h2>
+                      <h4>
+                        Offer 2 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -604,6 +694,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -612,11 +703,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/bags.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 3
-                    </h3>
+                      <h2>
+                        Offer 3 Heading
+                      </h2>
+                      <h4>
+                        Offer 3 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -635,6 +747,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -643,11 +756,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/sunglasses.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 4
-                    </h3>
+                      <h2>
+                        Offer 4 Heading
+                      </h2>
+                      <h4>
+                        Offer 4 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -665,6 +799,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -673,11 +808,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/yellowpic.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxright"
                     >
-                      Offer 1
-                    </h3>
+                      <h2>
+                        Offer Heading
+                      </h2>
+                      <h4>
+                        Offer Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -695,6 +851,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -703,11 +860,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/mensuits.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 2
-                    </h3>
+                      <h2>
+                        Offer 2 Heading
+                      </h2>
+                      <h4>
+                        Offer 2 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -725,6 +903,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -733,11 +912,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/bags.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 3
-                    </h3>
+                      <h2>
+                        Offer 3 Heading
+                      </h2>
+                      <h4>
+                        Offer 3 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -755,6 +955,7 @@ exports[`App Snapshot 1`] = `
               >
                 <div>
                   <div
+                    className="carouseloffers"
                     style={
                       Object {
                         "display": "inline-block",
@@ -763,11 +964,32 @@ exports[`App Snapshot 1`] = `
                     }
                     tabIndex={-1}
                   >
-                    <h3
-                      className="carouseloffers"
+                    <img
+                      height="300px"
+                      src="./assets/images/offers/sunglasses.jpg"
+                      width="100%"
+                    />
+                    <div
+                      className="offertextboxleft"
                     >
-                      Offer 4
-                    </h3>
+                      <h2>
+                        Offer 4 Heading
+                      </h2>
+                      <h4>
+                        Offer 4 Sub Heading
+                      </h4>
+                      <div>
+                        <button
+                          className="ant-btn ant-btn-dashed"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <span>
+                            Shop Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

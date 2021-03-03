@@ -1,6 +1,7 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,useParams } from "react-router-dom";
 import React from "react";
 import Home from "./container/Home/index";
+import CategoriesPage from "./container/categories/index";
 import NotFoundPage from "./components/NotFoundPage/index";
 import { withRouter } from "react-router";
 import {injectIntl} from "react-intl";
@@ -14,6 +15,7 @@ function Routes(props) {
     <ErrorBoundary>
       <Switch history={props.history}>
         <Route exact path={["/", "/home"]} component={Home} />
+        <Route exact path={"/category/:pagename?"} component={CategoriesPage} />
         <Route exact path={"/test"} component={Home} />
         <Route exact path={"/login"} render={() => (
                         <Login {...props}  />
