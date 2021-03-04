@@ -43,6 +43,13 @@
   text-decoration-color: #FFFFFF;
 }
 
+.header .cart{
+  color: #FFFFFF; 
+  text-decoration-color: #FFFFFF;
+  width:80px;
+  font-size: 20px;
+}
+
 .header .globe{
   color: #FFFFFF; 
   text-decoration-color: #FFFFFF;

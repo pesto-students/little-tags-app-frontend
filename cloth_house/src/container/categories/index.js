@@ -94,13 +94,15 @@ function ItemComponent(args) {
         cover={
           <Image
       width={300} height={300} src={args.imgsrc}></Image>
+      
           
         }
       >
         
         <Row justify="space-between" align="middle">
           <Col>
-          <Meta title="Polo" description="T-Shirt" />
+          <a href={`/detail/${args.category}/${args.productname}`}>
+          <Meta title="Polo" description="T-Shirt" /></a>
           </Col>
           <Col>
           <h2>₹299</h2>
@@ -122,7 +124,7 @@ function ItemComponent(args) {
 
 function CategoriesPage(props) {
   //console.log("Home===>",props);
-  let { pagename } = useParams();
+  let { categoryname } = useParams();
   return (
     <>
       <Layout className="layout">
@@ -130,15 +132,11 @@ function CategoriesPage(props) {
         <Content className="content">
           <Categories {...props}/>
           <Divider style={{ margin: "auto" }}></Divider>
-          <Row
-            className="rowcontent"
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-          >
+          <Row className="rowcontent" >
             <Col className="gutter-row" span={4}>
               <Row justify="center" align="middle" className="mainHeadRow">
-                <div className="categoryContent">{pagename}</div>
+                <div className="categoryContent">{categoryname}</div>
               </Row>
-
               <Row justify="center" align="middle">
                 <CollapseMenu />
               </Row>
@@ -180,34 +178,34 @@ function CategoriesPage(props) {
               </Row>
               <Row gutter={[8, 8]} style={{ paddingTop: "5px" }}>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50" />
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50" />
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kcjexe80/t-shirt/z/3/z/xxl-tblogr-blylrnful-r5-tripr-original-imaftnf3ysmybnbh.jpeg?q=50"/>
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kcjexe80/t-shirt/z/3/z/xxl-tblogr-blylrnful-r5-tripr-original-imaftnf3ysmybnbh.jpeg?q=50"/>
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
                 </Col>
                 <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
+                  <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
                 </Col>
                 <Col span={6}>
-                  <ItemComponent  imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
+                  <ItemComponent category={categoryname} productname={categoryname}  imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
                 </Col>
               </Row>
             </Col>
           </Row>
         </Content>
-        <SmileBagFooter />
+        <SmileBagFooter {...props}/>
       </Layout>
     </>
   );
