@@ -3,8 +3,8 @@ import English from "../lang/en-US.json";
 import French from  "../lang/fr-FR.json"
 import English_GB from "../lang/en-GB.json"
 const LangContext = React.createContext({
-  lang: '',
-  currentLangData: {},
+  lang: 'en-US',
+  currentLangData: English,
   switchLang: () => {},
 });
 

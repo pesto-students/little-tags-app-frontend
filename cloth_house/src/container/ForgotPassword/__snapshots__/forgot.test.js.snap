@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forgot Password Snapshot 1`] = `
+<p
+  className="paddingTop25"
+>
+  <div
+    className="ant-alert ant-alert-info ant-alert-no-icon"
+    data-show={true}
+    role="alert"
+    style={Object {}}
+  >
+    <div
+      className="ant-alert-content"
+    >
+      <div
+        className="ant-alert-message"
+      />
+      <div
+        className="ant-alert-description"
+      />
+    </div>
+  </div>
+</p>
+`;

@@ -84,3 +84,4 @@ const Offers = () => {
 };
 
 export {CarouselOffers,Offers};
+export default CarouselOffers;

@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories Snapshot 1`] = `
+<div
+  className="categories"
+>
+  <div
+    className="ant-row ant-row-left ant-row-middle"
+    style={
+      Object {
+        "marginBottom": undefined,
+        "marginLeft": undefined,
+        "marginRight": undefined,
+        "marginTop": undefined,
+      }
+    }
+  >
+    <div
+      className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <div
+        className="ant-space ant-space-horizontal ant-space-align-center"
+        style={Object {}}
+      >
+        <div
+          className="ant-space-item"
+          style={
+            Object {
+              "marginRight": 8,
+            }
+          }
+        >
+          <img
+            alt="fallback"
+            src="./assets/images/clothing.png"
+            style={
+              Object {
+                "height": "55px",
+                "width": "55px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-space-item"
+          style={Object {}}
+        >
+          <button
+            className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <span>
+               
+            </span>
+            <span
+              aria-label="down"
+              className="anticon anticon-down"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="down"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-divider ant-divider-vertical"
+      role="separator"
+      style={
+        Object {
+          "borderColor": "#baafaf",
+          "borderWidth": "2px",
+          "height": "50px",
+          "margin": "2px",
+        }
+      }
+    />
+    <div
+      className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <div
+        className="ant-space ant-space-horizontal ant-space-align-center"
+        style={Object {}}
+      >
+        <div
+          className="ant-space-item"
+          style={
+            Object {
+              "marginRight": 8,
+            }
+          }
+        >
+          <img
+            alt="fallback"
+            src="./assets/images/footwear.jpg"
+            style={
+              Object {
+                "height": "55px",
+                "width": "55px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-space-item"
+          style={Object {}}
+        >
+          <button
+            className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <span>
+               
+            </span>
+            <span
+              aria-label="down"
+              className="anticon anticon-down"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="down"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-divider ant-divider-vertical"
+      role="separator"
+      style={
+        Object {
+          "borderColor": "#baafaf",
+          "borderWidth": "2px",
+          "height": "50px",
+          "margin": "2px",
+        }
+      }
+    />
+    <div
+      className="ant-col gutter-row  ant-col-xs-16 ant-col-sm-6 ant-col-md-5 ant-col-lg-3 ant-col-xl-3"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <div
+        className="ant-space ant-space-horizontal ant-space-align-center"
+        style={Object {}}
+      >
+        <div
+          className="ant-space-item"
+          style={
+            Object {
+              "marginRight": 8,
+            }
+          }
+        >
+          <img
+            alt="fallback"
+            src="./assets/images/bags.png"
+            style={
+              Object {
+                "height": "55px",
+                "width": "55px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-space-item"
+          style={Object {}}
+        >
+          <button
+            className="ant-btn ant-btn-link ant-dropdown-trigger ant-dropdown-link category"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            type="button"
+          >
+            <span>
+               
+            </span>
+            <span
+              aria-label="down"
+              className="anticon anticon-down"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="down"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

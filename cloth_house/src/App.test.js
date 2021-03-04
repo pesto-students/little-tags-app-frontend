@@ -1,14 +1,30 @@
-import { render, screen } from '@testing-library/react';
+
 import App from './App';
-import renderer from 'react-test-renderer';
+import Enzyme,{ shallow} from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+Enzyme.configure({ adapter: new Adapter() });
+import createComponentWithIntl from './utils/helper_snapshot'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('App Snapshot', () => {
+  const component = createComponentWithIntl(<App />);
+  let tree = component.toJSON()
+
+  expect(tree).toMatchSnapshot()
+
 });
 
-it('renders correctly when there are no items', () => {
-  const tree = renderer.create(<Items />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+test('app main should be rendered', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper).toMatchSnapshot()
+})
+
+// describe("<AppScreen/>",()=>{
+//   it('allows us to set props', () => {
+//     const wrapper = mount(<App bar="baz" />);
+//     expect(wrapper.props().bar).to.equal('baz');
+//     wrapper.setProps({ bar: 'foo' });
+//     expect(wrapper.props().bar).to.equal('foo');
+//   });
+// })
+//module.exports = Intl;
+

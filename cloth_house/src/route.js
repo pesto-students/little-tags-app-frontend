@@ -10,7 +10,6 @@ import Login  from "./container/Login";
 import Signup from "./container/SignUp" 
 import ForgotPassword from "./container/ForgotPassword"
 function Routes(props) {
-  console.log("Routes", props);
 
   return (
     <ErrorBoundary>
