@@ -16,7 +16,8 @@ import {
   Select,
   Space,
   Card,
-  Image
+  Image,
+  Spin
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 const { Content } = Layout;
@@ -93,9 +94,7 @@ function ItemComponent(args) {
         hoverable
         cover={
           <Image
-      width={300} height={300} src={args.imgsrc}></Image>
-      
-          
+      width={300} height={300} src={args.imgsrc}></Image>  
         }
       >
         
@@ -176,6 +175,7 @@ function CategoriesPage(props) {
                   </Row>
                 </Col>
               </Row>
+              <Spin spinning={false}>
               <Row gutter={[8, 8]} style={{ paddingTop: "5px" }}>
                 <Col span={6}>
                   <ItemComponent category={categoryname} productname={categoryname} imgsrc="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50" />
@@ -202,6 +202,7 @@ function CategoriesPage(props) {
                   <ItemComponent category={categoryname} productname={categoryname}  imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
                 </Col>
               </Row>
+              </Spin>
             </Col>
           </Row>
         </Content>

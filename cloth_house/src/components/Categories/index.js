@@ -65,7 +65,6 @@ const Categories = (props) => {
           <Category imagesrc="./assets/images/bags.png" 
           menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})}
           //hreflink="/category/bags"
-          
           />
         </Col>
       </Row>
