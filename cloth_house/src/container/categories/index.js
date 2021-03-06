@@ -160,12 +160,13 @@ function ItemComponent(args) {
       >
         <Row justify="space-between" align="middle">
           <Col>
-            <a href={`/detail/${args.category}/${args.productname}`}>
+            <div onClick={()=>{args.history&&
+            args.history.push(`/detail/${args.category}/${args.productname}`)}}>
               <Meta
                 title={args.productTitle}
                 description={args.productDescription}
               />
-            </a>
+            </div>
           </Col>
           <Col>
             <h2>{args.productPrice}</h2>
@@ -257,6 +258,7 @@ function CategoriesPage(props) {
                 renderItem={(item) => (
                     <List.Item>
                       <ItemComponent
+                      {...props}
                         {...item}
                         category={categoryname}
                         productname={categoryname}
