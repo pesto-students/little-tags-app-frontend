@@ -11,16 +11,17 @@ import { useDispatch,useSelector } from 'react-redux'
 const { Content } = Layout;
  function Home(props) {
 const categories=useSelector((state)=>state)
+console.log("Home===>",categories);
 const dispatch = useDispatch()
 useEffect(()=>{
-dispatch(fetchCategories)
+dispatch(fetchCategories())
 fetch("https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/clothing").then((res)=>res.json()).then((data)=>{
 dispatch(fetchCategoriesSuccess(data))
 }).catch(err=>{
-  dispatch(fetchCategoriesFailure)
+  dispatch(fetchCategoriesFailure())
 })
 },[])
-console.log("Home===>",categories);
+
 
   return (
     <>

@@ -1,7 +1,7 @@
 export default function defaultReducer(state, action){
   console.log("TYPE===>",action.type);
     switch (action.type) {
-      case "REQUEST_FETCH_CATEGORIES":  
+      case "FETCH_CATEGORIES_REQUEST":  
       return {...state,categories:{loading:true}}
       case "FETCH_CATEGORIES_SUCCESS":
       return {...state,categories:{loading:false,values:action.payload.data}} 

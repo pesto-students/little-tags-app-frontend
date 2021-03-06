@@ -1,22 +1,6 @@
-export  function startAction() {
-   return { 
-       type: "rotate",
-       payload: true
-   }  
-};
-
-
-  export function stopAction() {
-   return { 
-    type: "rotate",
-    payload: false
-  }  
-};
-
-
 export function fetchCategories() {
   return { 
-   type: "REQUEST_FETCH_CATEGORIES"
+   type: "FETCH_CATEGORIES_REQUESTS"
  }  
 };
 
