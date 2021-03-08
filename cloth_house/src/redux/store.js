@@ -2,7 +2,10 @@ import { createStore,applyMiddleware,compose } from "redux";
 import rotateReducer from "./reducer";
 import thunk from 'redux-thunk';
 const defaultState={
-    rotating:false
+    categories:{
+      values:[],
+      loading:false
+    }
 }
 
 function configureStore(state = defaultState) {

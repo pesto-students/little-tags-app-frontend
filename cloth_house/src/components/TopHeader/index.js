@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import ErrorBoundary from "../../Hoc/ErrorBoundary.js";
 import { Layout } from "antd";
 import {Menu,Input, Row, Select,Space,Dropdown,Button  } from "antd";
-import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined } from '@ant-design/icons';
+import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined,ShoppingCartOutlined } from '@ant-design/icons';
 import "./topHeader.css";
 import LangContext,{langOptions} from "../../context/LangContext.js"
 const { Header } = Layout;
@@ -48,6 +48,7 @@ const SmileBagHeader= (props) =>{
           {props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
         </Button>
         </div>
+        <ShoppingCartOutlined className="cart" />
         <div className="globe">
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 

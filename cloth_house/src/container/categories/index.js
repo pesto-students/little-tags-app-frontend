@@ -16,13 +16,74 @@ import {
   Select,
   Space,
   Card,
-  Image
+  Image,
+  Spin,
+  List,
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 const { Content } = Layout;
 const { Panel } = Collapse;
 const { Option } = Select;
 const { Meta } = Card;
+
+const data = [
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kj4m0sw0-0/t-shirt/5/c/4/s-tsrt-303-reya-original-imafyrjprxpfbhqr.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kfmv9u80-0/t-shirt/o/2/5/m-brdblhenful-z14-blive-original-imafwfqfkcbddqkh.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+  },
+  {
+    productTitle: "Polo",
+    productDescription: "T-Shirt",
+    productPrice: 299,
+    productDiscount: "33%",
+    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+  },
+];
 
 function CollapseMenu(args) {
   return (
@@ -32,7 +93,11 @@ function CollapseMenu(args) {
         className="submenuHeadRow"
         accordion
         expandIcon={({ isActive }) =>
-          isActive ? <MinusCircleOutlined style={{ fontSize: '16px', color: '#08c' }}/> : <PlusCircleOutlined style={{ fontSize: '16px', color: '#08c' }} />
+          isActive ? (
+            <MinusCircleOutlined style={{ fontSize: "16px", color: "#08c" }} />
+          ) : (
+            <PlusCircleOutlined style={{ fontSize: "16px", color: "#08c" }} />
+          )
         }
       >
         <Panel header="Flipflops" key="1">
@@ -91,28 +156,41 @@ function ItemComponent(args) {
       {" "}
       <Card
         hoverable
-        cover={
-          <Image
-      width={300} height={300} src={args.imgsrc}></Image>
-          
-        }
+        cover={<Image width={300} height={300} src={args.imgsrc}></Image>}
       >
-        
         <Row justify="space-between" align="middle">
           <Col>
-          <Meta title="Polo" description="T-Shirt" />
+            <div onClick={()=>{args.history&&
+            args.history.push(`/detail/${args.category}/${args.productname}`)}}>
+              <Meta
+                title={args.productTitle}
+                description={args.productDescription}
+              />
+            </div>
           </Col>
           <Col>
-          <h2>₹299</h2>
+            <h2>{args.productPrice}</h2>
           </Col>
         </Row>
         <Divider></Divider>
         <Row justify="space-between" align="middle">
-        <Col>
-          <h3>33% Off</h3>
+          <Col>
+            <h3>{args.productDiscount}</h3>
           </Col>
           <Col>
-          <Button type="primary" style={{borderColor:"#1a4d7c",backgroundColor:"#1a4d7c",color:"#1a4d7c",fontWeight:"bold",fontFamily:"Lato" }} ghost="true" >Add To Cart</Button>
+            <Button
+              type="primary"
+              style={{
+                borderColor: "#1a4d7c",
+                backgroundColor: "#1a4d7c",
+                color: "#1a4d7c",
+                fontWeight: "bold",
+                fontFamily: "Lato",
+              }}
+              ghost="true"
+            >
+              Add To Cart
+            </Button>
           </Col>
         </Row>
       </Card>
@@ -122,23 +200,19 @@ function ItemComponent(args) {
 
 function CategoriesPage(props) {
   //console.log("Home===>",props);
-  let { pagename } = useParams();
+  let { categoryname } = useParams();
   return (
     <>
       <Layout className="layout">
         <TopHeader {...props} />
         <Content className="content">
-          <Categories {...props}/>
+          <Categories {...props} />
           <Divider style={{ margin: "auto" }}></Divider>
-          <Row
-            className="rowcontent"
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-          >
+          <Row className="rowcontent">
             <Col className="gutter-row" span={4}>
               <Row justify="center" align="middle" className="mainHeadRow">
-                <div className="categoryContent">{pagename}</div>
+                <div className="categoryContent">{categoryname}</div>
               </Row>
-
               <Row justify="center" align="middle">
                 <CollapseMenu />
               </Row>
@@ -178,36 +252,24 @@ function CategoriesPage(props) {
                   </Row>
                 </Col>
               </Row>
-              <Row gutter={[8, 8]} style={{ paddingTop: "5px" }}>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50" />
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kcjexe80/t-shirt/z/3/z/xxl-tblogr-blylrnful-r5-tripr-original-imaftnf3ysmybnbh.jpeg?q=50"/>
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50"/>
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
-                </Col>
-                <Col span={6}>
-                  <ItemComponent imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
-                </Col>
-                <Col span={6}>
-                  <ItemComponent  imgsrc="https://rukminim1.flixcart.com/image/580/696/kg9qbgw0-0/t-shirt/c/0/7/s-shp395402-shapphr-original-imafwjx7tnbqqqhz.jpeg?q=50" />
-                </Col>
-              </Row>
+              <List
+                grid={{ gutter: 0, column: 4 }}
+                dataSource={data}
+                renderItem={(item) => (
+                    <List.Item>
+                      <ItemComponent
+                      {...props}
+                        {...item}
+                        category={categoryname}
+                        productname={categoryname}
+                      />
+                    </List.Item>
+                )}
+              />
             </Col>
           </Row>
         </Content>
-        <SmileBagFooter />
+        <SmileBagFooter {...props} />
       </Layout>
     </>
   );

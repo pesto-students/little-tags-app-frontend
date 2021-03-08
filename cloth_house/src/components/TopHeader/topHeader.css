@@ -1,56 +1,63 @@
-@import '~antd/dist/antd.css';
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
-.header { 
-    z-index: 1;
-    width: 100%;
-    background-color: #006892;
-    white-space: nowrap
+.header {
+  z-index: 1;
+  width: 100%;
+  background-color: #006892;
+  white-space: nowrap;
 }
 
 .header .logo {
-    font-family: Lato;
-    color: #FFFFFF;
-    font-size:30px;
-    font-style:italic;
-    text-align:left;
-    font-weight: bold;
-    width: 300px;
+  font-family: Lato;
+  color: #ffffff;
+  font-size: 30px;
+  font-style: italic;
+  text-align: left;
+  font-weight: bold;
+  width: 300px;
 }
 
 .header .logoImage {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-.header .searchInput{
-    width: 576px;
-    height: 67px;  
+.header .searchInput {
+  width: 15rem;
+  height: 5rem;
 }
 
-.header .selectpin{
-  color: #FFFFFF; 
-  text-decoration-color: #FFFFFF;
+.header .selectpin {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
 .header .login {
   width: 150px;
-  color: #FFFFFF; 
-  text-decoration-color: #FFFFFF;
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
-.header .login .login-button{
-  color: #FFFFFF; 
-  text-decoration-color: #FFFFFF;
+.header .login .login-button {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
-.header .globe{
-  color: #FFFFFF; 
-  text-decoration-color: #FFFFFF;
-  width:200px;
+.header .cart {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+  width: 80px;
   font-size: 20px;
 }
-.globemenu{
-  color: #111111; 
+
+.header .globe {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+  width: 150px;
+  font-size: 20px;
+}
+.globemenu {
+  color: #111111;
 }
 
 .customWidth {
@@ -84,6 +91,3 @@ svg {
     font-size: 1.5rem;
   }
 }
-
-
-
