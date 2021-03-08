@@ -1,10 +1,12 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import "./categories.css";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import { useParams } from "react-router-dom";
 import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
+import {fetchCategories,fetchCategoriesFailure,fetchCategoriesSuccess} from "../../redux/action";
+import { useDispatch,useSelector } from 'react-redux'
 import {
   Layout,
   Divider,
@@ -199,6 +201,19 @@ function ItemComponent(args) {
 }
 
 function CategoriesPage(props) {
+  const categories=useSelector((state)=>state)
+console.log("Home===>",categories);
+const dispatch = useDispatch()
+useEffect(()=>{
+  console.log("abc");
+dispatch(fetchCategories())
+fetch("https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/clothing").then((res)=>res.json()).then((data)=>{
+dispatch(fetchCategoriesSuccess(data))
+}).catch(err=>{
+  console.log(err)
+  dispatch(fetchCategoriesFailure())
+})
+},[])
   //console.log("Home===>",props);
   let { categoryname } = useParams();
   return (
