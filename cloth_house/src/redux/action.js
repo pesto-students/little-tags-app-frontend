@@ -1,13 +1,18 @@
-export  function startAction() {
-   return { 
-       type: "rotate",
-       payload: true
-   }  
+export function fetchCategories() {
+  return { 
+   type: "FETCH_CATEGORIES_REQUESTS"
+ }  
 };
 
+export function fetchCategoriesSuccess(payload) {
+  return { 
+   type: "FETCH_CATEGORIES_SUCCESS",
+   payload:payload
+ }  
+};
 
-  export function stopAction() {
-   return { type: "rotate",
-    payload: false
-  }  
+export function fetchCategoriesFailure() {
+  return { 
+   type: "FETCH_CATEGORIES_FAIL"
+ }  
 };

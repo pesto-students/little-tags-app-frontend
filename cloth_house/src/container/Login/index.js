@@ -4,8 +4,12 @@ import {  Form, Input, Button, Checkbox,Row,Col, Space,Layout  } from "antd";
 import TopHeader from "../../components/TopHeader";
 import SmileBagFooter from "../../components/Footer";
 import "./login.css";
+import SocialLogin from "./socialLogin";
+
 const { Content } = Layout;
 const NormalLoginForm = (props) => { 
+
+  console.log("FacebookLogin========>");
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
     props.history.push('/home');
@@ -21,9 +25,8 @@ const NormalLoginForm = (props) => {
     
       <Col className="padForLoginForm">
        <Space direction="vertical" align="center">
-      <Button type="primary" danger>
-      {props.intl&&props.intl.formatMessage({id:"app.containers.Login.loginwithgoogle"})}
-    </Button>
+    <SocialLogin {...props}></SocialLogin>
+    
     <h2>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}</h2>
     <Form
       name="normal_login"

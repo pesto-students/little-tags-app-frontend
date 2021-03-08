@@ -3,6 +3,7 @@ import "./signup.css";
 import Modal from "../../components/Modal";
 import TopHeader from "../../components/TopHeader";
 import SmileBagFooter from "../../components/Footer";
+import SocialLogin from "../Login/socialLogin";
 import {
   Form,
   Input,
@@ -83,11 +84,10 @@ const RegistrationForm = (props) => {
         <Content className="content">
           <div className={"alignCenter"}>
             <Space direction="vertical" align="center">
-              <Button type="primary" danger>
-                {props.intl&&props.intl.formatMessage({
-                  id: "app.containers.SignUp.signupwithgoogle",
-                })}
-              </Button>
+             
+               <SocialLogin {...props}></SocialLogin>
+      
+              
               <h2>
                 {props.intl&&props.intl.formatMessage({ id: "app.containers.Login.or" })}
               </h2>
