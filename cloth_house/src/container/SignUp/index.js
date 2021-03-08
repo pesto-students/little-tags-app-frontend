@@ -295,7 +295,7 @@ const RegistrationForm = (props) => {
             </Space>
           </div>
         </Content>
-        <SmileBagFooter {...props} />
+        <SmileBagFooter {...props} className={"positionFixed"} />
       </Layout>
     </>
   );

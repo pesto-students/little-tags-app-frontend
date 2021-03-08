@@ -91,7 +91,7 @@ const NormalLoginForm = (props) => {
     </Content>
         
       </Layout>
-      <SmileBagFooter {...props} />
+      <SmileBagFooter {...props} className={"positionFixed"}/>
       </>
   );
 };

@@ -25,7 +25,7 @@
 
 .header .searchInput {
   width: 576px;
-  height: 67px; 
+  height: 67px;
 }
 
 .header .selectpin {
@@ -53,11 +53,9 @@
 .header .globe {
   color: #ffffff;
   text-decoration-color: #ffffff;
-  width: 150px;
+  width: 50px;
   font-size: 20px;
 }
 .globemenu {
   color: #111111;
 }
-
-

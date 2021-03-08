@@ -36,20 +36,20 @@ const SmileBagHeader= (props) =>{
         <Input size="large" placeholder="Search" suffix={<SearchOutlined onClick={() => {}} />} />
         </div>
         <div >
-        <Select className="selectpin" suffixIcon={<EnvironmentOutlined className="selectpin"/>} size="large" bordered={false} defaultValue="500070">
+        {/* <Select className="selectpin" suffixIcon={<EnvironmentOutlined className="selectpin"/>} size="large" bordered={false} defaultValue="500070">
         <Option value="500070">500070</Option>
         <Option value="500080">500080</Option>
-        </Select>
+        </Select> */}
         </div>
-        <div className="login">
-        <Button onClick={()=>{
+        
+        <Button type="link" onClick={()=>{
           props.history.push('/login')
-        }} className="login-button" block={true} type="primary" ghost={true} size="large">
+        }}>
           {props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
         </Button>
-        </div>
-        <ShoppingCartOutlined className="cart" />
-        <div className="globe">
+        
+        <ShoppingCartOutlined className="cart" /> 
+         <div className="globe">
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 
         </Dropdown>
