@@ -1,14 +1,17 @@
-.footer{
-    z-index: 1;
-    width: 100%;
-    background-color: #006892;
-    padding: 10px;
-    color: white;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.footer {
+  z-index: 1;
+  width: 100%;
+  background-color: #006892;
+  padding: 10px;
+  color: white;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
 }
 
-.footer button{
-    color: white;
+.footer button {
+  color: white;
+}
+.positionFixed {
+  position: fixed;
 }

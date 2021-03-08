@@ -65,7 +65,6 @@ function ProductDetail(props) {
   let { categoryname, productname } = useParams();
   return (
     <>
-      <Layout className="layout">
         <TopHeader {...props} />
         <Content className="content">
           <Categories {...props} />
@@ -163,8 +162,8 @@ function ProductDetail(props) {
             </Col>
           </Row>
         </Content>
-        <SmileBagFooter {...props} />
-      </Layout>
+        <SmileBagFooter {...props} className={"positionFixed"} />
+  
     </>
   );
 }

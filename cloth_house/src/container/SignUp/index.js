@@ -85,12 +85,12 @@ const RegistrationForm = (props) => {
           <div className={"alignCenter"}>
             <Space direction="vertical" align="center">
              
-               <SocialLogin {...props}></SocialLogin>
+               {/* <SocialLogin {...props}></SocialLogin> */}
       
               
-              <h2>
+              {/* <h2>
                 {props.intl&&props.intl.formatMessage({ id: "app.containers.Login.or" })}
-              </h2>
+              </h2> */}
               <Form
                 {...formItemLayout}
                 form={form}
