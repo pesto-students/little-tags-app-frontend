@@ -89,8 +89,9 @@ const NormalLoginForm = (props) => {
     </Space> 
     </Col></Row>
     </Content>
-        <SmileBagFooter {...props} />
+        
       </Layout>
+      <SmileBagFooter {...props} />
       </>
   );
 };
