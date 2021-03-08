@@ -24,8 +24,8 @@
 }
 
 .header .searchInput {
-  width: 15rem;
-  height: 5rem;
+  width: 576px;
+  height: 67px; 
 }
 
 .header .selectpin {
@@ -60,34 +60,4 @@
   color: #111111;
 }
 
-.customWidth {
-  width: 250px;
-  padding-top: 10px;
-}
-.borderRound {
-  border-radius: 2%;
-}
-.textAlignLeft {
-  text-align: left;
-}
-.width100 {
-  width: 100vh;
-  height: 1vh;
-  display: flex;
-}
-svg {
-  height: 100;
-  width: 100;
-}
 
-.textAlignCenter {
-  text-align: center;
-}
-.font_size_header {
-  font-size: 1rem;
-}
-@media (min-width: 40rem) {
-  .font_size_header {
-    font-size: 1.5rem;
-  }
-}
