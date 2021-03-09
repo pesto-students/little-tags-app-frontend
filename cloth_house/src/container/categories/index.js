@@ -268,6 +268,7 @@ dispatch(fetchCategoriesSuccess(data))
                 </Col>
               </Row>
               <List
+              loading={true}
                 grid={{ gutter: 0, column: 4 }}
                 dataSource={data}
                 renderItem={(item) => (
