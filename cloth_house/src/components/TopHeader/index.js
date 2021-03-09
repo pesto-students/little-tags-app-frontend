@@ -1,8 +1,9 @@
 import React,{useContext} from "react";
 import ErrorBoundary from "../../Hoc/ErrorBoundary.js";
-import { Layout } from "antd";
-import {Menu,Input, Row, Select,Space,Dropdown,Button  } from "antd";
-import { SearchOutlined,EnvironmentOutlined ,GlobalOutlined,ShoppingCartOutlined } from '@ant-design/icons';
+import { Layout,Col } from "antd";
+import {Menu,Input, Row, Select,Dropdown,Button  } from "antd";
+import { SearchOutlined ,GlobalOutlined,ShoppingCartOutlined } from '@ant-design/icons';
+import AutoCompleteSearch from "./autoComplete"
 import "./topHeader.css";
 import LangContext,{langOptions} from "../../context/LangContext.js"
 const { Header } = Layout;
@@ -19,42 +20,40 @@ const SmileBagHeader= (props) =>{
   })} 
   
   </Menu>)
+
+  
   return (
     <>
     <ErrorBoundary>
       <Header className="header">
         <Row>
-        <Space align="center">
+          <Col span={6}>
+        
         <div className="logo" onClick={()=>{
           props.history.push("/")
         }}>
           SmileBag{" "}
           <img alt="fallback" className="logoImage" src="./assets/images/Raster.png"></img>
         </div>
-       
-        <div className="searchInput">
-        <Input size="large" placeholder="Search" suffix={<SearchOutlined onClick={() => {}} />} />
-        </div>
-        <div >
-        <Select className="selectpin" suffixIcon={<EnvironmentOutlined className="selectpin"/>} size="large" bordered={false} defaultValue="500070">
-        <Option value="500070">500070</Option>
-        <Option value="500080">500080</Option>
-        </Select>
-        </div>
-        <div className="login">
-        <Button onClick={()=>{
+       </Col>
+       <Col  span={10}>
+        <AutoCompleteSearch >
+  
+    </AutoCompleteSearch>
+        </Col>
+        <Col span={4}>
+        <Button type="link" onClick={()=>{
           props.history.push('/login')
-        }} className="login-button" block={true} type="primary" ghost={true} size="large">
+        }}>
           {props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
         </Button>
-        </div>
-        <ShoppingCartOutlined className="cart" />
-        <div className="globe">
+        </Col>
+        <ShoppingCartOutlined className="cart" /> 
+         <div className="globe">
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 
         </Dropdown>
         </div>
-        </Space>
         </Row>
       </Header>
       </ErrorBoundary>

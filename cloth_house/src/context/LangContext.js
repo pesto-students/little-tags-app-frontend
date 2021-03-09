@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import English from "../lang/en-US.json";
 import French from  "../lang/fr-FR.json"
-import English_GB from "../lang/en-GB.json"
+//import English_GB from "../lang/en-GB.json"
 const LangContext = React.createContext({
   lang: 'en-US',
   currentLangData: English,
@@ -29,7 +29,7 @@ export function LangProvider (props) {
     <LangContext.Provider value={{
       lang, 
       switchLang, 
-      currentLangData: langData[lang]
+      currentLangData: langData[lang==="en-GB"?"en-US":lang]
     }}>
       {props.children}
     </LangContext.Provider>
@@ -37,13 +37,13 @@ export function LangProvider (props) {
 };
 
 export const langData = {
-  'en-GB': English_GB,
+//'en-GB': English_GB,
   'en-US': English,
   'fr-FR':French,
 }
 
 export const langOptions = {
-    'en-GB': "English_GB",
+    //'en-GB': "English_GB",
     'en-US': "English",
     'fr-FR':"French",
   }

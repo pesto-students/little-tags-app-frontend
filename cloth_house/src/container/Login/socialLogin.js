@@ -10,7 +10,7 @@ const onRejectSocialLogin = (response) => {
   } 
 
 function socialLogin(props){
-const FbLogin=()=>{
+function FbLogin(){
   return  <FacebookLogin
   appId={FacebookAppId}
   autoLoad={true}
@@ -21,8 +21,7 @@ const FbLogin=()=>{
 />   
 }
 
-const LogInGoogle=()=>{
-
+function LogInGoogle(){
   return  <GoogleLogin
    clientId={GOOGLE_CLIENT_ID}
    buttonText="Login"
@@ -33,7 +32,7 @@ const LogInGoogle=()=>{
 }
 
   return <>
-  { FbLogin()}
+  {/* { FbLogin()} */}
   <div className="pT2">
   { LogInGoogle()
   }

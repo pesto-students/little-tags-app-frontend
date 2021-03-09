@@ -45,7 +45,7 @@ const NormalLoginForm = (props) => {
           },
         ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={props.intl&&props.intl.formatMessage({id:"app.containers.Login.email"})} />
+        <Input id="loginEmail" prefix={<UserOutlined className="site-form-item-icon" />} placeholder={props.intl&&props.intl.formatMessage({id:"app.containers.Login.email"})} />
       </Form.Item>
       <Form.Item
         name="password"
@@ -57,6 +57,7 @@ const NormalLoginForm = (props) => {
         ]}
       >
         <Input
+          id="loginPassword"
           prefix={<LockOutlined className="site-form-item-icon" />}
           type="password"
           placeholder={props.intl&&props.intl.formatMessage({id:"app.containers.Login.password"})}
@@ -64,10 +65,10 @@ const NormalLoginForm = (props) => {
       </Form.Item>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.remember"})}  {props.intl&&props.intl.formatMessage({id:"app.containers.Login.me"})}</Checkbox>
+          <Checkbox id="checkBox">{props.intl&&props.intl.formatMessage({id:"app.containers.Login.remember"})}  {props.intl&&props.intl.formatMessage({id:"app.containers.Login.me"})}</Checkbox>
         </Form.Item>
 
-        <Button type="link" className="login-form-forgot" onClick={e=>{e.stopPropagation()
+        <Button type="link" id="forgot-password" className="login-form-forgot" onClick={e=>{e.stopPropagation()
         props.history.push('/forgot-password')
         }}>
           {props.intl&&props.intl.formatMessage({id:"app.containers.Login.forgotPassword"})}
@@ -76,13 +77,15 @@ const NormalLoginForm = (props) => {
 
       <Form.Item>
         <Space>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button id="submitButton" type="primary" htmlType="submit" className="login-form-button">
         {props.intl&&props.intl.formatMessage({id:"app.containers.Login.logIn"})}
         </Button>
-        {props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}<Button type="link" href="" onClick={(e)=>{
+        {props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}
+        <Button id="goToSignUp" type="link" href="" onClick={(e)=>{
           e.preventDefault()
           props.history.push('/signup')
-        }}>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.registerNow"})}</Button>
+        }}>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.registerNow"})}
+        </Button>
         </Space>
       </Form.Item>
     </Form>
@@ -91,7 +94,7 @@ const NormalLoginForm = (props) => {
     </Content>
         
       </Layout>
-      <SmileBagFooter {...props} />
+      <SmileBagFooter {...props} className={"positionFixed"}/>
       </>
   );
 };
