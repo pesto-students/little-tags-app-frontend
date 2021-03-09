@@ -1,12 +1,17 @@
-import React,{ useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./categories.css";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import { useParams } from "react-router-dom";
 import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
-import {fetchCategories,fetchCategoriesFailure,fetchCategoriesSuccess} from "../../redux/action";
-import { useDispatch,useSelector } from 'react-redux'
+import _ from "underscore";
+import {
+  fetchCategories,
+  fetchCategoriesFailure,
+  fetchCategoriesSuccess,
+} from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Layout,
   Divider,
@@ -34,56 +39,64 @@ const data = [
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kj4m0sw0-0/t-shirt/5/c/4/s-tsrt-303-reya-original-imafyrjprxpfbhqr.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kj4m0sw0-0/t-shirt/5/c/4/s-tsrt-303-reya-original-imafyrjprxpfbhqr.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kfmv9u80-0/t-shirt/o/2/5/m-brdblhenful-z14-blive-original-imafwfqfkcbddqkh.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kfmv9u80-0/t-shirt/o/2/5/m-brdblhenful-z14-blive-original-imafwfqfkcbddqkh.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50",
   },
   {
     productTitle: "Polo",
     productDescription: "T-Shirt",
     productPrice: 299,
     productDiscount: "33%",
-    imgsrc: "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50"
+    imgsrc:
+      "https://rukminim1.flixcart.com/image/580/696/kjkbv680-0/t-shirt/9/v/o/m-t285hs-as7whdngr-seven-rocks-original-imafz3wkfs8pevqc.jpeg?q=50",
   },
 ];
 
@@ -162,8 +175,14 @@ function ItemComponent(args) {
       >
         <Row justify="space-between" align="middle">
           <Col>
-            <div onClick={()=>{args.history&&
-            args.history.push(`/detail/${args.category}/${args.productname}`)}}>
+            <div
+              onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/detail/${args.category}/${args.productname}`
+                  );
+              }}
+            >
               <Meta
                 title={args.productTitle}
                 description={args.productDescription}
@@ -200,32 +219,47 @@ function ItemComponent(args) {
   );
 }
 
+async function getCategoryData(category) {
+  const response = await fetch(
+    "https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/" +
+      category
+  );
+  // const resp = await response.json();
+  return response;
+}
+
 function CategoriesPage(props) {
-  const categories=useSelector((state)=>state)
-console.log("Home===>",categories);
-const dispatch = useDispatch()
-useEffect(()=>{
-  console.log("abc");
-dispatch(fetchCategories())
-fetch("https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/clothing").then((res)=>res.json()).then((data)=>{
-dispatch(fetchCategoriesSuccess(data))
-}).catch(err=>{
-  console.log(err)
-  dispatch(fetchCategoriesFailure())
-})
-},[])
-  //console.log("Home===>",props);
+  const categories = useSelector(state => state, _.isEqual);
+  console.log("Home===>", categories);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log("abc");
+    dispatch(fetchCategories());
+    getCategoryData("clothing")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(fetchCategoriesSuccess(data));
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch(fetchCategoriesFailure());
+      });
+  }, []);
+  
   let { categoryname } = useParams();
   return (
     <>
+   
       <Layout className="layout">
         <TopHeader {...props} />
+        
         <Content className="content">
           <Categories {...props} />
           <Divider style={{ margin: "auto" }}></Divider>
           <Row className="rowcontent">
             <Col className="gutter-row" span={4}>
               <Row justify="center" align="middle" className="mainHeadRow">
+                
                 <div className="categoryContent">{categoryname}</div>
               </Row>
               <Row justify="center" align="middle">
@@ -268,18 +302,22 @@ dispatch(fetchCategoriesSuccess(data))
                 </Col>
               </Row>
               <List
-              loading={true}
+                loading={categories && categories.categories && categories.categories.loading}
                 grid={{ gutter: 0, column: 4 }}
-                dataSource={data}
+                dataSource={
+                  categories && categories.categories && categories.categories.categorydata && categories.categories.categorydata.data
+                    ? categories.categories.categorydata.data
+                    : []
+                }
                 renderItem={(item) => (
-                    <List.Item>
-                      <ItemComponent
+                  <List.Item>
+                    <ItemComponent
                       {...props}
-                        {...item}
-                        category={categoryname}
-                        productname={categoryname}
-                      />
-                    </List.Item>
+                      {...item}
+                      category={categoryname}
+                      productname={categoryname}
+                    />
+                  </List.Item>
                 )}
               />
             </Col>

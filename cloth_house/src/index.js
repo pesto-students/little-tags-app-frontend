@@ -6,11 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { LangProvider } from './context/LangContext';
 import {Provider} from "react-redux";
 import configureStore from "../src/redux/store"
+import { createStore,applyMiddleware,compose } from "redux";
+import reducer from "../src/redux/reducer";
+import thunk from 'redux-thunk';
+
+const store=createStore(reducer, applyMiddleware(thunk))
 ReactDOM.render(
   <React.StrictMode>
     
     <LangProvider>
-    <Provider store={configureStore()}>
+    <Provider store={store}>
     <App/>
     </Provider>
   </LangProvider>
