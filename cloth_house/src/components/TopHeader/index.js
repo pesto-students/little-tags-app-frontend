@@ -26,23 +26,22 @@ const SmileBagHeader= (props) =>{
     <>
     <ErrorBoundary>
       <Header className="header">
-        <Row>
+        <Row justify="space-between" align="middle">
           <Col span={6}>
         
-        <div className="logo" onClick={()=>{
+        <div className="logo" ><a className="logo" onClick={()=>{
           props.history.push("/")
         }}>
           SmileBag{" "}
-          <img alt="fallback" className="logoImage" src="./assets/images/Raster.png"></img>
+          <img alt="fallback" className="logoImage" src="./assets/images/Raster.png"></img></a>
         </div>
        </Col>
-       <Col  span={10}>
+       <Col span={8}>
         <AutoCompleteSearch >
-  
     </AutoCompleteSearch>
         </Col>
         <Col span={4}>
-        <Button type="link" onClick={()=>{
+        <Button className="login" type="link" onClick={()=>{
           props.history.push('/login')
         }}>
           {props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}

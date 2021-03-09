@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Input, AutoComplete } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import "./topHeader.css";
 
 function getRandomInt(max, min = 0) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line no-mixed-operators
@@ -49,17 +51,16 @@ const Complete = () => {
   };
 
   return (
+    <div className="searchInput">
     <AutoComplete
       dropdownMatchSelectWidth={252}
-      style={{
-        width: 300,
-      }}
       options={options}
       onSelect={onSelect}
       onSearch={handleSearch}
     >
-      <Input.Search size="large" placeholder="input here" enterButton />
+      <Input.Search style={{width:"550px"}} size="large" placeholder="Search"  />
     </AutoComplete>
+    </div>
   );
 };
 
