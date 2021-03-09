@@ -10,6 +10,8 @@ import ErrorBoundary from "./Hoc/ErrorBoundary";
 import Login  from "./container/Login";
 import Signup from "./container/SignUp" 
 import ForgotPassword from "./container/ForgotPassword"
+import Cart from "./container/Cart"
+import Order from "./container/Order"
 function Routes(props) {
 
   return (
@@ -27,7 +29,15 @@ function Routes(props) {
                       )}/>
          <Route exact path={"/forgot-password"} render={() => (
                         <ForgotPassword {...props}  />
-                      )}/>                           
+                      )}/>
+
+         <Route exact path={"/cart"} render={() => (
+                        <Cart {...props}  />
+                      )}/>
+
+          <Route exact path={"/order"} render={() => (
+                        <Order {...props}  />
+                      )}/>                                                    
         <Route component={NotFoundPage} />
       </Switch>
     </ErrorBoundary>
