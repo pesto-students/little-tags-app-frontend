@@ -47,7 +47,7 @@ const SmileBagHeader= (props) =>{
           {props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.loginSignUp"})}
         </Button>
         </Col>
-        <ShoppingCartOutlined className="cart" /> 
+        <ShoppingCartOutlined className="cart" onClick={()=>{props.history.push('/cart')}} /> 
          <div className="globe">
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 

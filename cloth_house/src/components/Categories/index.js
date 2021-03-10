@@ -54,8 +54,9 @@ const Category = (args) => {
             className="ant-dropdown-link category"
             href={args.hreflink}
           >
-            {args.menuLabel} <DownOutlined />
-          </Button>
+            {args.menuLabel} 
+            <span className="pop"><DownOutlined /></span>
+          </Button> 
         </Dropdown>
       </Space>
     </>
@@ -69,21 +70,21 @@ const Categories = (props) => {
   return (
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
-        <Col id="clothing" onClick={()=>redirectToParticularCategory("/category/clothing")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
+        <Col id="clothing" onClick={()=>redirectToParticularCategory("/category/clothing")} className="gutter-row marginRight" xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={clothingmenu}
             imagesrc="./assets/images/clothing.png"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})} 
           />
         </Col>
-        <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}} />
-        <Col id="footwear" onClick={()=>redirectToParticularCategory("/category/footwear")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
+        {/* <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}} /> */}
+        <Col id="footwear" onClick={()=>redirectToParticularCategory("/category/footwear")} className="gutter-row marginRight" xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={footwearmenu}
             imagesrc="./assets/images/footwear.jpg"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.footwear"})}
            // hreflink="/category/footwear"
           />
         </Col>
-        <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  />
+        {/* <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  /> */}
         <Col id="bags" onClick={()=>redirectToParticularCategory("/category/bags")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={bagsmenu} imagesrc="./assets/images/bags.png" 
           menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})}
