@@ -84,3 +84,9 @@ svg {
 .pTop15 {
   padding-top: 10px;
 }
+.headFontSize {
+  color: #47525e;
+  font-family: Lato;
+  font-size: 39px;
+  line-height: 50px;
+}

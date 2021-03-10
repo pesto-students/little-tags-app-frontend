@@ -17,7 +17,11 @@ return <>
   <TopHeader {...props}/>
   <Categories {...props}/>
 
-  
+  <Row>
+      <Col span={24} className="headFontSize">
+       PAYMENT
+      </Col>
+  </Row>
       
   <Row className={"width100"}>
       <Col span={14} className={"width100"}>
