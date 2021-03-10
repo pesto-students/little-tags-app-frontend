@@ -8,42 +8,42 @@ import "./offers.css";
 
 const CarouselOffers =() =>{
     return (<>
-    <Carousel autoplay>
+    <Carousel dotPosition="right" autoplay>
     <div  className="carouseloffers">
-      <img width="100%" height="300px" src="./assets/images/offers/yellowpic.jpg"></img>
+      <img width="100%" height="260px" src="./assets/images/offers/offerbg2.jpg"></img>
       <div className="offertextboxright">
-        <h2>Offer Heading</h2>
-        <h4>Offer Sub Heading</h4>
+        <h2>Footwear</h2>
+        <h4>Shop Footwear now at <b>50% off</b></h4>
         <div>
         <Button type="dashed">Shop Now</Button>
         </div>
       </div>
     </div>
     <div  className="carouseloffers">
-      <img width="100%" height="300px" src="./assets/images/offers/mensuits.jpg"></img>
+      <img width="100%" height="260px" src="./assets/images/offers/offerbg3.jpg"></img>
       <div className="offertextboxleft">
-        <h2>Offer 2 Heading</h2>
-        <h4>Offer 2 Sub Heading</h4>
+      <h2>Shirts</h2>
+        <h4>Shop Shirts now at <b>30% off</b></h4>
         <div>
         <Button type="dashed">Shop Now</Button>
         </div>
       </div>
     </div>
     <div  className="carouseloffers">
-      <img width="100%" height="300px" src="./assets/images/offers/bags.jpg"></img>
-      <div className="offertextboxleft">
-        <h2>Offer 3 Heading</h2>
-        <h4>Offer 3 Sub Heading</h4>
+      <img width="100%" height="260px" src="./assets/images/offers/offerbg5.jpg"></img>
+      <div className="offertextboxright">
+      <h2>Jeans</h2>
+        <h4>Shop Jeans now at <b>55% off</b></h4>
         <div>
         <Button type="dashed">Shop Now</Button>
         </div>
       </div>
     </div>
     <div  className="carouseloffers">
-      <img width="100%" height="300px" src="./assets/images/offers/sunglasses.jpg"></img>
+      <img width="100%" height="260px" src="./assets/images/offers/offerbg6.jpg"></img>
       <div className="offertextboxleft">
-        <h2>Offer 4 Heading</h2>
-        <h4>Offer 4 Sub Heading</h4>
+      <h2>Sunglasses</h2>
+        <h4>Shop Sunglasses now at <b>55% off</b></h4>
         <div>
         <Button type="dashed">Shop Now</Button>
         </div>
@@ -55,14 +55,14 @@ const CarouselOffers =() =>{
 
 
 
-const OfferCard =() => {
+const OfferCard =(args) => {
     return (<>
     <Card
     hoverable
     style={{ width: 400 }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+    cover={<img alt="example" src={args.offerimg} />}
   >
-    <Card.Meta title="Bags 30% OFF" description="Shop Now" />
+    <Card.Meta title={args.offertitle} description="Shop Now" />
   </Card>,
     </>);
 }
@@ -71,13 +71,13 @@ const Offers = () => {
     return (<div className="offerscards">
      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="space-around" align="middle">
          <Col span={8}> 
-         <OfferCard />
+         <OfferCard offertitle="Shoes @ 30%off" offerimg="./assets/images/offers/shoesoffer.jpg" />
          </Col>
          <Col span={8}> 
-         <OfferCard />
+         <OfferCard offertitle="T-Shirts @ 70%off"  offerimg="./assets/images/offers/shirts.jpg"/>
          </Col>
          <Col span={8}> 
-         <OfferCard />
+         <OfferCard offertitle="Casuals @ 70%off" offerimg="./assets/images/offers/casuals.jpg"/>
          </Col>
      </Row>
     </div>);
