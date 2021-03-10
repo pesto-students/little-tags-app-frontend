@@ -29,3 +29,53 @@ svg {
   padding-left: 0px;
   font-size: 16px;
 }
+
+.priceBg {
+  background-color: rgba(81, 148, 184, 0.24);
+}
+.priceHeight {
+  width: 100%;
+}
+.priceMargin {
+  margin-right: 2%;
+}
+.pad_left_2 {
+  padding-left: 4%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+.priceHeader {
+  font-size: 32px;
+  font-weight: 500;
+}
+.textAlignCenter {
+  text-align: center;
+}
+.bgForPlaceButton {
+  background-color: #125c83;
+  border-radius: 10px;
+  width: 50%;
+  height: 70px;
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 26px;
+  line-height: 46px;
+}
+
+.priceSubSection {
+  color: #47525e;
+  font-family: Lato;
+  font-size: 26px;
+  line-height: 33px;
+  text-align: left;
+  padding-bottom: 5%;
+  padding-left: 4%;
+}
+.borderTopBottom {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 1%;
+}
+.marTop {
+  margin-top: 4%;
+}

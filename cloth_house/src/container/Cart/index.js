@@ -7,6 +7,7 @@ import {Row,Col,Space,Avatar,Image,Rate,Radio,Button} from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 import Plus from "../../images/plus"
 import Minus from "../../images/minus"
+import PriceAction from "./priceDetailsSection";
 export default function Cart(props){
     const [state,setState]=useState({count:1})
 const increment=()=>{
@@ -41,7 +42,7 @@ return <>
                 src="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50"
               ></Image>
             </Col>
-            <Col className="gutter-row" span={8} offset={2}>
+            <Col className="gutter-row" span={6} offset={2}>
               <Row>
                 <h1 className="productTitle">Raymond</h1>
               </Row>
@@ -83,6 +84,10 @@ return <>
                 </Button>
                 </Col>
             </Row>
+            </Col>
+
+            <Col span={8} className="priceBg priceHeight">
+            <PriceAction/>
             </Col>
           </Row>
 

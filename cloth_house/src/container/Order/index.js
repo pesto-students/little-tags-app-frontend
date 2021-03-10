@@ -28,24 +28,24 @@ return <>
 
   
       
-  <>
-      <Col span={24}>
+  <Row>
+      <Col span={14}>
           <Row>
-              <Col  span={12}>
+              <Col  span={24}>
               <section className={"bgColor widthForSection"}>
                     fsdsfdfsd
                 </section>
               </Col>
           </Row>
           <Row>
-              <Col span={12}>
+              <Col span={24}>
               <section className={"bgColor widthForOrder"}>
                     fsdsfdfsd
                 </section>
               </Col>
           </Row>
       <Row>
-            <Col  span={8}>
+            <Col  span={14}>
                 
               <Image
                 width={400}
@@ -53,7 +53,7 @@ return <>
                 src="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50"
               ></Image>
             </Col>
-            <Col className="gutter-row" span={8} offset={2}>
+            <Col className="gutter-row" offset={2} span={8} >
               <Row>
                 <h1 className="productTitle">Raymond</h1>
               </Row>
@@ -82,7 +82,7 @@ return <>
                   <Col onClick={increment}>
              <Plus/>
                   </Col>
-                  <Col span={2} className="fontSizeFor">{state.count}</Col>
+                  <Col span={4} className="fontSizeFor">{state.count}</Col>
                   <Col onClick={decrement}>
                   <Minus />
                   </Col>
@@ -99,7 +99,7 @@ return <>
           </Row>
 
       </Col>
-  </>
+  </Row>
   <SmileBagFooter {...props} className={"positionFixed"}/>
   </>
 }
