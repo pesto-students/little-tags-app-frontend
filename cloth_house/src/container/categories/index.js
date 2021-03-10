@@ -101,6 +101,19 @@ const data = [
 ];
 
 function CollapseMenu(args) {
+
+let menucontent=[{"header":"cat1","menu":["cat1","cat2","cat3"]},{"header":"cat2","menu":["cat1","cat2","cat3"]},{"header":"cat3","menu":["cat1","cat2","cat3"]}];
+  if(args.category === "clothing"){
+    menucontent=[{"header":"T-Shitrs","menu":["TShirts","Lounge T-Shirts"]},{"header":"Shitrs","menu":["Casual Shirts","Formal Shirts"]},{"header":"Jackets","menu":["Jackets","Rain Jacket"]}];
+  }
+
+  if(args.category === "footwear"){
+    menucontent=[{"header":"Casual Shoes","menu":["Puma","Adidas"]},{"header":"Sports Shoes","menu":["Puma","Adidas","Nike"]},{"header":"Formal Shoes","menu":["Bata","Red Tape","Arrow"]}]
+  }
+
+  if(args.category === "bags"){
+    menucontent=[{"header":"Backpacks","menu":["Wildcraft","Puma","F Gear"]},{"header":"Laptop Bags","menu":["Wildcraft","Puma","F Gear"]},{"header":"Handbags","menu":["Voylla","M Boss","F Gear"]}]
+  }
   return (
     <>
       <Collapse
@@ -115,38 +128,43 @@ function CollapseMenu(args) {
           )
         }
       >
-        <Panel header="Flipflops" key="1">
-          <p className="menuContent">Cat1</p>
-        </Panel>
-        <Panel header="Shoes" key="2">
-          <p>Cat1</p>
-        </Panel>
-        <Panel header="Sandals" key="3">
-          <p>Cat1</p>
-        </Panel>
+        {menucontent.map((el,index) => { return (<Panel className="menuHeader" header={el.header} key={index}>
+          {el.menu.map((elmenu) => {return <p key={elmenu} className="menuContent">{elmenu}</p> })}
+          
+        </Panel>)})}
       </Collapse>
     </>
   );
 }
 
-function BreadCrumHeader() {
+function BreadCrumHeader(args) {
   return (
     <>
       <Breadcrumb separator=">">
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="">Footwear</Breadcrumb.Item>
-        <Breadcrumb.Item>Sandals</Breadcrumb.Item>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="">{args.category}</Breadcrumb.Item>
       </Breadcrumb>
     </>
   );
 }
 
-function SortComponent() {
+function SortComponent(args) {
+  const dispatch = useDispatch();
   return (
     <>
       <Select
         defaultValue="popularity"
         bordered={false}
+        onChange={(val) => { dispatch(fetchCategories()); getCategoryData(args.category)
+        .then((res) => res.json())
+        .then((data) => {
+          sortCategoryData(data.data,val)
+          dispatch(fetchCategoriesSuccess(data));
+        })
+        .catch((err) => {
+          console.log(err);
+          dispatch(fetchCategoriesFailure());
+        }); }}
         size="large"
         style={{
           width: 220,
@@ -157,9 +175,9 @@ function SortComponent() {
           borderRadius: "5px",
         }}
       >
-        <Option value="popularity">Popularity</Option>
-        <Option value="lucy">Low to High</Option>
-        <Option value="Yiminghe">High to Low</Option>
+        <Option value="rel">Popularity</Option>
+        <Option value={true}>Low to High</Option>
+        <Option value={false}>High to Low</Option>
       </Select>
     </>
   );
@@ -171,32 +189,33 @@ function ItemComponent(args) {
       {" "}
       <Card
         hoverable
-        cover={<Image width={300} height={300} src={args.imgsrc}></Image>}
+        cover={<Image width={300} height={400} src={args.imgsrc}></Image>}
       >
         <Row justify="space-between" align="middle">
           <Col>
             <div
+            
               onClick={() => {
                 args.history &&
                   args.history.push(
-                    `/detail/${args.category}/${args.productname}`
+                    `/detail/${args.category}/${args.id}`
                   );
               }}
             >
-              <Meta
+              <Meta 
                 title={args.productTitle}
-                description={args.productDescription}
+                description={<div className="productdesc" title={args.productDescription}>{args.productDescription}</div>}
               />
             </div>
           </Col>
           <Col>
-            <h2>{args.productPrice}</h2>
+            <h2>₹{args.productPrice}</h2>
           </Col>
         </Row>
         <Divider></Divider>
         <Row justify="space-between" align="middle">
           <Col>
-            <h3>{args.productDiscount}</h3>
+            <h3>{args.productDiscount}% off</h3>
           </Col>
           <Col>
             <Button
@@ -228,14 +247,26 @@ async function getCategoryData(category) {
   return response;
 }
 
+function sortCategoryData(data,ascending){
+  if(ascending==="rel"){
+    return data;
+  }
+  if(ascending){
+    return data.sort((a, b) => parseFloat(a.productPrice) - parseFloat(b.productPrice));
+  }else{
+    return data.sort((a, b) => parseFloat(b.productPrice) - parseFloat(a.productPrice));
+  }
+}
+
 function CategoriesPage(props) {
   const categories = useSelector(state => state, _.isEqual);
+  let { categoryname } = useParams();
   console.log("Home===>", categories);
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("abc");
     dispatch(fetchCategories());
-    getCategoryData("clothing")
+    getCategoryData(categoryname)
       .then((res) => res.json())
       .then((data) => {
         dispatch(fetchCategoriesSuccess(data));
@@ -246,7 +277,7 @@ function CategoriesPage(props) {
       });
   }, []);
   
-  let { categoryname } = useParams();
+  
   return (
     <>
    
@@ -259,18 +290,17 @@ function CategoriesPage(props) {
           <Row className="rowcontent">
             <Col className="gutter-row" span={4}>
               <Row justify="center" align="middle" className="mainHeadRow">
-                
                 <div className="categoryContent">{categoryname}</div>
               </Row>
               <Row justify="center" align="middle">
-                <CollapseMenu />
+                <CollapseMenu category={categoryname} />
               </Row>
             </Col>
             <Col className="gutter-row" span={20}>
               <Row justify="end" align="middle" className="mainHeadRow">
                 <Col style={{ padding: "5px" }} flex={2}>
                   <Row justify="start" align="top">
-                    <BreadCrumHeader />
+                    <BreadCrumHeader category={categoryname} />
                   </Row>
                   <Row justify="start" align="bottom">
                     <h2
@@ -278,9 +308,10 @@ function CategoriesPage(props) {
                         fontFamily: "Lato",
                         fontWeight: "bold",
                         color: "grey",
+                        textTransform:"capitalize"
                       }}
                     >
-                      Sandals
+                      {categoryname}
                     </h2>
                   </Row>
                 </Col>
@@ -296,13 +327,14 @@ function CategoriesPage(props) {
                       >
                         Sort By{" "}
                       </h4>{" "}
-                      <SortComponent />
+                      <SortComponent category={categoryname}/>
                     </Space>
                   </Row>
                 </Col>
               </Row>
+              
               <List
-                loading={categories && categories.categories && categories.categories.loading}
+                loading={categories.categories.loading}
                 grid={{ gutter: 0, column: 4 }}
                 dataSource={
                   categories && categories.categories && categories.categories.categorydata && categories.categories.categorydata.data

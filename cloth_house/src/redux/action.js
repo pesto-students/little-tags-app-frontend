@@ -1,6 +1,6 @@
 export function fetchCategories() {
   return { 
-   type: "FETCH_CATEGORIES_REQUESTS"
+   type: "FETCH_CATEGORIES_REQUEST"
  }  
 };
 

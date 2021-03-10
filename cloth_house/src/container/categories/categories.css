@@ -29,12 +29,24 @@
     
 }
 
-
-.submenuHeadRow .menuContent{
+.submenuHeadRow .menuHeader{
     color: #47525E;
     font-family: Lato;
     font-size: 18px;
     text-transform: capitalize;
     
 }
+.submenuHeadRow .menuContent{
+    color: #47525E;
+    font-family: Lato;
+    font-size: 13px;
+    text-transform: capitalize;
+    
+}
 
+.productdesc{
+    width: 195px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
