@@ -1,10 +1,17 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import "./productdetail.css";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import { useParams } from "react-router-dom";
 import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
+import _ from "underscore";
+import {
+  fetchCategories,
+  fetchCategoriesFailure,
+  fetchCategoriesSuccess,
+} from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Layout,
   Divider,
@@ -20,19 +27,22 @@ import {
   Rate,
   Avatar,
   List,
-  Radio
+  Radio,
+  Spin,
+  Carousel 
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 const { Content } = Layout;
 const { Option } = Select;
 
-function BreadCrumHeader() {
+function BreadCrumHeader(args) {
+  let href=`/category/${args.categoryname}`;
   return (
     <>
       <Breadcrumb separator=">">
         <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="">Footwear</Breadcrumb.Item>
-        <Breadcrumb.Item>Sandals</Breadcrumb.Item>
+        <Breadcrumb.Item style={{ textTransform:"capitalize"}} href={href}>{args.categoryname}</Breadcrumb.Item>
+        <Breadcrumb.Item href="">{args.productname}</Breadcrumb.Item>
       </Breadcrumb>
     </>
   );
@@ -40,69 +50,115 @@ function BreadCrumHeader() {
 
 const data = [
   {
-    title: 'Review 1',
-    rating:2,
-    description:'average quality'
+    title: 'Abhinav | 14 Nov 2020',
+    rating:randomNumber(1,5),
+    description:'Perfect size and quality Love it. Look forward to shop again.'
   },
   {
-    title: 'Review 2',
-    rating:2,
-    description:'average quality'
+    title: 'Asiya | 28 Dec 2020',
+    rating:randomNumber(1,5),
+    description:'Great material ... One can buy as the color is cute...'
   },
   {
-    title: 'Review 3',
-    rating:2,
-    description:'average quality'
+    title: 'Deepak Goel | 15 Sept 2020',
+    rating:randomNumber(1,5),
+    description:'Fitting was perfect.Colour expected..Comfortable..What else can you ask for on this price point???simply wow..bought it for my son..he loved it..u are gonna love it too'
   },
   {
-    title: 'Review 4',
-    rating:2,
-    description:'average quality'
+    title: 'Twashti26 | June 2020',
+    rating:randomNumber(1,5),
+    description:`I loved the fabric. The product same as described on the site. It's just perfect! Thanks Myntra, you never disappoint.`
   },
 ];
 
+async function getCategoryData(category) {
+  const response = await fetch(
+    "https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/" +
+      category
+  );
+  // const resp = await response.json();
+  return response;
+}
+
+function getOriginalPrice(price,discount){
+      return Math.round(price/(1-(discount/100)));
+}
+
+function filterCategoryData(mapdata,id){
+  
+  if(mapdata.categories === undefined || mapdata.categories.categorydata === undefined || mapdata.categories.categorydata.data=== undefined){
+    return {};
+  }
+  let data=mapdata.categories.categorydata.data;
+  data=data.filter(x => x.id == id);
+  return data.length>0?data[0]:{};
+}
+function randomNumber(min, max){
+  const r = Math.random()*(max-min) + min
+  return Math.floor(r)
+}
 function ProductDetail(props) {
   let { categoryname, productname } = useParams();
+  const categories = useSelector(state => state, _.isEqual);
+  let productdetail=filterCategoryData(categories,productname);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategories());
+    getCategoryData(categoryname)
+      .then((res) => res.json())
+      .then((data) => {
+        
+        dispatch(fetchCategoriesSuccess(data));
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch(fetchCategoriesFailure());
+      });
+  }, []);
+  console.log("pdetail =>",productdetail);
   return (
     <>
         <TopHeader {...props} />
+        <Spin spinning={categories.categories.loading} size="large">
         <Content className="content">
           <Categories {...props} />
           <Divider style={{ margin: "auto" }}></Divider>
           <div className="breadcrum">
-            <BreadCrumHeader />
+            <BreadCrumHeader categoryname={categoryname} productname={productdetail.productTitle} />
           </div>
           <Row className="mainRow">
             <Col className="gutter-row" span={8}>
-              <Image
-                width={400}
-                height={400}
-                src="https://rukminim1.flixcart.com/image/580/696/kjuby4w0/t-shirt/f/m/x/s-4057-4058-4129-fastcolors-original-imafzbjegphge6uu.jpeg?q=50"
-              ></Image>
+            <Carousel autoplay>
+              {productdetail.imagegallery && productdetail.imagegallery.map((el) =>{
+                  return (<div>
+                  <Image width={400} height={500} src={el}></Image>
+                </div>);
+              })}
+  </Carousel>
             </Col>
             <Col className="gutter-row" span={8} offset={2}>
               <Row>
-                <h1 className="productTitle">Title</h1>
+                <h1 className="productTitle">{productdetail.productTitle}</h1>
               </Row>
               <Row>
-                <h3 className="productTitle">Sub Title</h3>
+                <h3 className="productTitle">{productdetail.productDescription}</h3>
               </Row>
               <br></br>
               <Row>
                 <Space>
                   <Col>
-                    <span className="productOfferPrice">₹299</span>
+                    <span className="productOfferPrice">₹{productdetail.productPrice}</span>
                   </Col>
                   <Col>
-                    <span className="productOriginalPrice">₹1299</span>
+                    <span className="productOriginalPrice">₹{getOriginalPrice(productdetail.productPrice,productdetail.productDiscount)}</span>
                   </Col>
                   <Col>
-                    <span className="productOffer">(59% off)</span>
+                    <span className="productOffer">({productdetail.productDiscount}% off)</span>
                   </Col>
                 </Space>
               </Row>
               <Row>
-                <Rate value="3" />
+                <Rate  disabled defaultValue={randomNumber(1,5)} />
               </Row>
               <br></br>
               <Row>
@@ -122,7 +178,7 @@ function ProductDetail(props) {
               </Row>
               <br></br>
               <Row>
-                <span className="productDelivery">Delivery in 5 Days</span>
+                <span className="productDelivery">Delivery in {randomNumber(1,5)} Days</span>
               </Row>
               <br></br>
               <Row>
@@ -152,7 +208,7 @@ function ProductDetail(props) {
                         avatar={
                           <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                         }
-                        title={<a href="#">{item.title} <Rate value={item.rating} /></a>}
+                        title={<>{item.title} <Rate disabled defaultValue={item.rating} /></>}
                         description={item.description}
                        
                       />
@@ -162,6 +218,7 @@ function ProductDetail(props) {
             </Col>
           </Row>
         </Content>
+        </Spin>
         <SmileBagFooter {...props} className={"positionFixed"} />
   
     </>

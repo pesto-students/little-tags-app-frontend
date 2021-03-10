@@ -24,8 +24,9 @@
 }
 
 .header .searchInput {
-  width: 576px;
-  height: 67px; 
+  width: 100%;
+  height: 67px;
+  margin: -40px;
 }
 
 .header .selectpin {
@@ -34,9 +35,12 @@
 }
 
 .header .login {
-  width: 150px;
+  width: 50%;
   color: #ffffff;
   text-decoration-color: #ffffff;
+  border-width: thin;
+  border-color: white;
+  height: 40px;
 }
 .header .login .login-button {
   color: #ffffff;
@@ -46,18 +50,19 @@
 .header .cart {
   color: #ffffff;
   text-decoration-color: #ffffff;
-  width: 80px;
-  font-size: 20px;
+  
+  font-size: 30px;
 }
 
 .header .globe {
   color: #ffffff;
   text-decoration-color: #ffffff;
-  width: 150px;
-  font-size: 20px;
+  
+  font-size: 25px;
 }
 .globemenu {
   color: #111111;
 }
-
-
+.left {
+  text-align: left;
+}
