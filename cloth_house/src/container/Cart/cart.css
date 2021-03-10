@@ -54,7 +54,7 @@ svg {
 .bgForPlaceButton {
   background-color: #125c83;
   border-radius: 10px;
-  width: 50%;
+  /* width: 50%; */
   height: 70px;
   color: #ffffff;
   font-family: Lato;

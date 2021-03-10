@@ -12,6 +12,7 @@ import Signup from "./container/SignUp"
 import ForgotPassword from "./container/ForgotPassword"
 import Cart from "./container/Cart"
 import Order from "./container/Order"
+import Payment from "./container/Payment"
 function Routes(props) {
 
   return (
@@ -37,7 +38,11 @@ function Routes(props) {
 
           <Route exact path={"/order"} render={() => (
                         <Order {...props}  />
-                      )}/>                                                    
+                      )}/>
+
+          <Route exact path={"/payment"} render={() => (
+                        <Payment {...props}  />
+                      )}/>                                                                
         <Route component={NotFoundPage} />
       </Switch>
     </ErrorBoundary>

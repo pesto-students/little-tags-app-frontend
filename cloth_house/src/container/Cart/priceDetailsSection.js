@@ -1,7 +1,22 @@
 import React from "react"
 import {Row,Col, Button} from "antd"; 
 export default function PriceAction(props){
-    
+    const routeAccordingToProp=()=>{
+      console.log("Orios=======>",props.from);
+      if(props.from==="order"){
+
+        props.history.push("/payment")
+      }
+      if(props.from==="cart"){
+        props.history.push("/order")
+      }
+    }
+
+   const getText=()=>{
+    if(props.from==="order") return "Continue" 
+    if(props.from==="cart") return  "Place Order"
+    if(props.from==="payment") return  "Pay & Place Order"
+  } 
   return <>  
   <Row>
      <Col className="pad_left_2">
@@ -29,9 +44,7 @@ export default function PriceAction(props){
       </Row>
       <Row className="priceSubSection">
           <Col className="textAlignCenter" span={24}>
-          <Button className="bgForPlaceButton" onClick={()=>{
-            props.history.push("/order")
-          }}>{props.from==="order"?"Continue":"Place Order"}</Button>
+          <Button className="bgForPlaceButton" onClick={routeAccordingToProp}>{getText()}</Button>
           </Col>
       </Row>
     </>
