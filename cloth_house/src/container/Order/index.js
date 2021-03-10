@@ -7,6 +7,7 @@ import {Row,Col,Space,Avatar,Image,Rate,Radio,Button} from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 import Plus from "../../images/plus"
 import Minus from "../../images/minus"
+import PriceAction from "../Cart/priceDetailsSection";
 export default function Cart(props){
     const [state,setState]=useState({count:1})
 const increment=()=>{
@@ -33,14 +34,19 @@ return <>
           <Row>
               <Col  span={24}>
               <section className={"bgColor widthForSection"}>
-                    fsdsfdfsd
+                    
+                   <div className="mainOrder">Delivery Address</div> 
+                <div className="subOrder">
+                B-45 laxmi Nagar Telanganag-500070 (edit)
+                </div>
                 </section>
+                
               </Col>
           </Row>
           <Row>
               <Col span={24}>
               <section className={"bgColor widthForOrder"}>
-                    fsdsfdfsd
+                    <div className="orderSummary">ORDER SUMMARY</div>
                 </section>
               </Col>
           </Row>
@@ -99,7 +105,11 @@ return <>
           </Row>
 
       </Col>
+
+      <Col span={8} offset={2} className="priceBg">
+      <PriceAction from={"order"}/>
+      </Col>
   </Row>
-  <SmileBagFooter {...props} className={"positionFixed"}/>
+  <SmileBagFooter {...props} />
   </>
 }

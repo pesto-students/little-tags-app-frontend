@@ -43,3 +43,23 @@ svg {
   padding-left: 2%;
   margin: 2% 0%;
 }
+.priceBg {
+  background-color: rgba(81, 148, 184, 0.24);
+  height: 80%;
+}
+.mainOrder {
+  padding: 3% 3% 0% 3%;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.subOrder {
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 2%;
+}
+.orderSummary {
+  padding: 0% 2%;
+  font-size: 24px;
+  font-weight: 400px;
+}

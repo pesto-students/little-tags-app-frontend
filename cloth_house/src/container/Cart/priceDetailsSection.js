@@ -1,6 +1,6 @@
 import React from "react"
 import {Row,Col, Button} from "antd"; 
-export default function PriceAction(){
+export default function PriceAction(props){
     
   return <>  
   <Row>
@@ -29,7 +29,7 @@ export default function PriceAction(){
       </Row>
       <Row className="priceSubSection">
           <Col className="textAlignCenter" span={24}>
-          <Button className="bgForPlaceButton">Place Order</Button>
+          <Button className="bgForPlaceButton">{props.from==="order"?"Continue":"Place Order"}</Button>
           </Col>
       </Row>
     </>

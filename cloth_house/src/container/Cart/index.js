@@ -94,6 +94,6 @@ return <>
       </Col>
       <Col span={12}></Col>
   </Row>
-  <SmileBagFooter {...props} className={"positionFixed"}/>
+  <SmileBagFooter {...props}/>
   </>
 }
