@@ -29,7 +29,9 @@ export default function PriceAction(props){
       </Row>
       <Row className="priceSubSection">
           <Col className="textAlignCenter" span={24}>
-          <Button className="bgForPlaceButton">{props.from==="order"?"Continue":"Place Order"}</Button>
+          <Button className="bgForPlaceButton" onClick={()=>{
+            props.history.push("/order")
+          }}>{props.from==="order"?"Continue":"Place Order"}</Button>
           </Col>
       </Row>
     </>

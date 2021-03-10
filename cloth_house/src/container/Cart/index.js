@@ -87,7 +87,7 @@ return <>
             </Col>
 
             <Col span={8} className="priceBg priceHeight">
-            <PriceAction/>
+            <PriceAction {...props}/>
             </Col>
           </Row>
 

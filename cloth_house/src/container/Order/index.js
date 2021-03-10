@@ -107,7 +107,7 @@ return <>
       </Col>
 
       <Col span={8} offset={2} className="priceBg">
-      <PriceAction from={"order"}/>
+      <PriceAction {...props} from={"order"}/>
       </Col>
   </Row>
   <SmileBagFooter {...props} />
