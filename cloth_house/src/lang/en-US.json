@@ -47,7 +47,7 @@
     "app.containers.Login.deliveryCharges":"Delivery Charges",
     "app.containers.Login.totalAmount":"Total Amount",
     "app.containers.Login.saveAmount":"you will save {price} on this order",
-    "app.containers.Login.continue":"continue",
+    "app.containers.Login.continue":"Continue",
     "app.containers.Login.placeOrder":"Place Order",
     "app.containers.Login.payAndPlaceOrder":"Pay & Place Order",
     "app.containers.Login.deliveryAddress":"Delivery Address",
@@ -56,6 +56,8 @@
     "app.containers.Login.creditCard":"Credit Cards",
     "app.containers.Login.debitCard":"Debits Cards",
     "app.containers.Login.wallets":"Wallets",
-    "app.containers.Login.netBanking":"Net Banking"
+    "app.containers.Login.netBanking":"Net Banking",
+    "app.containers.Login.payMethod":"PAYMENT METHODS",
+    "app.containers.Login.payMent":"Payment"
   
   }

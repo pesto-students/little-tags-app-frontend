@@ -19,7 +19,7 @@ return <>
 
   <Row>
       <Col span={24} className="headFontSize">
-       PAYMENT
+       {props.intl.formatMessage({id:"app.containers.Login.payMent"})}
       </Col>
   </Row>
       
@@ -40,7 +40,7 @@ return <>
           <Row>
               <Col span={24}>
               <section className={"bgColor widthForOrder"}>
-                    <div className="orderSummary">PAYMENT METHODS</div>
+                    <div className="orderSummary">{props.intl.formatMessage({id:"app.containers.Login.payMethod"})}</div>
                 </section>
               </Col>
           </Row>

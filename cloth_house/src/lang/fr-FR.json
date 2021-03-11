@@ -54,5 +54,7 @@
     "app.containers.Login.creditCard":"Cartes de crédit",
     "app.containers.Login.debitCard":"Cartes de débit",
     "app.containers.Login.wallets":"Portefeuilles",
-    "app.containers.Login.netBanking":"Net Banking"
+    "app.containers.Login.netBanking":"Net Banking",
+    "app.containers.Login.payMethod":"MÉTHODES DE PAYEMENT",
+    "app.containers.Login.payMent":"Paiement"
   }
