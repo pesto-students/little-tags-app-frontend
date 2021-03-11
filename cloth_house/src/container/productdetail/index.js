@@ -219,7 +219,7 @@ function ProductDetail(props) {
           </Row>
         </Content>
         </Spin>
-        <SmileBagFooter {...props} className={"positionFixed"} />
+        <SmileBagFooter {...props}  />
   
     </>
   );

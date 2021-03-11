@@ -28,7 +28,7 @@ return <>
   <Categories {...props}/>
   <Row className="cart_top_row">
       <Col span={16}>
-          My Cart
+          {props.intl.formatMessage({id:"app.containers.Login.myCart"})}
       </Col>
   </Row>
 
@@ -87,7 +87,7 @@ return <>
             </Col>
 
             <Col span={8} className="priceBg priceHeight">
-            <PriceAction {...props}/>
+            <PriceAction {...props} from="cart"/>
             </Col>
           </Row>
 

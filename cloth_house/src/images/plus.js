@@ -1,7 +1,7 @@
 
 export default function Plus(){
 return <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style={{"enable-background":"new 0 0 512 512"}} space="preserve">
+	 viewBox="0 0 512 512" style={{"enableBackground":"new 0 0 512 512"}} space="preserve">
 <g>
 	<g>
 		<path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
