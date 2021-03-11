@@ -35,9 +35,9 @@ return <>
               <Col  span={24}>
               <section className={"bgColor widthForSection"}>
                     
-                   <div className="mainOrder">Delivery Address</div> 
+                   <div className="mainOrder">{props.intl.formatMessage({id:"app.containers.Login.deliveryAddress"})}</div> 
                 <div className="subOrder">
-                B-45 laxmi Nagar Telanganag-500070 (edit)
+                B-45 laxmi Nagar Telanganag-500070 ({props.intl.formatMessage({id:"app.containers.Login.edit"})})
                 </div>
                 </section>
                 
@@ -46,7 +46,7 @@ return <>
           <Row>
               <Col span={24}>
               <section className={"bgColor widthForOrder"}>
-                    <div className="orderSummary">ORDER SUMMARY</div>
+                    <div className="orderSummary">{props.intl.formatMessage({id:"app.containers.Login.orderSummary"})}</div>
                 </section>
               </Col>
           </Row>

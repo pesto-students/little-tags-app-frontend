@@ -29,9 +29,9 @@ return <>
               <Col  span={24}>
               <section className={"bgColor widthForSection"}>
                     
-                   <div className="mainOrder">Delivery Address</div> 
+                   <div className="mainOrder">{props.intl.formatMessage({id:"app.containers.Login.deliveryAddress"})}</div> 
                 <div className="subOrder">
-                B-45 laxmi Nagar Telanganag-500070 (edit)
+                B-45 laxmi Nagar Telanganag-500070 ({props.intl.formatMessage({id:"app.containers.Login.edit"})})
                 </div>
                 </section>
                 
@@ -48,16 +48,16 @@ return <>
             <Col  span={24} >
         <Radio.Group className={"width100"} onChange={onChangePayMethod} value={state.payType}>
         <Radio className="borderBottom radioStyle"  value={1} >
-          Credit Cards
+          {props.intl.formatMessage({id:"app.containers.Login.creditCard"})}
         </Radio >
         <Radio  className="borderBottom radioStyle pTop15" value={2}>
-          Debit Cards
+        {props.intl.formatMessage({id:"app.containers.Login.debitCard"})}
         </Radio>
         <Radio  className="borderBottom radioStyle pTop15" value={3}>
-          Wallets
+        {props.intl.formatMessage({id:"app.containers.Login.wallets"})}
         </Radio>
         <Radio className="radioStyle pTop15"   value={4}>
-          Net Banking
+        {props.intl.formatMessage({id:"app.containers.Login.netBanking"})}
         </Radio>
       </Radio.Group>
               
