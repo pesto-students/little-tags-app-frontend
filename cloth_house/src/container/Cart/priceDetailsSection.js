@@ -24,20 +24,20 @@ export default function PriceAction(props){
      </Col>   
     </Row>
      <Row className="priceSubSection">
-      <Col span={12}>Price (1 item)</Col>
-      <Col span={12}>₹500</Col>
+      <Col span={16}>Price (1 item)</Col>
+      <Col span={8}>₹500</Col>
       </Row>
       <Row className="priceSubSection">
-      <Col span={12}>Discount</Col>
-      <Col span={12}>₹500</Col>
+      <Col span={16}>Discount</Col>
+      <Col span={8}>₹500</Col>
       </Row>
       <Row className="priceSubSection">
-      <Col span={12}>Delivery Charges</Col>
-      <Col span={12}>₹44</Col>
+      <Col span={16}>Delivery Charges</Col>
+      <Col span={8}>₹44</Col>
       </Row>
       <Row className="priceSubSection borderTopBottom">
-      <Col span={12}>Total Amount</Col>
-      <Col span={12}>₹688</Col>
+      <Col span={16}>Total Amount</Col>
+      <Col span={8}>₹688</Col>
       </Row>
       <Row className="priceSubSection marTop">
       <Col>you will save ₹688 on this order </Col>
