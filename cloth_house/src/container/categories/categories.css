@@ -50,3 +50,28 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+.plusminusbuttonborder{
+    border: solid;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: #47525d;
+}
+
+.plusbutton{
+    font-size: 35px;
+    padding: 5px;
+    color: green;
+}
+
+.minusbutton{
+        font-size: 35px;
+        padding: 5px;
+        color: red;
+}
+.cartcount{
+    padding: 5px;
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: bold;
+}

@@ -29,6 +29,26 @@ function reducer(state = defaultState, action){
 } 
 
 
+function addItems(state,payload){
+    let newcartitem=state.items.filter(x => x.id == payload.id);
+    let newItems = state.items.filter(item => item.id !== payload.id)
+    let newitem={...payload,count:newcartitem.length>0?newcartitem[0].count+1:1};
+
+    return [...newItems, newitem];
+}
+
+function removeItems(state,payload){
+  let newcartitem=state.items.filter(x => x.id == payload.id);
+  let newItems = state.items.filter(item => item.id !== payload.id)
+  if(newcartitem.length>0 && newcartitem[0].count>1){
+    let newitem={...payload,count:newcartitem.length>0?newcartitem[0].count-1:1};
+    return [...newItems, newitem];
+  }else{
+    return [...newItems];
+  }
+  
+}
+
 function cartreducer(state = defaultCart, action){
   
   console.log("TYPE===>",action.type);
@@ -36,7 +56,13 @@ function cartreducer(state = defaultCart, action){
       case "ADD_TO_CART":
         return { 
           ...state,
-          items: [...state.items, action.payload]
+          items: addItems(state,action.payload)
+      }
+      case "REMOVE_FROM_CART":
+        let item=action.payload;
+        return { 
+          ...state,
+          items: removeItems(state,action.payload)
       }
       case "VIEW_CART":
         return state;
