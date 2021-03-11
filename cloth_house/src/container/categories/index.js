@@ -7,6 +7,7 @@ import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
 import _ from "underscore";
 import {
+  addToCart,
   fetchCategories,
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
@@ -153,7 +154,7 @@ function SortComponent(args) {
   return (
     <>
       <Select
-        defaultValue="popularity"
+        defaultValue="rel"
         bordered={false}
         onChange={(val) => { dispatch(fetchCategories()); getCategoryData(args.category)
         .then((res) => res.json())
@@ -184,6 +185,7 @@ function SortComponent(args) {
 }
 
 function ItemComponent(args) {
+  const dispatch = useDispatch();
   return (
     <>
       {" "}
@@ -228,6 +230,7 @@ function ItemComponent(args) {
                 fontFamily: "Lato",
               }}
               ghost="true"
+              onClick={async () => { dispatch(addToCart(args.itemdata));}}
             >
               Add To Cart
             </Button>
@@ -259,7 +262,7 @@ function sortCategoryData(data,ascending){
 }
 
 function CategoriesPage(props) {
-  const categories = useSelector(state => state, _.isEqual);
+  const categories = useSelector(state => state.catdata, _.isEqual);
   let { categoryname } = useParams();
   console.log("Home===>", categories);
   const dispatch = useDispatch();
@@ -275,7 +278,7 @@ function CategoriesPage(props) {
         console.log(err);
         dispatch(fetchCategoriesFailure());
       });
-  }, []);
+  }, [props.location]);
   
   
   return (
@@ -346,6 +349,7 @@ function CategoriesPage(props) {
                     <ItemComponent
                       {...props}
                       {...item}
+                      itemdata={item}
                       category={categoryname}
                       productname={categoryname}
                     />

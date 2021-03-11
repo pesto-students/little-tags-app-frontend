@@ -4,7 +4,7 @@ import {  Form, Input, Button, Checkbox,Row,Col, Space,Layout  } from "antd";
 import TopHeader from "../../components/TopHeader";
 import SmileBagFooter from "../../components/Footer";
 import "./login.css";
-import SocialLogin from "./socialLogin";
+import LogInGoogle from "./socialLogin";
 
 const { Content } = Layout;
 const NormalLoginForm = (props) => { 
@@ -21,11 +21,11 @@ const NormalLoginForm = (props) => {
       <Layout className="layout">
         <TopHeader {...props} />
         <Content className="content">
-    <Row>
+    <Row justify="center" align="center" className="pT2">
     
-      <Col className="padForLoginForm">
+      <Col >
        <Space direction="vertical" align="center">
-    <SocialLogin {...props}></SocialLogin>
+    <LogInGoogle {...props}></LogInGoogle>
     
     <h2>{props.intl&&props.intl.formatMessage({id:"app.containers.Login.or"})}</h2>
     <Form
