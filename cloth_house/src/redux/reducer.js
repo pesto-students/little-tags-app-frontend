@@ -1,3 +1,6 @@
+import { combineReducers} from "redux";
+const _ = require("lodash");
+
 const defaultState={
   categories:{
     categorydata:{},
@@ -5,7 +8,12 @@ const defaultState={
   }
 }
 
-export default function reducer(state = defaultState, action){
+var cartitems=[];
+let defaultCart={
+  items:[]
+}
+
+function reducer(state = defaultState, action){
   console.log("TYPE===>",action.type);
     switch (action.type) {
       case "FETCH_CATEGORIES_REQUEST":  
@@ -18,4 +26,30 @@ export default function reducer(state = defaultState, action){
         return state;
 
     }
-}  
+} 
+
+
+function cartreducer(state = defaultCart, action){
+  
+  console.log("TYPE===>",action.type);
+    switch (action.type) {
+      case "ADD_TO_CART":
+        return { 
+          ...state,
+          items: [...state.items, action.payload]
+      }
+      case "VIEW_CART":
+        return state;
+        default:
+        return state;
+
+    }
+}
+
+const allReducers = combineReducers({
+  //we access this by any key we want
+  catdata : reducer,
+  cart : cartreducer
+})
+
+export default allReducers;

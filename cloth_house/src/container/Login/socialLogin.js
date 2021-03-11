@@ -3,44 +3,29 @@ import FacebookLogin from 'react-facebook-login';
 import  {FacebookAppId,GOOGLE_CLIENT_ID} from "../../appConfig"
 import { GoogleLogin } from 'react-google-login'
 const onSuccessSocialLogin = (response) => {
-  
+  console.log(response);
 }
 const onRejectSocialLogin = (response) => {
     console.log(response);
   } 
 
-function socialLogin(props){
-function FbLogin(){
-  return  <FacebookLogin
-  appId={FacebookAppId}
-  autoLoad={true}
-  fields="name,email,picture"
-  callback={onSuccessSocialLogin}
-  cssClass="my-facebook-button-class"
-  icon={<i class="fab fa-facebook"></i>}
-/>   
-}
+
+
 
 function LogInGoogle(){
   return  <GoogleLogin
+  className="googlecss"
+  theme="dark"
    clientId={GOOGLE_CLIENT_ID}
-   buttonText="Login"
+   buttonText="Login with Google"
    onSuccess={onSuccessSocialLogin}
    onFailure={onRejectSocialLogin}
    cookiePolicy={'single_host_origin'}
  /> 
 }
-
-  return <>
-  {/* { FbLogin()} */}
-  <div className="pT2">
-  { LogInGoogle()
-  }
-  </div>
-  </> 
-}    
+   
 
 
 
-export default socialLogin
+export default LogInGoogle
  

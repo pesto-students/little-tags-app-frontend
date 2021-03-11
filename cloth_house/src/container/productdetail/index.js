@@ -99,7 +99,7 @@ function randomNumber(min, max){
 }
 function ProductDetail(props) {
   let { categoryname, productname } = useParams();
-  const categories = useSelector(state => state, _.isEqual);
+  const categories = useSelector(state => state.catdata, _.isEqual);
   let productdetail=filterCategoryData(categories,productname);
   const dispatch = useDispatch();
   useEffect(() => {

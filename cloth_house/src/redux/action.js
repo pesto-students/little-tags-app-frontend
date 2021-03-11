@@ -16,3 +16,16 @@ export function fetchCategoriesFailure() {
    type: "FETCH_CATEGORIES_FAIL"
  }  
 };
+
+export function addToCart(payload){
+    return {
+      type: "ADD_TO_CART",
+      payload:payload
+    };
+}
+
+export function viewCart(payload){
+  return {
+    type: "VIEW_CART"
+  };
+}

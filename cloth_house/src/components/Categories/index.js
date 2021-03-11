@@ -55,7 +55,7 @@ const Category = (args) => {
             href={args.hreflink}
           >
             {args.menuLabel} 
-            <span className="pop"><DownOutlined /></span>
+            <span style={{verticalAlign:"sub",paddingLeft:"6px"}}><DownOutlined /></span>
           </Button> 
         </Dropdown>
       </Space>
@@ -76,7 +76,7 @@ const Categories = (props) => {
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})} 
           />
         </Col>
-        {/* <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}} /> */}
+        { <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}} />}
         <Col id="footwear" onClick={()=>redirectToParticularCategory("/category/footwear")} className="gutter-row marginRight" xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={footwearmenu}
             imagesrc="./assets/images/footwear.jpg"
@@ -84,7 +84,7 @@ const Categories = (props) => {
            // hreflink="/category/footwear"
           />
         </Col>
-        {/* <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  /> */}
+        { <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  /> }
         <Col id="bags" onClick={()=>redirectToParticularCategory("/category/bags")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={bagsmenu} imagesrc="./assets/images/bags.png" 
           menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})}
