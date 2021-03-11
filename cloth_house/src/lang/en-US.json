@@ -42,7 +42,7 @@
     "app.containers.Login.remove":"Remove",
     "app.containers.Login.myCart":"My Cart",
     "app.containers.Login.priceDetails":"PRICE DETAILS",
-    "app.containers.Login.priceItem":"price ({count} item)",
+    "app.containers.Login.priceItem":"Price ({count} item)",
     "app.containers.Login.discount":"Discount",
     "app.containers.Login.deliveryCharges":"Delivery Charges",
     "app.containers.Login.totalAmount":"Total Amount",
