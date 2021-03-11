@@ -11,6 +11,7 @@ import {
   fetchCategories,
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
+  removeFromCart,
 } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -184,8 +185,24 @@ function SortComponent(args) {
   );
 }
 
+function PlusMinusButton(args){
+  const dispatch = useDispatch();
+  return (<>
+  <div className="plusminusbuttonborder">
+            <Row justify="space-around" align="middle">
+              <Col><MinusCircleOutlined className="minusbutton"  onClick={async () => { dispatch(removeFromCart(args.itemdata));}}/></Col>
+              <Col><div className="cartcount">{args.itemdata.count}</div></Col>
+              <Col><PlusCircleOutlined className="plusbutton"  onClick={async () => { dispatch(addToCart(args.itemdata));}}/></Col>
+              
+            </Row>
+            </div>
+  </>);
+}
+
 function ItemComponent(args) {
   const dispatch = useDispatch();
+  const cartdata = useSelector(state => state.cart, _.isEqual);
+  let newcart=cartdata.items.filter(x => x.id == args.id);
   return (
     <>
       {" "}
@@ -220,6 +237,7 @@ function ItemComponent(args) {
             <h3>{args.productDiscount}% off</h3>
           </Col>
           <Col>
+            {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
             <Button
               type="primary"
               style={{
@@ -234,6 +252,7 @@ function ItemComponent(args) {
             >
               Add To Cart
             </Button>
+            }
           </Col>
         </Row>
       </Card>

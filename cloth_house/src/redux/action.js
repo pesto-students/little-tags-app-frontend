@@ -24,6 +24,13 @@ export function addToCart(payload){
     };
 }
 
+export function removeFromCart(payload){
+  return {
+    type: "REMOVE_FROM_CART",
+    payload:payload
+  };
+}
+
 export function viewCart(payload){
   return {
     type: "VIEW_CART"
