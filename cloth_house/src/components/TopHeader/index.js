@@ -7,14 +7,13 @@ import _ from "underscore";
 import { FaShoppingBag } from "react-icons/fa";
 import AutoCompleteSearch from "./autoComplete"
 import "./topHeader.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LangContext,{langOptions} from "../../context/LangContext.js"
 const { Header } = Layout;
-const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
   const cartdata = useSelector(state => state.cart, _.isEqual);
-  
+
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item key={Math.random()}>

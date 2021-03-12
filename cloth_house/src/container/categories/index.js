@@ -13,6 +13,7 @@ import {
   fetchCategoriesSuccess,
   removeFromCart,
 } from "../../redux/action";
+import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Layout,
@@ -185,19 +186,6 @@ function SortComponent(args) {
   );
 }
 
-function PlusMinusButton(args){
-  const dispatch = useDispatch();
-  return (<>
-  <div className="plusminusbuttonborder">
-            <Row justify="space-around" align="middle">
-              <Col><MinusCircleOutlined className="minusbutton"  onClick={async () => { dispatch(removeFromCart(args.itemdata));}}/></Col>
-              <Col><div className="cartcount">{args.itemdata.count}</div></Col>
-              <Col><PlusCircleOutlined className="plusbutton"  onClick={async () => { dispatch(addToCart(args.itemdata));}}/></Col>
-              
-            </Row>
-            </div>
-  </>);
-}
 
 function ItemComponent(args) {
   const dispatch = useDispatch();
@@ -283,7 +271,7 @@ function sortCategoryData(data,ascending){
 function CategoriesPage(props) {
   const categories = useSelector(state => state.catdata, _.isEqual);
   let { categoryname } = useParams();
-  console.log("Home===>", categories);
+  //console.log("Home===>", categories);
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("abc");
