@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import ErrorBoundary from "../../Hoc/ErrorBoundary.js";
 import { Layout,Col } from "antd";
-import {Menu,Input, Row, Select,Dropdown,Button,Badge  } from "antd";
+import {Menu,Input, Row, Select,Dropdown,Button,Badge ,Comment, Tooltip, Avatar } from "antd";
 import { SearchOutlined ,GlobalOutlined,ShoppingCartOutlined } from '@ant-design/icons';
 import _ from "underscore";
 import { FaShoppingBag } from "react-icons/fa";
@@ -14,7 +14,7 @@ const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
   const cartdata = useSelector(state => state.cart, _.isEqual);
-  console.log("cart data =>",cartdata);
+  
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item key={Math.random()}>
@@ -24,7 +24,40 @@ const SmileBagHeader= (props) =>{
     </Menu.Item>
   })} 
   
-  </Menu>)
+  </Menu>);
+
+  const cartmenu=(<Menu style={{width:"225px"}} className="globemenu dropdownprops">
+   {cartdata.items.length<1?<Menu.Item key="empty">
+   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold"}}>Empty Cart</span></center>
+   </Menu.Item>:<></>} 
+  {cartdata.items.map((key,index)=>{ 
+   return <><Menu.Item key={key.id} onClick={()=>{props.history.push('/cart')}}>
+      <Comment
+      author={<><div>{key.productTitle} Qty:{key.count}</div></>}
+      avatar={
+        <Avatar
+          src={key.imgsrc}
+          alt={key.productTitle}
+        />
+      }
+      content={
+        <p style={{textOverflow: "ellipsis",whiteSpace: "nowrap",overflow: "hidden"}}>
+          {key.productDescription}
+        </p>
+      }
+      
+    />
+    </Menu.Item>
+    
+  <Menu.Divider />
+    </>
+  })}
+
+<Menu.Item key="viewall" onClick={()=>{props.history.push('/cart')}}>
+   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold",color:"orange"}}>Go To Cart >></span></center>
+   </Menu.Item>
+  
+  </Menu>);
 
   
   return (
@@ -58,7 +91,9 @@ const SmileBagHeader= (props) =>{
               <Col span={6}>
                 <div>
                 <Badge size="medium" count={cartdata.items.length} overflowCount={9}>
+                <Dropdown className="globe" overlay={cartmenu} placement="bottomCenter" arrow>
         <FaShoppingBag size={40} className="cart" onClick={()=>{props.history.push('/cart')}} /> 
+        </Dropdown>
         </Badge>
         </div>
         </Col>
