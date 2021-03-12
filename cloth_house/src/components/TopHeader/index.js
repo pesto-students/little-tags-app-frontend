@@ -1,20 +1,19 @@
 import React,{useContext} from "react";
 import ErrorBoundary from "../../Hoc/ErrorBoundary.js";
 import { Layout,Col } from "antd";
-import {Menu,Input, Row, Select,Dropdown,Button,Badge  } from "antd";
-import { SearchOutlined ,GlobalOutlined,ShoppingCartOutlined } from '@ant-design/icons';
+import {Menu, Row, Dropdown,Button,Badge  } from "antd";
+import {  GlobalOutlined, } from '@ant-design/icons';
 import _ from "underscore";
 import { FaShoppingBag } from "react-icons/fa";
 import AutoCompleteSearch from "./autoComplete"
 import "./topHeader.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LangContext,{langOptions} from "../../context/LangContext.js"
 const { Header } = Layout;
-const { Option } = Select;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
   const cartdata = useSelector(state => state.cart, _.isEqual);
-  console.log("cart data =>",cartdata);
+  //console.log("cart data =>",cartdata);
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item key={Math.random()}>

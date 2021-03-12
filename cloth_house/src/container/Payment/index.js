@@ -3,9 +3,8 @@ import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import SmileBagFooter from "../../components/Footer";
 import "./payment.css"
-import {Row,Col,Radio,Button,Input, Divider} from "antd";
-
-import PriceAction from "../Cart/priceDetailsSection";
+import {Row,Col,Radio} from "antd";
+import PriceAction from "../../components/PriceDetail";
 export default function Cart(props){
 const [state,setState]=useState({payType:1})
 

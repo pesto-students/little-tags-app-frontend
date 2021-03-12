@@ -3,25 +3,14 @@ import React,{useState} from "react";
 import "./productlist.css"
 import {Row,Col,Space,Image,Radio,Button} from "antd";
 import { useSelector } from "react-redux";
-import Plus from "../../images/plus"
-import Minus from "../../images/minus"
+import PlusMinusButton from "../PlusMinus"
 export default function ProductList(props){
-    const curState=useSelector((state)=>state);
-    const [state,setState]=useState({count:1})
-    const increment=()=>{
-        setState({...state,count:state.count+1})
-        }
-        
-        const decrement=()=>{
-            if(state.count>1)
-            setState({...state,count:state.count-1})
-        }
-        
-        const remove=()=>{
+const curState=useSelector((state)=>state);  
+const remove=()=>{
             console.log("remove Fired")
         }
     return <Col span={props.from==="cart"?14:24}>
-        {Array.isArray(curState.cart.items)&&curState.cart.items.map((key)=>{
+ {Array.isArray(curState.cart.items)&&curState.cart.items.map((key)=>{
     return  <Row>
       
       <Col  span={12}>
@@ -57,13 +46,8 @@ export default function ProductList(props){
     
 
     <Row className="mbot">
-        <Col onClick={increment}>
-   <Plus/>
-        </Col>
-        <Col span={2} className="fontSizeFor">{state.count}</Col>
-        <Col onClick={decrement}>
-        <Minus />
-        </Col>
+    <PlusMinusButton itemdata={key}/>
+        
     </Row>    
   
   <Row className="mbot">

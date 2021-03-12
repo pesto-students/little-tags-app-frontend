@@ -5,8 +5,11 @@ import SmileBagFooter from "../../components/Footer";
 import "./cart.css"
 import {Row,Col} from "antd";
 import PriceAction from "../../components/PriceDetail";
-import ProductList from "../../components/ProductList"
+import ProductList from "../../components/ProductList";
+import { useSelector } from "react-redux";
 export default function Cart(props){
+  const curState=useSelector((state)=>state);
+console.log("Cart=====>",curState);  
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>

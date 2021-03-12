@@ -4,8 +4,10 @@
   padding-left: 2%;
   margin-top: 2%;
   font-size: 24px;
-  background-color: aliceblue;
+  background-color: rgba(150, 159, 170, 0.68);
   height: 8%;
+  color: black;
+  font-weight: 400;
 }
 .mbot {
   margin-bottom: 4%;
