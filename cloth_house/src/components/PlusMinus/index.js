@@ -19,7 +19,7 @@ export default function PlusMinusButton(args){
               <Row justify="space-around" align="middle">
                 <Col><MinusCircleOutlined className="minusbutton"  onClick={async () => { dispatch(removeFromCart(args.itemdata));}}/></Col>
                 <Col><div className="cartcount">{args.itemdata.count}</div></Col>
-                <Col><PlusCircleOutlined className="plusbutton"  onClick={async () => { dispatch(addToCart(args.itemdata));}}/></Col>
+                <Col><PlusCircleOutlined className="plusbutton"  onClick={async () => { dispatch(addToCart(args.itemdata))}}/></Col>
                 
               </Row>
               </div>
