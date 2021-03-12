@@ -7,10 +7,13 @@ import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
 import _ from "underscore";
 import {
+  addToCart,
   fetchCategories,
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
+  removeFromCart,
 } from "../../redux/action";
+import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Layout,
@@ -153,7 +156,7 @@ function SortComponent(args) {
   return (
     <>
       <Select
-        defaultValue="popularity"
+        defaultValue="rel"
         bordered={false}
         onChange={(val) => { dispatch(fetchCategories()); getCategoryData(args.category)
         .then((res) => res.json())
@@ -183,7 +186,11 @@ function SortComponent(args) {
   );
 }
 
+
 function ItemComponent(args) {
+  const dispatch = useDispatch();
+  const cartdata = useSelector(state => state.cart, _.isEqual);
+  let newcart=cartdata.items.filter(x => x.id == args.id);
   return (
     <>
       {" "}
@@ -218,6 +225,7 @@ function ItemComponent(args) {
             <h3>{args.productDiscount}% off</h3>
           </Col>
           <Col>
+            {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
             <Button
               type="primary"
               style={{
@@ -228,9 +236,11 @@ function ItemComponent(args) {
                 fontFamily: "Lato",
               }}
               ghost="true"
+              onClick={async () => { dispatch(addToCart(args.itemdata));}}
             >
               Add To Cart
             </Button>
+            }
           </Col>
         </Row>
       </Card>
@@ -259,9 +269,9 @@ function sortCategoryData(data,ascending){
 }
 
 function CategoriesPage(props) {
-  const categories = useSelector(state => state, _.isEqual);
+  const categories = useSelector(state => state.catdata, _.isEqual);
   let { categoryname } = useParams();
-  console.log("Home===>", categories);
+  //console.log("Home===>", categories);
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("abc");
@@ -275,7 +285,7 @@ function CategoriesPage(props) {
         console.log(err);
         dispatch(fetchCategoriesFailure());
       });
-  }, []);
+  }, [props.location]);
   
   
   return (
@@ -346,6 +356,7 @@ function CategoriesPage(props) {
                     <ItemComponent
                       {...props}
                       {...item}
+                      itemdata={item}
                       category={categoryname}
                       productname={categoryname}
                     />

@@ -53,12 +53,13 @@ const Complete = () => {
   return (
     <div className="searchInput">
     <AutoComplete
+    className="searchInput"
       dropdownMatchSelectWidth={252}
       options={options}
       onSelect={onSelect}
       onSearch={handleSearch}
     >
-      <Input.Search style={{width:"550px"}} size="large" placeholder="Search"  />
+      <Input.Search style={{width:"100%"}} size="large" placeholder="Search"  />
     </AutoComplete>
     </div>
   );

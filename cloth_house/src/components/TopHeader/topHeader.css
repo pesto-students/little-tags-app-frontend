@@ -35,7 +35,7 @@
 }
 
 .header .login {
-  width: 50%;
+  width: 100%;
   color: #ffffff;
   text-decoration-color: #ffffff;
   border-width: thin;
@@ -50,15 +50,14 @@
 .header .cart {
   color: #ffffff;
   text-decoration-color: #ffffff;
-  
-  font-size: 30px;
+  vertical-align: sub;
 }
 
 .header .globe {
   color: #ffffff;
   text-decoration-color: #ffffff;
   
-  font-size: 25px;
+  font-size: xx-large;
 }
 .globemenu {
   color: #111111;
