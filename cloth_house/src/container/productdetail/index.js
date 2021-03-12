@@ -75,7 +75,7 @@ const data = [
 
 async function getCategoryData(category) {
   const response = await fetch(
-    "https://299b7901-79a5-4150-b143-f0af14279977.mock.pstmn.io/smilebag/products/" +
+    "https://603db03a48171b0017b2d7b2.mockapi.io/" +
       category
   );
   // const resp = await response.json();
