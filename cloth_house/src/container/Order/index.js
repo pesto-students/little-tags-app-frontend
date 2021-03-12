@@ -5,8 +5,13 @@ import SmileBagFooter from "../../components/Footer";
 import "./order.css"
 import {Row,Col} from "antd";
 import PriceAction from "../../components/PriceDetail";
-import ProductList from "../../components/ProductList"
+import ProductList from "../../components/ProductList";
+import { useSelector } from "react-redux";
 export default function Cart(props){
+  const curState=useSelector((state)=>state);
+  if(curState.cart.items&&!curState.cart.items.length){
+    props.history.push("/home")
+    }
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>   
