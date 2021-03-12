@@ -61,7 +61,13 @@
 }
 .globemenu {
   color: #111111;
+  height: 6%;
 }
 .left {
   text-align: left;
+}
+
+.dropdownprops{
+  overflow-y: auto;
+  max-height: 250px;
 }
