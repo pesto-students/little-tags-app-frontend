@@ -378,7 +378,7 @@ function CategoriesPage(props) {
             </Col>
           </Row>
         </Content>
-        <SmileBagFooter {...props} />
+        {categories.categories.loading?<></>:<SmileBagFooter {...props} />} 
       </Layout>
     </>
   );

@@ -7,9 +7,11 @@ import SmileBagFooter from "../../components/Footer";
 import { injectIntl } from "react-intl";
 import _ from "underscore";
 import {
+  addToCart,
   fetchCategories,
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
+  removeFromCart,
 } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -97,9 +99,46 @@ function randomNumber(min, max){
   const r = Math.random()*(max-min) + min
   return Math.floor(r)
 }
+
+function PlusMinusButton(args){
+  const dispatch = useDispatch();
+  return (<>
+  <div className="plusminusbuttonborder">
+            <Row justify="space-around" align="middle">
+              <Col><MinusCircleOutlined className="minusbutton"  onClick={async () => { dispatch(removeFromCart(args.itemdata));}}/></Col>
+              <Col><div className="cartcount">{args.itemdata.count}</div></Col>
+              <Col><PlusCircleOutlined className="plusbutton"  onClick={async () => { dispatch(addToCart(args.itemdata));}}/></Col>
+              
+            </Row>
+            </div>
+  </>);
+}
+
+function AddToCartButton(args){
+  const cartdata = useSelector(state => state.cart, _.isEqual);
+  console.log("cart data =>",cartdata);
+  let newcart=cartdata.items.filter(x => x.id == args.itemdata.id);
+  const dispatch = useDispatch();
+  return (<>{newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
+    <Button
+      type="primary"
+      size="large"
+      style={{
+        borderColor: "#1a4d7c",
+        backgroundColor: "#1a4d7c",
+        color: "white",
+        fontWeight: "bold",
+        fontFamily: "Lato",
+      }}
+      onClick={async () => { dispatch(addToCart(args.itemdata));}}>
+      Add To Cart
+    </Button>
+    }</>);
+}
 function ProductDetail(props) {
   let { categoryname, productname } = useParams();
   const categories = useSelector(state => state.catdata, _.isEqual);
+  
   let productdetail=filterCategoryData(categories,productname);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -182,19 +221,7 @@ function ProductDetail(props) {
               </Row>
               <br></br>
               <Row>
-                <Button
-                  size="large"
-                  type="primary"
-                  style={{
-                    borderColor: "#1a4d7c",
-                    backgroundColor: "#1a4d7c",
-                    color: "white",
-                    fontWeight: "bold",
-                    fontFamily: "Lato",
-                  }}
-                >
-                  Add To Cart
-                </Button>
+                <AddToCartButton itemdata={productdetail}/>
               </Row>
             </Col>
             <Col  span={6}>
@@ -219,7 +246,7 @@ function ProductDetail(props) {
           </Row>
         </Content>
         </Spin>
-        <SmileBagFooter {...props}  />
+        {categories.categories.loading?<></>:<SmileBagFooter {...props} />} 
   
     </>
   );
