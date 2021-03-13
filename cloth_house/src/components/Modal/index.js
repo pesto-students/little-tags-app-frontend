@@ -25,6 +25,8 @@ export default class CustomModal extends React.Component {
   };
 
   render() {
+
+  console.log("Props======>",this.props);  
     const { visible, loading } = this.state;
     const defaultFooter=[
         <Button key="back" onClick={this.props.handleCancel||this.handleCancel}>
@@ -34,7 +36,17 @@ export default class CustomModal extends React.Component {
           Submit
         </Button>,
       ]
-    return (
+ let body="";
+ if(this.props.callFrom==="order"){
+body=this.props.body
+ }else{
+   body=   this.props.intl&&
+   this.props.intl.formatMessage({id:this.props.body&&this.props.body.toString()})
+  }
+
+ 
+ 
+      return (
       <>
         <Modal
           visible={this.props.visible||visible}
@@ -42,8 +54,7 @@ export default class CustomModal extends React.Component {
           onOk={this.props.handleOk||this.handleOk}
           footer={this.props.footer||defaultFooter}
           onCancel={this.props.handleCancel||this.handleCancel}
-        >
-         {this.props.intl&&this.props.intl.formatMessage({id:this.props.body&&this.props.body.toString()})}
+        >{body}
         </Modal>
       </>
     );

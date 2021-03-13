@@ -5,6 +5,7 @@ import SmileBagFooter from "../../components/Footer";
 import "./payment.css"
 import {Row,Col,Radio} from "antd";
 import PriceAction from "../../components/PriceDetail";
+import AddressModel from "../../components/Address/index"
 export default function Cart(props){
 const [state,setState]=useState({payType:1})
 
@@ -24,18 +25,7 @@ return <>
       
   <Row className={"width100"}>
       <Col span={14} className={"width100"}>
-          <Row>
-              <Col  span={24}>
-              <section className={"bgColor widthForSection"}>
-                    
-                   <div className="mainOrder">{props.intl.formatMessage({id:"app.containers.Login.deliveryAddress"})}</div> 
-                <div className="subOrder">
-                B-45 laxmi Nagar Telanganag-500070 ({props.intl.formatMessage({id:"app.containers.Login.edit"})})
-                </div>
-                </section>
-                
-              </Col>
-          </Row>
+          <AddressModel {...props} />
           <Row>
               <Col span={24}>
               <section className={"bgColor widthForOrder"}>

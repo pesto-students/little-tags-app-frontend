@@ -96,7 +96,7 @@ const Offers = (args) => {
   }
 
     return (<div className="offerscards" onClick={()=>redirectTo("clothing")}> 
-     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="space-around" align="middle">
+     <Row justify="space-around" align="middle">
          <Col span={8}> 
          <OfferCard offertitle="Shoes @ 30%off" offerimg="./assets/images/offers/shoesoffer.jpg" />
          </Col>
