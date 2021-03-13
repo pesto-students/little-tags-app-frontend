@@ -72,7 +72,7 @@ const Categories = (props) => {
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
         <Col id="clothing" onClick={()=>redirectToParticularCategory("/category/clothing")} className="gutter-row marginRight" xs={16} sm={6} md={5} lg={3} xl={3}>
           <Category menutype={clothingmenu}
-            imagesrc="./assets/images/clothing.png"
+            imagesrc="./assets/images/clothing.jpg"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})} 
           />
         </Col>
@@ -86,7 +86,7 @@ const Categories = (props) => {
         </Col>
         { <Divider type="vertical" style={{margin:"2px",height:"50px",borderWidth:"2px",borderColor:"#baafaf"}}  /> }
         <Col id="bags" onClick={()=>redirectToParticularCategory("/category/bags")} className="gutter-row " xs={16} sm={6} md={5} lg={3} xl={3}>
-          <Category menutype={bagsmenu} imagesrc="./assets/images/bags.png" 
+          <Category menutype={bagsmenu} imagesrc="./assets/images/bags.jpg" 
           menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.bags"})}
           //hreflink="/category/bags"
           />

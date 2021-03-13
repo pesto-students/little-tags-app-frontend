@@ -8,7 +8,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import AutoCompleteSearch from "./autoComplete"
 import "./topHeader.css";
 import { useSelector } from "react-redux";
-import LangContext,{langOptions} from "../../context/LangContext.js"
+import LangContext,{langOptions,langIcons} from "../../context/LangContext.js"
 const { Header } = Layout;
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
@@ -26,7 +26,7 @@ const goToCart=()=>{
  const menu=(<Menu className="globemenu">
   {Object.keys(langOptions).map((key)=>{ 
    return <Menu.Item key={Math.random()}>
-      <Button  className="globemenu" type="link" value={key} onClick={()=>{console.log("key======>",key)
+      <img style={{width:"20px",height:"20px"}} src={langIcons[key]}></img><Button  className="globemenu" type="link" value={key} onClick={()=>{console.log("key======>",key)
     switchLang(key)
     }} >{langOptions[key]}</Button>
     </Menu.Item>
@@ -35,9 +35,7 @@ const goToCart=()=>{
   </Menu>);
 
   const cartmenu=(<Menu style={{width:"225px"}} className="globemenu dropdownprops">
-   {cartdata.items.length<1?<Menu.Item key="empty">
-   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold"}}>Empty Cart</span></center>
-   </Menu.Item>:<></>} 
+   
   {cartdata.items.map((key,index)=>{ 
    return <><Menu.Item key={key.id} onClick={goToCart}>
       <Comment
@@ -60,10 +58,11 @@ const goToCart=()=>{
   <Menu.Divider />
     </>
   })}
-
-<Menu.Item key="viewall" onClick={goToCart}>
-   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold",color:"orange"}}>{"Go To Cart >>"}</span></center>
-   </Menu.Item>
+{cartdata.items.length<1?<Menu.Item key="empty">
+   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold"}}>Empty Cart</span></center>
+   </Menu.Item>:<Menu.Item key="viewall" onClick={()=>{props.history.push('/cart')}}>
+   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold",color:"orange"}}>Go To Cart >></span></center>
+   </Menu.Item>} 
   
   </Menu>
   
@@ -85,7 +84,7 @@ const goToCart=()=>{
         </div>
        </Col>
        <Col span={6}>
-        <AutoCompleteSearch >
+        <AutoCompleteSearch {...props}>
     </AutoCompleteSearch>
         </Col>
         <Col span={8}>
