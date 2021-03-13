@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./home.css";
 import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
@@ -18,9 +18,9 @@ const { Content } = Layout;
         <TopHeader {...props} />
         <Content className="content">
           <Categories {...props}/>
-          <CarouselOffers/>
+          <CarouselOffers {...props}/>
           <Divider style={{fontSize:"x-large"}}>{props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.home.offerstitle"})}</Divider>
-          <Offers />
+          <Offers {...props}/>
         </Content>
         <SmileBagFooter {...props} />
       </Layout>

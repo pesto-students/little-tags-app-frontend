@@ -6,7 +6,19 @@ import {  Row, Col,  Carousel ,Card, Button  } from "antd";
 import "./offers.css";
 
 
-const CarouselOffers =() =>{
+const CarouselOffers =(props) =>{
+console.log("CarouselOffers=========>",props);
+  const redirectTo=(args)=>{
+    if(args==="footwear")
+    props.history.push("/category/footwear")
+
+    if(args==="clothing")
+    props.history.push("/category/clothing")
+
+    if(args==="bags")
+    props.history.push("/category/bags")
+  }
+
     return (<>
     <Carousel dotPosition="right" autoplay>
     <div  className="carouseloffers">
@@ -15,7 +27,7 @@ const CarouselOffers =() =>{
         <h2>Footwear</h2>
         <h4>Shop Footwear now at <b>50% off</b></h4>
         <div>
-        <Button type="dashed">Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("footwear")}}>Shop Now</Button>
         </div>
       </div>
     </div>
@@ -25,7 +37,7 @@ const CarouselOffers =() =>{
       <h2>Shirts</h2>
         <h4>Shop Shirts now at <b>30% off</b></h4>
         <div>
-        <Button type="dashed">Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>Shop Now</Button>
         </div>
       </div>
     </div>
@@ -35,7 +47,7 @@ const CarouselOffers =() =>{
       <h2>Jeans</h2>
         <h4>Shop Jeans now at <b>55% off</b></h4>
         <div>
-        <Button type="dashed">Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>Shop Now</Button>
         </div>
       </div>
     </div>
@@ -45,7 +57,7 @@ const CarouselOffers =() =>{
       <h2>Sunglasses</h2>
         <h4>Shop Sunglasses now at <b>55% off</b></h4>
         <div>
-        <Button type="dashed">Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("bags")}}>Shop Now</Button>
         </div>
       </div>
     </div>
@@ -56,19 +68,34 @@ const CarouselOffers =() =>{
 
 
 const OfferCard =(args) => {
+
+  
+
     return (<>
     <Card
     hoverable
     style={{ width: 400 }}
     cover={<img alt="example" src={args.offerimg} />}
+    
   >
     <Card.Meta title={args.offertitle} description="Shop Now" />
   </Card>,
     </>);
 }
 
-const Offers = () => {
-    return (<div className="offerscards">
+const Offers = (args) => {
+  const redirectTo=(path)=>{
+    if(args==="footwear")
+    args.history.push("/category/footwear")
+
+    if(path==="clothing")
+    args.history.push("/category/clothing")
+
+    if(args==="bags")
+    args.history.push("/category/bags")
+  }
+
+    return (<div className="offerscards" onClick={()=>redirectTo("clothing")}> 
      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} justify="space-around" align="middle">
          <Col span={8}> 
          <OfferCard offertitle="Shoes @ 30%off" offerimg="./assets/images/offers/shoesoffer.jpg" />
