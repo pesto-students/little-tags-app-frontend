@@ -9,7 +9,11 @@ import ProductList from "../../components/ProductList";
 import { useSelector } from "react-redux";
 export default function Cart(props){
   const curState=useSelector((state)=>state);
-console.log("Cart=====>",curState);  
+//console.log("Cart=====>",curState);
+
+if(curState.cart.items&&!curState.cart.items.length){
+props.history.push("/home")
+}
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>

@@ -38,9 +38,14 @@ function addItems(state,payload){
 }
 
 function removeItems(state,payload){
+ console.log("removeItems=====>",{payload},"====>",{state}); 
   let newcartitem=state.items.filter(x => x.id == payload.id);
   let newItems = state.items.filter(item => item.id !== payload.id)
-  if(newcartitem.length>0 && newcartitem[0].count>1){
+  if(payload&&payload.remove){
+    console.log("newItems=====>",newItems);
+    return [...newItems]
+  }
+  else if(newcartitem.length>0 && newcartitem[0].count>1){
     let newitem={...payload,count:newcartitem.length>0?newcartitem[0].count-1:1};
     return [...newItems, newitem];
   }else{

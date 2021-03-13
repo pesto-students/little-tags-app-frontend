@@ -2,14 +2,15 @@ import React,{useState} from "react";
 
 import "./productlist.css"
 import {Row,Col,Space,Image,Radio,Button} from "antd";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import PlusMinusButton from "../PlusMinus"
+import {
+    removeFromCart,
+  } from "../../redux/action";
 export default function ProductList(props){
-const curState=useSelector((state)=>state);  
-const remove=()=>{
-            console.log("remove Fired")
-        }
-    return <Col span={props.from==="cart"?14:24}>
+const curState=useSelector((state)=>state); 
+const dispatch=useDispatch() 
+return <Col span={props.from==="cart"?14:24}>
  {Array.isArray(curState.cart.items)&&curState.cart.items.map((key)=>{
     return  <Row>
       
@@ -52,7 +53,7 @@ const remove=()=>{
   
   <Row className="mbot">
       <Col className="textAlignLeft" span={24}>
-      <Button type="link" onClick={remove} className={"paddingZero"}>
+      <Button type="link"  onClick={async () => { dispatch(removeFromCart({...key,remove:true}))}} className={"paddingZero"}>
           {props.intl&&props.intl.formatMessage({id:"app.containers.Login.remove"})}
       </Button>
       </Col>
