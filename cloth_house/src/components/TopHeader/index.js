@@ -8,14 +8,16 @@ import { FaShoppingBag } from "react-icons/fa";
 import AutoCompleteSearch from "./autoComplete"
 import "./topHeader.css";
 import { useSelector } from "react-redux";
+import HeartIcon from "../../images/heart"
 import LangContext,{langOptions,langIcons} from "../../context/LangContext.js"
 const { Header } = Layout;
+
 const SmileBagHeader= (props) =>{
   const { switchLang } = useContext(LangContext);
   const cartdata = useSelector(state => state.cart, _.isEqual);
-
+  const wishistData = useSelector(state => state.catdata.wishlist, _.isEqual);
 const goToCart=()=>{
-  console.log("cartdata.items.length===>",cartdata.items.length);
+  
   if(cartdata.items.length){
 
 
@@ -87,8 +89,11 @@ const goToCart=()=>{
         <AutoCompleteSearch {...props}>
     </AutoCompleteSearch>
         </Col>
+        
         <Col span={8}>
           <Row justify="start">
+              
+
               <Col span={6}>
               <Button className="login" type="link" onClick={()=>{
           props.history.push('/login')
@@ -97,6 +102,11 @@ const goToCart=()=>{
         </Button>
               </Col>
 
+              <Col className="pTop" offset={2} span={4} onClick={()=>{props.history.push("/wishlist")}}>
+              <Badge size="medium" count={wishistData.items.length} overflowCount={9}>
+                <HeartIcon/>
+                </Badge>
+              </Col>
               <Col span={6}>
                 <div>
                 <Badge size="medium" count={cartdata.items.length} overflowCount={9}>
@@ -106,6 +116,7 @@ const goToCart=()=>{
         </Badge>
         </div>
         </Col>
+       
         <Col span={6}>
         <Dropdown className="globe" overlay={menu} placement="bottomCenter" arrow>
          <GlobalOutlined  className="globe"/> 

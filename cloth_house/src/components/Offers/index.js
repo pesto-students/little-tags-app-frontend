@@ -25,9 +25,9 @@ console.log("CarouselOffers=========>",props);
       <img width="100%" height="260px" src="./assets/images/offers/offerbg2.jpg"></img>
       <div className="offertextboxright">
         <h2>Footwear</h2>
-        <h4>Shop Footwear now at <b>50% off</b></h4>
+        <h4>{props.intl&&props.intl.formatMessage({id:"app.components.offers.footwear"})} <b>50% {props.intl&&props.intl.formatMessage({id:"app.components.offers.off"})}</b></h4>
         <div>
-        <Button type="dashed" onClick={()=>{redirectTo("footwear")}}>Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("footwear")}}>{props.intl&&props.intl.formatMessage({id:"app.components.offers.shopnow"})}</Button>
         </div>
       </div>
     </div>
@@ -35,9 +35,9 @@ console.log("CarouselOffers=========>",props);
       <img width="100%" height="260px" src="./assets/images/offers/offerbg3.jpg"></img>
       <div className="offertextboxleft">
       <h2>Shirts</h2>
-        <h4>Shop Shirts now at <b>30% off</b></h4>
+        <h4>{props.intl&&props.intl.formatMessage({id:"app.components.offers.clothing"})} <b>30% {props.intl&&props.intl.formatMessage({id:"app.components.offers.off"})}</b></h4>
         <div>
-        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>{props.intl&&props.intl.formatMessage({id:"app.components.offers.shopnow"})}</Button>
         </div>
       </div>
     </div>
@@ -45,9 +45,9 @@ console.log("CarouselOffers=========>",props);
       <img width="100%" height="260px" src="./assets/images/offers/offerbg5.jpg"></img>
       <div className="offertextboxright">
       <h2>Jeans</h2>
-        <h4>Shop Jeans now at <b>55% off</b></h4>
+        <h4>{props.intl&&props.intl.formatMessage({id:"app.components.offers.jeans"})} <b>55% {props.intl&&props.intl.formatMessage({id:"app.components.offers.off"})}</b></h4>
         <div>
-        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("clothing")}}>{props.intl&&props.intl.formatMessage({id:"app.components.offers.shopnow"})}</Button>
         </div>
       </div>
     </div>
@@ -55,9 +55,9 @@ console.log("CarouselOffers=========>",props);
       <img width="100%" height="260px" src="./assets/images/offers/offerbg6.jpg"></img>
       <div className="offertextboxleft">
       <h2>Sunglasses</h2>
-        <h4>Shop Sunglasses now at <b>55% off</b></h4>
+        <h4>{props.intl&&props.intl.formatMessage({id:"app.components.offers.sunglasses"})} <b>55% {props.intl&&props.intl.formatMessage({id:"app.components.offers.off"})}</b></h4>
         <div>
-        <Button type="dashed" onClick={()=>{redirectTo("bags")}}>Shop Now</Button>
+        <Button type="dashed" onClick={()=>{redirectTo("bags")}}>{props.intl&&props.intl.formatMessage({id:"app.components.offers.shopnow"})}</Button>
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ const OfferCard =(args) => {
     cover={<img alt="example" src={args.offerimg} />}
     
   >
-    <Card.Meta title={args.offertitle} description="Shop Now" />
+    <Card.Meta title={args.offertitle} description={args.intl&&args.intl.formatMessage({id:"app.components.offers.shopnow"})} />
   </Card>,
     </>);
 }
@@ -98,13 +98,13 @@ const Offers = (args) => {
     return (<div className="offerscards" onClick={()=>redirectTo("clothing")}> 
      <Row justify="space-around" align="middle">
          <Col span={8}> 
-         <OfferCard offertitle="Shoes @ 30%off" offerimg="./assets/images/offers/shoesoffer.jpg" />
+         <OfferCard {...args} offertitle={args.intl&&args.intl.formatMessage({id:"app.components.offers.card.shoes"})} offerimg="./assets/images/offers/shoesoffer.jpg" />
          </Col>
          <Col span={8}> 
-         <OfferCard offertitle="T-Shirts @ 70%off"  offerimg="./assets/images/offers/shirts.jpg"/>
+         <OfferCard {...args} offertitle={args.intl&&args.intl.formatMessage({id:"app.components.offers.card.tshirts"})}  offerimg="./assets/images/offers/shirts.jpg"/>
          </Col>
          <Col span={8}> 
-         <OfferCard offertitle="Casuals @ 70%off" offerimg="./assets/images/offers/casuals.jpg"/>
+         <OfferCard {...args} offertitle={args.intl&&args.intl.formatMessage({id:"app.components.offers.card.casuals"})} offerimg="./assets/images/offers/casuals.jpg"/>
          </Col>
      </Row>
     </div>);

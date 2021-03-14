@@ -12,6 +12,7 @@ import {
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
   removeFromCart,
+  addToWishlist
 } from "../../redux/action";
 import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,6 +34,8 @@ import {
   Slider
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
+import RedHeart from "../../images/like"
+import Heart from "../../images/heart";
 const { Content } = Layout;
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -146,8 +149,18 @@ function BreadCrumHeader(args) {
   return (
     <>
       <Breadcrumb separator=">">
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="">{args.category}</Breadcrumb.Item>
+       <a><Breadcrumb.Item onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/`
+                  );
+              }} >Home</Breadcrumb.Item></a> 
+       <a> <Breadcrumb.Item onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/category/${args.category}`
+                  );
+              }}>{args.category}</Breadcrumb.Item></a>
       </Breadcrumb>
     </>
   );
@@ -197,9 +210,9 @@ function SortComponent(args) {
           borderRadius: "5px",
         }}
       >
-        <Option value="rel">Popularity</Option>
-        <Option value={true}>Low to High</Option>
-        <Option value={false}>High to Low</Option>
+        <Option value="rel">{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.popularity"})}</Option>
+        <Option value={true}>{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.lowtohigh"})}</Option>
+        <Option value={false}>{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.hightolow"})}</Option>
       </Select>
     </>
   );
@@ -210,6 +223,11 @@ function ItemComponent(args) {
   const dispatch = useDispatch();
   const cartdata = useSelector(state => state.cart, _.isEqual);
   let newcart=cartdata.items.filter(x => x.id == args.id);
+const wishlist=useSelector(state => state.catdata.wishlist, _.isEqual);
+const checkForWishlistIcon=(key)=>{
+  
+  return wishlist.items.filter(x => x.id == key.id).length>0?true:false
+}  
   return (
     <>
       {" "}
@@ -237,11 +255,17 @@ function ItemComponent(args) {
           <Col>
             <h2>₹{args.productPrice}</h2>
           </Col>
+          <Col>
+         {checkForWishlistIcon(args)?<RedHeart/>:
+         (<span onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
+           <Heart/> 
+         </span>)}
+          </Col>
         </Row>
         <Divider></Divider>
         <Row justify="space-between" align="middle">
           <Col>
-            <h3>{args.productDiscount}% off</h3>
+            <h3>{args.productDiscount}% {args.intl&&args.intl.formatMessage({id:"app.components.offers.off"})}</h3>
           </Col>
           <Col>
             {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
@@ -258,7 +282,7 @@ function ItemComponent(args) {
               ghost="true"
               onClick={async () => { dispatch(addToCart(args.itemdata));}}
             >
-              Add To Cart
+              {args.intl&&args.intl.formatMessage({id:"app.components.cart.addtocart"})}
             </Button>
             }
           </Col>
@@ -335,7 +359,7 @@ function CategoriesPage(props) {
               <Divider></Divider>
               <Row justify="start" align="middle" style={{fontFamily:"Lato",fontWeight:"bold",fontSize:"18px",textAlign:"left"}}>
                 <Col span={24}>
-                  <span>Price:</span>
+                  <span>{props.intl&&props.intl.formatMessage({id:"app.components.filter.price"})}:</span>
                   <PriceChangeComponent category={categoryname}/>
                 </Col>
               
@@ -345,7 +369,7 @@ function CategoriesPage(props) {
               <Row justify="end" align="middle" className="mainHeadRow">
                 <Col style={{ padding: "5px" }} flex={2}>
                   <Row justify="start" align="top">
-                    <BreadCrumHeader category={categoryname} />
+                    <BreadCrumHeader category={categoryname} {...props} />
                   </Row>
                   <Row justify="start" align="bottom">
                     <h2
@@ -370,9 +394,9 @@ function CategoriesPage(props) {
                           color: "grey",
                         }}
                       >
-                        Sort By{" "}
+                        {props.intl&&props.intl.formatMessage({id:"app.components.cart.sortby"})}{" "}
                       </h4>{" "}
-                      <SortComponent category={categoryname}/>
+                      <SortComponent {...props} category={categoryname}/>
                     </Space>
                   </Row>
                 </Col>
