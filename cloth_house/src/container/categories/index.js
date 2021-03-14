@@ -227,6 +227,7 @@ function ItemComponent(args) {
           <Col>
             {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
             <Button
+            id="addToCart"
               type="primary"
               style={{
                 borderColor: "#1a4d7c",
