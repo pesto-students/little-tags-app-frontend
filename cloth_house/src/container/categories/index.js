@@ -29,6 +29,8 @@ import {
   Image,
   Spin,
   List,
+  Checkbox,
+  Slider
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 const { Content } = Layout;
@@ -131,8 +133,8 @@ let menucontent=[{"header":"cat1","menu":["cat1","cat2","cat3"]},{"header":"cat2
           )
         }
       >
-        {menucontent.map((el,index) => { return (<Panel className="menuHeader" header={el.header} key={index}>
-          {el.menu.map((elmenu) => {return <p key={elmenu} className="menuContent">{elmenu}</p> })}
+        {menucontent.map((el,index) => { return (<Panel className="menuHeader"  header={el.header} key={index}>
+          {el.menu.map((elmenu) => {return <p key={elmenu} className="menuContent"><Checkbox >{elmenu}</Checkbox></p> })}
           
         </Panel>)})}
       </Collapse>
@@ -151,6 +153,24 @@ function BreadCrumHeader(args) {
   );
 }
 
+function PriceChangeComponent(args){
+  const dispatch = useDispatch();
+  return (
+    <>
+    <Slider step={50} onChange={(val) => { dispatch(fetchCategories()); getCategoryData(args.category)
+        .then((data) => {
+          let filterdata=filterDataWithPrice(data.data,val[0],val[1])
+          console.log(filterdata);
+          data.data=filterdata;
+          dispatch(fetchCategoriesSuccess(data));
+        })
+        .catch((err) => {
+          console.log(err);
+          dispatch(fetchCategoriesFailure());
+        }); }} tipFormatter={(val) => `₹${val}`} range={{ draggableTrack: true }} min={100} max={2000} defaultValue={[400, 2000]} />
+    </>);
+}
+
 function SortComponent(args) {
   const dispatch = useDispatch();
   return (
@@ -159,7 +179,6 @@ function SortComponent(args) {
         defaultValue="rel"
         bordered={false}
         onChange={(val) => { dispatch(fetchCategories()); getCategoryData(args.category)
-        .then((res) => res.json())
         .then((data) => {
           sortCategoryData(data.data,val)
           dispatch(fetchCategoriesSuccess(data));
@@ -249,13 +268,17 @@ function ItemComponent(args) {
   );
 }
 
+var catresponse;
 async function getCategoryData(category) {
-  const response = await fetch(
-    "https://603db03a48171b0017b2d7b2.mockapi.io/" +
-      category
-  );
-  // const resp = await response.json();
-  return response;
+  if(typeof catresponse === "undefined" || typeof catresponse[category] === "undefined"){
+    catresponse = await fetch(
+      "https://603db03a48171b0017b2d7b2.mockapi.io/" +
+        category
+    );
+
+    catresponse[category] = await catresponse.json();
+    }
+  return {...catresponse[category]};
 }
 
 function sortCategoryData(data,ascending){
@@ -269,6 +292,10 @@ function sortCategoryData(data,ascending){
   }
 }
 
+function filterDataWithPrice(data,min,max){
+    return data.filter((item) => item.productPrice>=min && item.productPrice<=max);
+}
+
 function CategoriesPage(props) {
   const categories = useSelector(state => state.catdata, _.isEqual);
   let { categoryname } = useParams();
@@ -278,7 +305,6 @@ function CategoriesPage(props) {
     console.log("abc");
     dispatch(fetchCategories());
     getCategoryData(categoryname)
-      .then((res) => res.json())
       .then((data) => {
         dispatch(fetchCategoriesSuccess(data));
       })
@@ -305,6 +331,14 @@ function CategoriesPage(props) {
               </Row>
               <Row justify="center" align="middle">
                 <CollapseMenu category={categoryname} />
+              </Row>
+              <Divider></Divider>
+              <Row justify="start" align="middle" style={{fontFamily:"Lato",fontWeight:"bold",fontSize:"18px",textAlign:"left"}}>
+                <Col span={24}>
+                  <span>Price:</span>
+                  <PriceChangeComponent category={categoryname}/>
+                </Col>
+              
               </Row>
             </Col>
             <Col className="gutter-row" span={20}>
@@ -345,6 +379,7 @@ function CategoriesPage(props) {
               </Row>
               
               <List
+              style={{paddingTop:"3px"}}
                 loading={categories.categories.loading}
                 grid={{ gutter: 0, column: 4 }}
                 dataSource={
