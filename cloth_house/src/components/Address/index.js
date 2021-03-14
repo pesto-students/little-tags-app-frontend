@@ -1,5 +1,6 @@
 import React,{useState} from "react"; 
 import {Row,Col,Button,Form,Select,Input} from "antd";
+import { HomeOutlined } from '@ant-design/icons';
 import Modal from "../Modal";
 export default function AddressModal(props){
     const [addressModal,setAddressModal]=useState(false);
@@ -119,7 +120,7 @@ const returnAddressForm=()=>{
  <Col  span={24}>
  <section className={"bgColor widthForSection"}>
        
-      <div className="mainOrder">{props.intl.formatMessage({id:"app.containers.Login.deliveryAddress"})}</div> 
+      <div className="mainOrder"><HomeOutlined /> {props.intl.formatMessage({id:"app.containers.Login.deliveryAddress"})}</div> 
    <div className="subOrder">
    {`${address.address} ${address.street} ${address.city} - ${address.pincode} `} <Button onClick={openAddressPopUp}>{props.intl.formatMessage({id:"app.containers.Login.edit"})}</Button>
    </div>

@@ -3,7 +3,7 @@ import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import SmileBagFooter from "../../components/Footer";
 import "./order.css"
-import {Row,Col} from "antd";
+import {Row,Col, Divider} from "antd";
 import PriceAction from "../../components/PriceDetail";
 import ProductList from "../../components/ProductList";
 import { useSelector } from "react-redux";
