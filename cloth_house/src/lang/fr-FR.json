@@ -65,6 +65,22 @@
     "app.components.address.pincode":"Code PIN",
     "app.components.address.pincodeError":"Veuillez sélectionner un code PIN!",
     "app.components.address.submit":"Nous faire parvenir",
-    "app.components.address.wishlist":"Liste de souhaits"
+    "app.components.address.wishlist":"Liste de souhaits",
+    "app.components.offers.off":"désactivé",
+    "app.components.offers.footwear":"Achetez des chaussures maintenant à",
+    "app.components.offers.clothing":"Achetez des vêtements maintenant à",
+    "app.components.offers.jeans":"Achetez des jeans maintenant à",
+    "app.components.offers.sunglasses":"Achetez maintenant des lunettes de soleil à",
+    "app.components.offers.shopnow":"Achetez maintenant",
+    "app.components.offers.card.shoes":"Chaussures @ 30% de rabais",
+    "app.components.offers.card.tshirts":"T-shirts @ 70% de rabais",
+    "app.components.offers.card.casuals":"Casuals @ 60% de rabais",
+    "app.components.cart.addtocart":"Ajouter au panier",
+    "app.components.cart.sortby":"Trier par",
+    "app.components.cart.sortby.lowtohigh":"De bas en haut",
+    "app.components.cart.sortby.hightolow":"Haut en bas",
+    "app.components.cart.sortby.popularity":"Popularité",
+    "app.components.filter.price":"Prix",
+    "app.components.cart.reviews":"Commentaires"
   
   }

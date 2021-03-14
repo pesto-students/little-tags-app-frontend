@@ -210,9 +210,9 @@ function SortComponent(args) {
           borderRadius: "5px",
         }}
       >
-        <Option value="rel">Popularity</Option>
-        <Option value={true}>Low to High</Option>
-        <Option value={false}>High to Low</Option>
+        <Option value="rel">{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.popularity"})}</Option>
+        <Option value={true}>{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.lowtohigh"})}</Option>
+        <Option value={false}>{args.intl&&args.intl.formatMessage({id:"app.components.cart.sortby.hightolow"})}</Option>
       </Select>
     </>
   );
@@ -265,7 +265,7 @@ const checkForWishlistIcon=(key)=>{
         <Divider></Divider>
         <Row justify="space-between" align="middle">
           <Col>
-            <h3>{args.productDiscount}% off</h3>
+            <h3>{args.productDiscount}% {args.intl&&args.intl.formatMessage({id:"app.components.offers.off"})}</h3>
           </Col>
           <Col>
             {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
@@ -282,7 +282,7 @@ const checkForWishlistIcon=(key)=>{
               ghost="true"
               onClick={async () => { dispatch(addToCart(args.itemdata));}}
             >
-              Add To Cart
+              {args.intl&&args.intl.formatMessage({id:"app.components.cart.addtocart"})}
             </Button>
             }
           </Col>
@@ -359,7 +359,7 @@ function CategoriesPage(props) {
               <Divider></Divider>
               <Row justify="start" align="middle" style={{fontFamily:"Lato",fontWeight:"bold",fontSize:"18px",textAlign:"left"}}>
                 <Col span={24}>
-                  <span>Price:</span>
+                  <span>{props.intl&&props.intl.formatMessage({id:"app.components.filter.price"})}:</span>
                   <PriceChangeComponent category={categoryname}/>
                 </Col>
               
@@ -394,9 +394,9 @@ function CategoriesPage(props) {
                           color: "grey",
                         }}
                       >
-                        Sort By{" "}
+                        {props.intl&&props.intl.formatMessage({id:"app.components.cart.sortby"})}{" "}
                       </h4>{" "}
-                      <SortComponent category={categoryname}/>
+                      <SortComponent {...props} category={categoryname}/>
                     </Space>
                   </Row>
                 </Col>

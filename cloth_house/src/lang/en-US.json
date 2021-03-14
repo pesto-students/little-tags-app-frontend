@@ -67,6 +67,7 @@
     "app.components.address.pincode":"Pincode",
     "app.components.address.pincodeError":"Please select a pincode!",
     "app.components.address.submit":"Submit",
+    "app.components.address.wishlist":"Wishlist",
     "app.components.offers.off":"off",
     "app.components.offers.footwear":"Shop Footwear now at",
     "app.components.offers.clothing":"Shop Clothing now at",
@@ -76,5 +77,11 @@
     "app.components.offers.card.shoes":"Shoes @ 30%off",
     "app.components.offers.card.tshirts":"T-Shirts @ 70%off",
     "app.components.offers.card.casuals":"Casuals @ 60%off",
-    "app.components.address.wishlist":"Wishlist"
+    "app.components.cart.addtocart":"Add To Cart",
+    "app.components.cart.sortby":"Sort By",
+    "app.components.cart.sortby.lowtohigh":"Low To High",
+    "app.components.cart.sortby.hightolow":"High To Low",
+    "app.components.cart.sortby.popularity":"Popularity",
+    "app.components.filter.price":"Price",
+    "app.components.cart.reviews":"Reviews"
   }

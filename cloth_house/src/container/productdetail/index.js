@@ -141,7 +141,7 @@ function AddToCartButton(args){
         fontFamily: "Lato",
       }}
       onClick={async () => { dispatch(addToCart(args.itemdata));}}>
-      Add To Cart
+      {args.intl&&args.intl.formatMessage({id:"app.components.cart.addtocart"})}
     </Button>
     }</>);
 }
@@ -231,12 +231,12 @@ function ProductDetail(props) {
               </Row>
               <br></br>
               <Row>
-                <AddToCartButton itemdata={productdetail}/>
+                <AddToCartButton {...props} itemdata={productdetail}/>
               </Row>
             </Col>
             <Col  span={6}>
                 <List
-                header={<div className="reviewsHeader">Reviews</div>}
+                header={<div className="reviewsHeader">{props.intl&&props.intl.formatMessage({id:"app.components.cart.reviews"})}</div>}
                   size="small"
                   dataSource={data}
                   renderItem={(item) => (
