@@ -56,7 +56,7 @@
 .header .globe {
   color: #ffffff;
   text-decoration-color: #ffffff;
-  
+
   font-size: xx-large;
 }
 .globemenu {
@@ -67,7 +67,10 @@
   text-align: left;
 }
 
-.dropdownprops{
+.dropdownprops {
   overflow-y: auto;
   max-height: 250px;
+}
+.pTop {
+  padding-top: 1%;
 }

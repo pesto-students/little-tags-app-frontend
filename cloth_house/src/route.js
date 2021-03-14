@@ -13,6 +13,7 @@ import ForgotPassword from "./container/ForgotPassword"
 import Cart from "./container/Cart"
 import Order from "./container/Order"
 import Payment from "./container/Payment"
+import Wishlist from "./container/Wishlist"
 function Routes(props) {
 
   return (
@@ -42,7 +43,11 @@ function Routes(props) {
 
           <Route exact path={"/payment"} render={() => (
                         <Payment {...props}  />
-                      )}/>                                                                
+                      )}/>
+
+          <Route exact path={"/wishlist"} render={() => (
+                        <Wishlist {...props}  />
+                      )}/>                                                                            
         <Route component={NotFoundPage} />
       </Switch>
     </ErrorBoundary>

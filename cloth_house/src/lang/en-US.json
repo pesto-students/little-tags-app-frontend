@@ -75,5 +75,6 @@
     "app.components.offers.shopnow":"Shop Now",
     "app.components.offers.card.shoes":"Shoes @ 30%off",
     "app.components.offers.card.tshirts":"T-Shirts @ 70%off",
-    "app.components.offers.card.casuals":"Casuals @ 60%off"
+    "app.components.offers.card.casuals":"Casuals @ 60%off",
+    "app.components.address.wishlist":"Wishlist"
   }
