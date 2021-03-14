@@ -3,7 +3,7 @@ import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import SmileBagFooter from "../../components/Footer";
 import "./payment.css"
-import {Row,Col,Radio} from "antd";
+import {Row,Col,Radio,Divider} from "antd";
 import PriceAction from "../../components/PriceDetail";
 import AddressModel from "../../components/Address/index"
 export default function Cart(props){
@@ -59,6 +59,7 @@ return <>
       <PriceAction {...props} from={"payment"}/>
       </Col>
   </Row>
+  <Divider style={{borderColor:"white",height:"25px"}}></Divider>
   <SmileBagFooter {...props} />
   </>
 }

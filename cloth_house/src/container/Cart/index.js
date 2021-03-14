@@ -3,7 +3,7 @@ import TopHeader from "../../components/TopHeader";
 import Categories from "../../components/Categories";
 import SmileBagFooter from "../../components/Footer";
 import "./cart.css"
-import {Row,Col} from "antd";
+import {Row,Col,Space, Divider} from "antd";
 import PriceAction from "../../components/PriceDetail";
 import ProductList from "../../components/ProductList";
 import { useSelector } from "react-redux";
@@ -17,13 +17,13 @@ props.history.push("/home")
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>
-  <Row className="cart_top_row">
-      <Col span={12}>
+  <Row className="cart_top_row" justify="start" align="middle">
+      <Col span={8}>
           {props.intl.formatMessage({id:"app.containers.Login.myCart"})}
       </Col>
   </Row>
 
-  
+  <Divider style={{borderColor:"white"}}></Divider>
       <Row>
         <ProductList {...props} from="cart"/>
 
@@ -31,7 +31,6 @@ return <>
             <PriceAction {...props} from="cart"/>
             </Col>
           </Row>
-
   <SmileBagFooter {...props}/>
   </>
 }
