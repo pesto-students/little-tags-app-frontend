@@ -167,7 +167,7 @@ function PriceChangeComponent(args){
         .catch((err) => {
           console.log(err);
           dispatch(fetchCategoriesFailure());
-        }); }} tipFormatter={(val) => `₹${val}`} range={{ draggableTrack: true }} min={400} max={2000} defaultValue={[400, 2000]} />
+        }); }} tipFormatter={(val) => `₹${val}`} range={{ draggableTrack: true }} min={100} max={2000} defaultValue={[400, 2000]} />
     </>);
 }
 
