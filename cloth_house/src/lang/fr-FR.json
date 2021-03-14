@@ -81,6 +81,9 @@
     "app.components.cart.sortby.hightolow":"Haut en bas",
     "app.components.cart.sortby.popularity":"Popularité",
     "app.components.filter.price":"Prix",
-    "app.components.cart.reviews":"Commentaires"
-  
+    "app.components.cart.reviews":"Commentaires",
+    "app.components.cart.emptyCart":"Votre panier est vide!",
+    "app.components.cart.shopNow":"Achetez maintenant",
+    "app.components.cart.myWishlist":"Ma liste d'envies",
+    "app.components.cart.emptyWishlist":"Votre liste de souhaits est vide!"
   }

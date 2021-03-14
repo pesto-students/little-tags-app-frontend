@@ -7,13 +7,14 @@ import {Row,Col} from "antd";
 import PriceAction from "../../components/PriceDetail";
 import ProductList from "../../components/ProductList";
 import { useSelector } from "react-redux";
+import EmptyCart from "../../components/EmptyPage"
 export default function Cart(props){
   const curState=useSelector((state)=>state);
-//console.log("Cart=====>",curState);
+console.log("Cart=====>",curState);
 
-if(curState.cart.items&&!curState.cart.items.length){
-props.history.push("/home")
-}
+// if(curState.cart.items&&!curState.cart.items.length){
+// props.history.push("/home")
+// }
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>
@@ -24,14 +25,18 @@ return <>
   </Row>
 
   
+      <>
+      {curState.cart.items.length?
       <Row>
-        <ProductList {...props} from="cart"/>
+      <ProductList {...props} from="cart"/>
 
             <Col offset={2} span={8} className="priceBg priceHeight">
             <PriceAction {...props} from="cart"/>
             </Col>
-          </Row>
+            </Row>:<EmptyCart {...props} from="cart"/>}
+          </>
 
-  <SmileBagFooter {...props}/>
+        
+  <SmileBagFooter {...props} className={curState.cart.items.length>1?"":"positionFixed"}/>
   </>
 }
