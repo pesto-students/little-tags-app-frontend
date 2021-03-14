@@ -11,8 +11,8 @@ import {
   fetchCategories,
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
-  removeFromCart,
-  addToWishlist
+  addToWishlist,
+  removeFromWishlist
 } from "../../redux/action";
 import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +28,6 @@ import {
   Space,
   Card,
   Image,
-  Spin,
   List,
   Checkbox,
   Slider
@@ -256,9 +255,9 @@ const checkForWishlistIcon=(key)=>{
             <h2>₹{args.productPrice}</h2>
           </Col>
           <Col>
-         {checkForWishlistIcon(args)?<RedHeart/>:
+         {checkForWishlistIcon(args)?<span onClick={async () => { dispatch(removeFromWishlist(args.itemdata));}}><RedHeart/></span>:
          (<span onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
-           <Heart/> 
+           <Heart for="card"/> 
          </span>)}
           </Col>
         </Row>

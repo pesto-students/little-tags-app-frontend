@@ -29,6 +29,9 @@ export default function PriceAction(props){
       if(props.from==="cart"){
         props.history.push("/order")
       }
+      if(props.from==="payment"){
+        props.history.push("/home")
+      }
     }
 
    const getText=()=>{
