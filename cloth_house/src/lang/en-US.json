@@ -66,5 +66,6 @@
     "app.components.address.cityError":"Please select your city!",
     "app.components.address.pincode":"Pincode",
     "app.components.address.pincodeError":"Please select a pincode!",
-    "app.components.address.submit":"Submit"
+    "app.components.address.submit":"Submit",
+    "app.components.address.wishlist":"Wishlist"
   }

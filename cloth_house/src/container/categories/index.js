@@ -12,6 +12,7 @@ import {
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
   removeFromCart,
+  addToWishlist
 } from "../../redux/action";
 import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,6 +34,8 @@ import {
   Slider
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
+import RedHeart from "../../images/like"
+import Heart from "../../images/heart";
 const { Content } = Layout;
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -210,6 +213,11 @@ function ItemComponent(args) {
   const dispatch = useDispatch();
   const cartdata = useSelector(state => state.cart, _.isEqual);
   let newcart=cartdata.items.filter(x => x.id == args.id);
+const wishlist=useSelector(state => state.catdata.wishlist, _.isEqual);
+const checkForWishlistIcon=(key)=>{
+  
+  return wishlist.items.filter(x => x.id == key.id).length>0?true:false
+}  
   return (
     <>
       {" "}
@@ -237,6 +245,12 @@ function ItemComponent(args) {
           <Col>
             <h2>₹{args.productPrice}</h2>
           </Col>
+          <Col>
+         {checkForWishlistIcon(args)?<RedHeart/>:
+         (<span onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
+           <Heart/> 
+         </span>)}
+          </Col>
         </Row>
         <Divider></Divider>
         <Row justify="space-between" align="middle">
@@ -246,6 +260,7 @@ function ItemComponent(args) {
           <Col>
             {newcart.length>0?<PlusMinusButton itemdata={newcart[0]} />:
             <Button
+            id="addToCart"
               type="primary"
               style={{
                 borderColor: "#1a4d7c",

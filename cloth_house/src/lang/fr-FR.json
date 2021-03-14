@@ -64,5 +64,7 @@
     "app.components.address.cityError":"Veuillez sélectionner votre ville!",
     "app.components.address.pincode":"Code PIN",
     "app.components.address.pincodeError":"Veuillez sélectionner un code PIN!",
-    "app.components.address.submit":"Nous faire parvenir"
+    "app.components.address.submit":"Nous faire parvenir",
+    "app.components.address.wishlist":"Liste de souhaits"
+  
   }
