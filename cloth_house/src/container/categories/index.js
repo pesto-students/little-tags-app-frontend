@@ -34,7 +34,8 @@ import {
   Slider
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
-import {FaBeer} from "react-icons/fa"
+import RedHeart from "../../images/like"
+import Heart from "../../images/heart";
 const { Content } = Layout;
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -212,6 +213,11 @@ function ItemComponent(args) {
   const dispatch = useDispatch();
   const cartdata = useSelector(state => state.cart, _.isEqual);
   let newcart=cartdata.items.filter(x => x.id == args.id);
+const wishlist=useSelector(state => state.catdata.wishlist, _.isEqual);
+const checkForWishlistIcon=(key)=>{
+  
+  return wishlist.items.filter(x => x.id == key.id).length>0?true:false
+}  
   return (
     <>
       {" "}
@@ -239,8 +245,11 @@ function ItemComponent(args) {
           <Col>
             <h2>₹{args.productPrice}</h2>
           </Col>
-          <Col onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
-          <FaBeer/>
+          <Col>
+         {checkForWishlistIcon(args)?<RedHeart/>:
+         (<span onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
+           <Heart/> 
+         </span>)}
           </Col>
         </Row>
         <Divider></Divider>
