@@ -42,9 +42,19 @@ function BreadCrumHeader(args) {
   return (
     <>
       <Breadcrumb separator=">">
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item style={{ textTransform:"capitalize"}} href={href}>{args.categoryname}</Breadcrumb.Item>
-        <Breadcrumb.Item href="">{args.productname}</Breadcrumb.Item>
+      <a> <Breadcrumb.Item onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/`
+                  );
+              }}>Home</Breadcrumb.Item></a>
+        <a><Breadcrumb.Item style={{ textTransform:"capitalize"}} onClick={() => {
+                args.history &&
+                  args.history.push(
+                    href
+                  );
+              }}>{args.categoryname}</Breadcrumb.Item></a>
+        <a> <Breadcrumb.Item >{args.productname}</Breadcrumb.Item></a>
       </Breadcrumb>
     </>
   );
@@ -163,7 +173,7 @@ function ProductDetail(props) {
           <Categories {...props} />
           <Divider style={{ margin: "auto" }}></Divider>
           <div className="breadcrum">
-            <BreadCrumHeader categoryname={categoryname} productname={productdetail.productTitle} />
+            <BreadCrumHeader {...props} categoryname={categoryname} productname={productdetail.productTitle} />
           </div>
           <Row className="mainRow">
             <Col className="gutter-row" span={8}>

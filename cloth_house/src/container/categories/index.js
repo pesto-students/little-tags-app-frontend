@@ -146,8 +146,18 @@ function BreadCrumHeader(args) {
   return (
     <>
       <Breadcrumb separator=">">
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="">{args.category}</Breadcrumb.Item>
+       <a><Breadcrumb.Item onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/`
+                  );
+              }} >Home</Breadcrumb.Item></a> 
+       <a> <Breadcrumb.Item onClick={() => {
+                args.history &&
+                  args.history.push(
+                    `/category/${args.category}`
+                  );
+              }}>{args.category}</Breadcrumb.Item></a>
       </Breadcrumb>
     </>
   );
@@ -344,7 +354,7 @@ function CategoriesPage(props) {
               <Row justify="end" align="middle" className="mainHeadRow">
                 <Col style={{ padding: "5px" }} flex={2}>
                   <Row justify="start" align="top">
-                    <BreadCrumHeader category={categoryname} />
+                    <BreadCrumHeader category={categoryname} {...props} />
                   </Row>
                   <Row justify="start" align="bottom">
                     <h2
