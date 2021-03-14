@@ -12,6 +12,7 @@ import {
   fetchCategoriesFailure,
   fetchCategoriesSuccess,
   removeFromCart,
+  addToWishlist
 } from "../../redux/action";
 import PlusMinusButton from "../../components/PlusMinus";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,6 +34,7 @@ import {
   Slider
 } from "antd";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
+import {FaBeer} from "react-icons/fa"
 const { Content } = Layout;
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -236,6 +238,9 @@ function ItemComponent(args) {
           </Col>
           <Col>
             <h2>₹{args.productPrice}</h2>
+          </Col>
+          <Col onClick={async () => { dispatch(addToWishlist(args.itemdata));}}>
+          <FaBeer/>
           </Col>
         </Row>
         <Divider></Divider>

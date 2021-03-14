@@ -5,6 +5,10 @@ const defaultState={
   categories:{
     categorydata:{},
     loading:false
+  },
+  wishlist:{
+    items:[],
+    loading:false
   }
 }
 
@@ -12,6 +16,18 @@ var cartitems=[];
 let defaultCart={
   items:[]
 }
+
+function addToWishlist(state,item){
+console.log("addToWishlist=======>",state,item)
+return [...state.wishlist.items,item]
+}
+
+function removeFromWishlist(state,item){
+  console.log("addToWishlist=======>",state,item)
+  let newWishlist=state.wishlist.items.filter(key=>(key.id!=item.id))
+
+  return [...newWishlist]
+  }
 
 function reducer(state = defaultState, action){
   console.log("TYPE===>",action.type);
@@ -22,6 +38,16 @@ function reducer(state = defaultState, action){
       return {...state,categories:{loading:false,categorydata:action.payload}} 
       case "FETCH_CATEGORIES_FAIL":
       return {...state,categories:{loading:false}} 
+      case "ADD_TO_WISHLIST":
+        return {
+          ...state,wishlist:{items:addToWishlist(state,action.payload),loading:false}
+        }
+       case "REMOVE_FROM_WISHLIST":
+         return {
+          
+            ...state,wishlist:{items:removeFromWishlist(state,action.payload),loading:false}
+            
+         } 
         default:
         return state;
 
@@ -72,7 +98,7 @@ function cartreducer(state = defaultCart, action){
       case "VIEW_CART":
         return state;
         default:
-        return state;
+        return state;  
 
     }
 }
