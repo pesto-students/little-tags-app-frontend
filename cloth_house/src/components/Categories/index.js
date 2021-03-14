@@ -71,7 +71,7 @@ const Categories = (props) => {
     <div className="categories">
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} align="middle" justify="left">
         <Col id="clothing" onClick={()=>redirectToParticularCategory("/category/clothing")} className="gutter-row marginRight" xs={16} sm={6} md={5} lg={3} xl={3}>
-          <Category menutype={clothingmenu}
+          <Category  menutype={clothingmenu}
             imagesrc="./assets/images/clothing.jpg"
             menuLabel={props.intl&&props.intl.formatMessage({id:"app.components.LangSwitch.category.clothing"})} 
           />
