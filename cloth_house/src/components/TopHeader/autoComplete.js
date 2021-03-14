@@ -60,7 +60,7 @@ async function getSearchResults(query,props){
       if(typeof result.item.id === "undefined"){
         let imgsrc=`./assets/images/${result.item.category.toLowerCase()}.jpg`;
         return {
-          value: `${idx}`,
+          value: `/category/${result.item.category.toLowerCase()}`,
           label: (
             <div
               style={{
@@ -85,7 +85,7 @@ async function getSearchResults(query,props){
       }
 
       return {
-        value: `${idx}`,
+        value: `/detail/${result.item.category.toLowerCase()}/${result.item.id}`,
         label: (
           <div
             style={{
@@ -157,6 +157,8 @@ const Complete = (props) => {
 
   const onSelect = (value) => {
     console.log('onSelect', value);
+    props.history.push(value
+    )
   };
 
   return (
@@ -167,7 +169,6 @@ const Complete = (props) => {
       options={options}
       onSelect={onSelect}
       onSearch={handleSearch}
-      
     >
       <Input.Search style={{width:"100%"}} size="large" placeholder="Search"  />
     </AutoComplete>
