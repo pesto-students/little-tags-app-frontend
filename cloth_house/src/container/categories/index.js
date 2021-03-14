@@ -196,7 +196,7 @@ function ItemComponent(args) {
       {" "}
       <Card
         hoverable
-        cover={<Image width={300} height={400} src={args.imgsrc}></Image>}
+        cover={<Image width={250} height={280} src={args.imgsrc}></Image>}
       >
         <Row justify="space-between" align="middle">
           <Col>

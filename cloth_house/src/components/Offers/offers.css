@@ -4,23 +4,21 @@
   line-height: 160px;
 }
 
-
-
-.carouseloffers .offertextboxright{
-    position: absolute;
-    top:  50%;
-    right: -15%;
-    transform: translate(-50%, -50%);
-    height: 200px;
-    border-radius: 10px;
-    width: 600px;
-    background-color: rgb(196 27 27 / 14%);
-    backdrop-filter: blur(5px);
+.carouseloffers .offertextboxright {
+  position: absolute;
+  top: 50%;
+  right: -15%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  border-radius: 10px;
+  width: 600px;
+  background-color: rgb(196 27 27 / 14%);
+  backdrop-filter: blur(5px);
 }
 
-.carouseloffers .offertextboxleft{
+.carouseloffers .offertextboxleft {
   position: absolute;
-  top:  50%;
+  top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
   height: 200px;
@@ -30,29 +28,23 @@
   backdrop-filter: blur(5px);
 }
 
-.carouseloffers  h2{
+.carouseloffers h2 {
   font-family: Lato;
   font-weight: bold;
   color: black;
   height: 10%;
 }
 
-.carouseloffers  h4{
+.carouseloffers h4 {
   font-family: Lato;
   font-weight: bold;
   color: black;
   height: 20%;
 }
 
-
-
-
-
-
-
-.offerscards{
-    padding-top: 0.5%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 0.5%;
+.offerscards {
+  padding-top: 0.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 0.5%;
 }

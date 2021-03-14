@@ -52,12 +52,19 @@
     "app.containers.Login.payAndPlaceOrder":"Pay & Place Order",
     "app.containers.Login.deliveryAddress":"Delivery Address",
     "app.containers.Login.orderSummary":"ORDER SUMMARY",
-    "app.containers.Login.edit":"edit",
+    "app.containers.Login.edit":"Edit",
     "app.containers.Login.creditCard":"Credit Cards",
     "app.containers.Login.debitCard":"Debits Cards",
     "app.containers.Login.wallets":"Wallets",
     "app.containers.Login.netBanking":"Net Banking",
     "app.containers.Login.payMethod":"PAYMENT METHODS",
-    "app.containers.Login.payMent":"Payment"
-  
+    "app.containers.Login.payMent":"Payment",
+    "app.containers.Login.update":"Update",
+    "app.components.address.address":"Address",
+    "app.components.address.locality":"Locality",
+    "app.components.address.city":"city",
+    "app.components.address.cityError":"Please select your city!",
+    "app.components.address.pincode":"Pincode",
+    "app.components.address.pincodeError":"Please select a pincode!",
+    "app.components.address.submit":"Submit"
   }

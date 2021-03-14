@@ -3,7 +3,6 @@ import "./signup.css";
 import Modal from "../../components/Modal";
 import TopHeader from "../../components/TopHeader";
 import SmileBagFooter from "../../components/Footer";
-import SocialLogin from "../Login/socialLogin";
 import {
   Form,
   Input,

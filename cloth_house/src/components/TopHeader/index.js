@@ -60,8 +60,8 @@ const goToCart=()=>{
   })}
 {cartdata.items.length<1?<Menu.Item key="empty">
    <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold"}}>Empty Cart</span></center>
-   </Menu.Item>:<Menu.Item key="viewall" onClick={()=>{props.history.push('/cart')}}>
-   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold",color:"orange"}}>Go To Cart >></span></center>
+   </Menu.Item>:<Menu.Item key="viewall" onClick={goToCart}>
+   <center> <span style={{fontFamily:"Lato",fontSize:"15px",fontWeight:"bold",color:"orange"}}>{"Go To Cart >>"}</span></center>
    </Menu.Item>} 
   
   </Menu>
