@@ -7,13 +7,14 @@ import {Row,Col,Space, Divider} from "antd";
 import PriceAction from "../../components/PriceDetail";
 import ProductList from "../../components/ProductList";
 import { useSelector } from "react-redux";
+import EmptyCart from "../../components/EmptyPage"
 export default function Cart(props){
   const curState=useSelector((state)=>state);
-//console.log("Cart=====>",curState);
+console.log("Cart=====>",curState);
 
-if(curState.cart.items&&!curState.cart.items.length){
-props.history.push("/home")
-}
+// if(curState.cart.items&&!curState.cart.items.length){
+// props.history.push("/home")
+// }
 return <>
   <TopHeader {...props}/>
   <Categories {...props}/>
@@ -22,15 +23,16 @@ return <>
           {props.intl.formatMessage({id:"app.containers.Login.myCart"})}
       </Col>
   </Row>
-
-  <Divider style={{borderColor:"white"}}></Divider>
-      <Row>
-        <ProductList {...props} from="cart"/>
+  
+      <>
+      {curState.cart.items.length?<Row>
+      <ProductList {...props} from="cart"/>
 
             <Col offset={2} span={8} className="priceBg priceHeight">
             <PriceAction {...props} from="cart"/>
-            </Col>
-          </Row>
-  <SmileBagFooter {...props}/>
+           
+            </Row>:<EmptyCart {...props} from="cart"/>}
+          </>
+<SmileBagFooter {...props} className={curState.cart.items.length>1?"":"positionFixed"}/>
   </>
 }

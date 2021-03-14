@@ -42,7 +42,7 @@ return <>
       <PriceAction {...props} from={"order"}/>
       </Col>
   </Row>
-  <Divider style={{borderColor:"white",height:"25px"}}></Divider>
-  <SmileBagFooter {...props} />
+  
+  <SmileBagFooter {...props} className={curState.catdata.wishlist.items.length>1?"":"positionFixed"} />
   </>
 }

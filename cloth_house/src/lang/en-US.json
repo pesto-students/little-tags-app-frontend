@@ -83,5 +83,10 @@
     "app.components.cart.sortby.hightolow":"High To Low",
     "app.components.cart.sortby.popularity":"Popularity",
     "app.components.filter.price":"Price",
-    "app.components.cart.reviews":"Reviews"
+    "app.components.cart.reviews":"Reviews",
+    "app.components.cart.emptyCart":"Your cart is empty!",
+    "app.components.cart.shopNow":"Shop Now",
+    "app.components.cart.myWishlist":"My Wishlist",
+    "app.components.cart.emptyWishlist":"Your wishlist is empty!"
+  
   }
