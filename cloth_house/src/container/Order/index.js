@@ -43,6 +43,6 @@ return <>
       </Col>
   </Row>
   
-  <SmileBagFooter {...props} />
+  <SmileBagFooter {...props} className={curState.catdata.wishlist.items.length>1?"":"positionFixed"} />
   </>
 }

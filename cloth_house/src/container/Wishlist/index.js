@@ -6,12 +6,12 @@ import Categories from "../../components/Categories";
 import { useSelector } from "react-redux";
 export default function Wishlist(props){
 const state=useSelector(state=>state);
-//console.log("Wishlist=======>",state.catdata.wishlist);
+console.log("Wishlist=======>",state.catdata.wishlist);
 
 return <>
 <TopHeader {...props}/>
 <Categories {...props}/>
   <ProductList {...props} from="wishlist"/>
-  <SmileBagFooter {...props} className={"positionFixed"}/>
+  <SmileBagFooter {...props} className={state.catdata.wishlist.items.length>1?"":"positionFixed"}/>
 </>
 }
